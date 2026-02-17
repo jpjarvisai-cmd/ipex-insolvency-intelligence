@@ -1,7 +1,10 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-17T21:00:00+11:00",
-    "lastScan": "2026-02-17T21:00:00+11:00"
+    "lastUpdated": "2026-02-18T07:06:06.108244",
+    "totalBuilders": 17,
+    "totalProjectsAtRisk": 0,
+    "totalValueAtRisk": 0,
+    "avgDaysInsolvent": 206
   },
   "builders": [
     {
@@ -3158,7 +3161,7 @@
           "notes": "10 apartments, completed 2022. Electrical work by Electric City."
         },
         {
-          "id": "aux-002", 
+          "id": "aux-002",
           "projectName": "60x Apartments - Wiley Park",
           "address": "108 the Boulevard, Wiley Park NSW 2195",
           "developer": "Developer Not Yet Identified",
@@ -4344,6 +4347,49 @@
           "usedFor": "Impact analysis on hundreds of suppliers and subcontractors across multiple projects"
         }
       ]
+    },
+    {
+      "id": "uk-construction-company",
+      "name": "UK construction company",
+      "abn": "26653669553",
+      "acn": "653669553",
+      "state": "VIC",
+      "status": "new",
+      "insolvency": {
+        "administrationDate": "2026-02-18",
+        "administrator": null,
+        "administrationType": null,
+        "estimatedInsolvencyStart": null,
+        "daysInsolventTrading": null,
+        "creditorsMeetingDate": null
+      },
+      "summary": {
+        "totalProjectsAtRisk": 0,
+        "totalValueAtRisk": 0,
+        "totalDevelopersAffected": 0,
+        "totalLendersAffected": 0,
+        "narrative": "Recently identified \u2014 automated monitoring detected potential insolvency. Research pipeline initiated. Source: UK construction company enters administration, records show | Largs and Millport Weekly News"
+      },
+      "projects": [],
+      "timeline": [
+        {
+          "date": "2026-02-18",
+          "event": "Detected by IPEX monitoring system",
+          "type": "detection"
+        }
+      ],
+      "research": {
+        "lastUpdated": "2026-02-18T07:06:05.678490",
+        "researchedBy": "IPEX Monitoring Engine (automated)",
+        "confidence": "medium",
+        "dataSources": [
+          "Brave Search",
+          "https://www.largsandmillportnews.com/news/national/uk-today/25854901.uk-construction-company-enters-administration-records-show/",
+          "ABR"
+        ],
+        "gaps": "Pending administrator report, ABN verification, project research",
+        "sourceArticles": []
+      }
     }
   ]
 }
