@@ -1,25 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-17T16:06:21+11:00",
-    "lastScan": "2026-02-17T16:06:21+11:00",
-    "totalBuilders": 16,
-    "totalProjectsAtRisk": 132,
-    "totalValueAtRisk": 8039536300,
-    "avgDaysInsolvent": 203,
-    "windowTotals": {
-      "preInsolvency": {
-        "count": 8,
-        "value": 134250000
-      },
-      "insolventTrading": {
-        "count": 22,
-        "value": 1346885300
-      },
-      "preAdministration": {
-        "count": 27,
-        "value": 1496053000
-      }
-    }
+    "lastUpdated": "2026-02-17T20:30:00+11:00",
+    "lastScan": "2026-02-17T20:30:00+11:00"
   },
   "builders": [
     {
@@ -40,11 +22,9 @@
         "creditorsMeetingDate": "2026-02-18",
         "outcome": null,
         "insolvencyStartEstimated": true,
-        "insolvencyPeriodDays": 180
+        "insolvencyPeriodDays": 175
       },
       "summary": {
-        "totalProjectsAtRisk": 4,
-        "totalValueAtRisk": 70000000,
         "totalDevelopersAffected": 4,
         "totalLendersAffected": null,
         "narrative": "Novati Constructions, a Sydney builder operating since 1971, entered voluntary administration on 8 February 2026 (public announcement 13 Feb). The family-run company had a portfolio spanning residential, commercial, industrial, aged care and education projects. At collapse, active projects included the Loftex warehouse ($30M), Embassy Residences, Georges Manor Aged Care, and the Manly Civic Club fitout. Directors are proposing a Deed of Company Arrangement. MBA NSW Award winner 2017."
@@ -60,8 +40,6 @@
           "contractDate": "2025-06-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Novati website / LinkedIn",
           "notes": "25,000sqm warehouse + 1,000sqm office. ESD features. Repeat Loftex client."
         },
@@ -75,8 +53,6 @@
           "contractDate": "2024-01-01",
           "status": "verified",
           "contractStatus": "Completed",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Novati website",
           "notes": "Major industrial warehouse project."
         },
@@ -84,14 +60,12 @@
           "id": "nov-003",
           "projectName": "Point Apartments \u2014 South Cronulla",
           "address": "South Cronulla NSW 2230",
-          "developer": "TBD",
+          "developer": "Developer Not Yet Identified",
           "estimatedValue": 15000000,
           "valueEstimated": true,
           "contractDate": "2024-06-01",
           "status": "verified",
           "contractStatus": "Completed",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Novati LinkedIn / Daily Mail",
           "notes": "Luxury apartment complex. One of Novati's most recent successes."
         },
@@ -105,8 +79,6 @@
           "contractDate": "2016-01-01",
           "status": "verified",
           "contractStatus": "Completed",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "MBA NSW 2017 Award / API Magazine",
           "notes": "MBA NSW Excellence Award 2017 ($10-15M category). Disability accommodation."
         },
@@ -120,36 +92,30 @@
           "contractDate": "2024-01-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Novati website / API Magazine"
         },
         {
           "id": "nov-006",
           "projectName": "Embassy Residences \u2014 St Leonards",
           "address": "St Leonards NSW 2065",
-          "developer": "TBD",
+          "developer": "Loftex Property",
           "estimatedValue": 20000000,
           "valueEstimated": true,
           "contractDate": "2025-01-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Novati website"
         },
         {
           "id": "nov-007",
           "projectName": "Georges Manor Aged Care",
           "address": "Georges Hall NSW 2198",
-          "developer": "TBD",
+          "developer": "Developer Not Yet Identified",
           "estimatedValue": 15000000,
           "valueEstimated": true,
           "contractDate": "2024-06-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Novati website"
         }
       ],
@@ -448,21 +414,7 @@
       "abn_entity_type": "Australian Private Company",
       "abn_gst": "2000-07-01",
       "abn_business_names": [],
-      "abn_entity_name": "NOVATI CONSTRUCTIONS PTY LTD",
-      "windowStats": {
-        "preInsolvency": {
-          "count": 0,
-          "value": 0
-        },
-        "insolventTrading": {
-          "count": 0,
-          "value": 0
-        },
-        "preAdministration": {
-          "count": 0,
-          "value": 0
-        }
-      }
+      "abn_entity_name": "NOVATI CONSTRUCTIONS PTY LTD"
     },
     {
       "id": "lanskey-constructions",
@@ -488,8 +440,6 @@
         "creditorCount": 282
       },
       "summary": {
-        "totalProjectsAtRisk": 7,
-        "totalValueAtRisk": 86960000,
         "totalDevelopersAffected": 7,
         "totalLendersAffected": null,
         "projectsWonWithin6Months": 19,
@@ -508,8 +458,6 @@
           "contractDate": "2022-09-30",
           "status": "verified",
           "contractStatus": "Tendering",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -527,8 +475,6 @@
           "contractDate": "2022-08-19",
           "status": "verified",
           "contractStatus": "Tendering",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -546,8 +492,6 @@
           "contractDate": "2022-10-25",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -560,13 +504,11 @@
           "id": "lanskey-004",
           "projectName": "Newmarket Rd Development",
           "address": "131A, 131 & 143 Newmarket Rd, Windsor QLD",
-          "developer": "TBD",
+          "developer": "Developer Not Yet Identified",
           "estimatedValue": 10000000,
           "contractDate": "2022-06-01",
           "status": "verified",
           "contractStatus": "TBD",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -583,8 +525,6 @@
           "contractDate": "2022-01-01",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -596,13 +536,11 @@
           "id": "lanskey-006",
           "projectName": "Vermont Development",
           "address": "27-63 Morack Rd, Vermont VIC 3133",
-          "developer": "TBD",
+          "developer": "Developer Not Yet Identified",
           "estimatedValue": 6500000,
           "contractDate": "2022-06-01",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null
@@ -611,13 +549,11 @@
           "id": "lanskey-007",
           "projectName": "Radich Chase Development",
           "address": "38 Radich Chase, Wangara WA 6065",
-          "developer": "TBD",
+          "developer": "Developer Not Yet Identified",
           "estimatedValue": 2730000,
           "contractDate": "2022-04-01",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -847,21 +783,7 @@
       "abn_entity_type": "Australian Private Company",
       "abn_gst": "2000-07-01",
       "abn_business_names": [],
-      "abn_entity_name": "LANSKEY CONSTRUCTIONS PTY. LTD.",
-      "windowStats": {
-        "preInsolvency": {
-          "count": 0,
-          "value": 0
-        },
-        "insolventTrading": {
-          "count": 6,
-          "value": 80460000
-        },
-        "preAdministration": {
-          "count": 3,
-          "value": 57730000
-        }
-      }
+      "abn_entity_name": "LANSKEY CONSTRUCTIONS PTY. LTD."
     },
     {
       "id": "lloyd-group",
@@ -886,8 +808,6 @@
         "totalDebtsTier": 2
       },
       "summary": {
-        "totalProjectsAtRisk": 8,
-        "totalValueAtRisk": 62980000,
         "totalDevelopersAffected": 8,
         "totalLendersAffected": null,
         "projectsWonWithin6Months": 5,
@@ -906,8 +826,6 @@
           "contractDate": "2022-10-01",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -924,8 +842,6 @@
           "contractDate": "2022-10-01",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -942,8 +858,6 @@
           "contractDate": "2023-11-01",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -958,8 +872,6 @@
           "contractDate": "2022-10-01",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -976,8 +888,6 @@
           "contractDate": "2022-09-19",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -994,8 +904,6 @@
           "contractDate": "2022-09-01",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -1013,8 +921,6 @@
           "contractDate": "2023-06-01",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -1029,8 +935,6 @@
           "contractDate": "2022-09-29",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -1222,21 +1126,7 @@
       "abn_entity_type": "Australian Private Company",
       "abn_gst": "2011-03-01",
       "abn_business_names": [],
-      "abn_entity_name": "LLOYD GROUP PTY LTD",
-      "windowStats": {
-        "preInsolvency": {
-          "count": 1,
-          "value": 1000000
-        },
-        "insolventTrading": {
-          "count": 6,
-          "value": 53649000
-        },
-        "preAdministration": {
-          "count": 0,
-          "value": 0
-        }
-      }
+      "abn_entity_name": "LLOYD GROUP PTY LTD"
     },
     {
       "id": "gcb-constructions",
@@ -1261,8 +1151,6 @@
         "totalDebtsTier": 1
       },
       "summary": {
-        "totalProjectsAtRisk": 1,
-        "totalValueAtRisk": 193000000,
         "totalDevelopersAffected": 1,
         "totalLendersAffected": null,
         "projectsWonWithin6Months": 1,
@@ -1281,8 +1169,6 @@
           "contractDate": "2023-04-01",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -1300,8 +1186,6 @@
           "contractDate": "2022-10-01",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": "Won within 6 months of insolvent trading date, not during.",
@@ -1489,21 +1373,7 @@
       "abn_business_names": [
         "G C B CONSTRUCTIONS"
       ],
-      "abn_entity_name": "G C B CONSTRUCTIONS PTY LTD",
-      "windowStats": {
-        "preInsolvency": {
-          "count": 1,
-          "value": 51000000
-        },
-        "insolventTrading": {
-          "count": 1,
-          "value": 193000000
-        },
-        "preAdministration": {
-          "count": 1,
-          "value": 193000000
-        }
-      }
+      "abn_entity_name": "G C B CONSTRUCTIONS PTY LTD"
     },
     {
       "id": "eq-projects",
@@ -1526,8 +1396,6 @@
         "creditorCount": 30
       },
       "summary": {
-        "totalProjectsAtRisk": 1,
-        "totalValueAtRisk": 38580000,
         "totalDevelopersAffected": 1,
         "totalLendersAffected": null,
         "projectsWonWithin6Months": 0,
@@ -1541,13 +1409,11 @@
           "id": "eq-001",
           "projectName": "Forest Lodge Warriewood",
           "address": "8 Forest Rd, Warriewood NSW 2102",
-          "developer": "TBD",
+          "developer": "Developer Not Yet Identified",
           "estimatedValue": 38580000,
           "contractDate": "2022-01-01",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -1712,21 +1578,7 @@
       "abn_entity_type": "Australian Private Company",
       "abn_gst": null,
       "abn_business_names": [],
-      "abn_entity_name": "OFFICE EQ PROJECTS PTY LIMITED",
-      "windowStats": {
-        "preInsolvency": {
-          "count": 0,
-          "value": 0
-        },
-        "insolventTrading": {
-          "count": 1,
-          "value": 38580000
-        },
-        "preAdministration": {
-          "count": 0,
-          "value": 0
-        }
-      }
+      "abn_entity_name": "OFFICE EQ PROJECTS PTY LIMITED"
     },
     {
       "id": "st-hilliers",
@@ -1751,8 +1603,6 @@
         "totalDebtsTier": 1
       },
       "summary": {
-        "totalProjectsAtRisk": 0,
-        "totalValueAtRisk": 0,
         "totalDevelopersAffected": 5,
         "totalLendersAffected": null,
         "projectsWonWithin6Months": 5,
@@ -1771,8 +1621,6 @@
           "contractDate": "2023-09-14",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -1790,8 +1638,6 @@
           "contractDate": "2023-12-14",
           "status": "verified",
           "contractStatus": "Tendering",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -1809,8 +1655,6 @@
           "contractDate": "2023-12-21",
           "status": "verified",
           "contractStatus": "Tendering",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -1828,8 +1672,6 @@
           "contractDate": "2023-12-12",
           "status": "verified",
           "contractStatus": "Tendering",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -1847,8 +1689,6 @@
           "contractDate": "2023-09-14",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": "Opal HealthCare component of the Ascot Grove Care Community development.",
@@ -2040,21 +1880,7 @@
       "abn_entity_type": "Australian Private Company",
       "abn_gst": "2000-07-01",
       "abn_business_names": [],
-      "abn_entity_name": "ST HILLIERS CONTRACTING PTY LIMITED",
-      "windowStats": {
-        "preInsolvency": {
-          "count": 5,
-          "value": 62250000
-        },
-        "insolventTrading": {
-          "count": 0,
-          "value": 0
-        },
-        "preAdministration": {
-          "count": 5,
-          "value": 62250000
-        }
-      }
+      "abn_entity_name": "ST HILLIERS CONTRACTING PTY LIMITED"
     },
     {
       "id": "stevens-constructions",
@@ -2076,8 +1902,6 @@
         "insolvencyPeriodDays": 240
       },
       "summary": {
-        "totalProjectsAtRisk": 2,
-        "totalValueAtRisk": 10390000,
         "totalDevelopersAffected": 2,
         "totalLendersAffected": null,
         "projectsWonWithin6Months": 2,
@@ -2096,8 +1920,6 @@
           "contractDate": "2024-05-15",
           "status": "verified",
           "contractStatus": "Tendering",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -2115,8 +1937,6 @@
           "contractDate": "2023-10-01",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -2133,8 +1953,6 @@
           "contractDate": "2024-04-01",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": "Won within 6 months of insolvent trading date.",
@@ -2142,22 +1960,6 @@
             "insolvent-trading",
             "pre-administration"
           ]
-        },
-        {
-          "id": "stv-004",
-          "projectName": "Taco Bell \u2014 Lisarow Plaza Complex",
-          "address": "4/1 Parsons Rd, Lisarow NSW 2250",
-          "developer": "Yum! Restaurants International",
-          "estimatedValue": 1974000,
-          "contractDate": "2024-10-01",
-          "status": "verified",
-          "contractStatus": "Contract Won",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": true,
-          "source": "Paul Reid / IPEX Research",
-          "sourceUrl": null,
-          "notes": "Won within 6 months of administration date.",
-          "windows": []
         }
       ],
       "contacts": [],
@@ -2327,21 +2129,7 @@
       "abn_entity_type": "Australian Private Company",
       "abn_gst": "2006-09-13",
       "abn_business_names": [],
-      "abn_entity_name": "STEVENS CONSTRUCTION (NSW) PTY LIMITED",
-      "windowStats": {
-        "preInsolvency": {
-          "count": 0,
-          "value": 0
-        },
-        "insolventTrading": {
-          "count": 3,
-          "value": 20370000
-        },
-        "preAdministration": {
-          "count": 2,
-          "value": 16680000
-        }
-      }
+      "abn_entity_name": "STEVENS CONSTRUCTION (NSW) PTY LIMITED"
     },
     {
       "id": "project-coordination",
@@ -2368,8 +2156,6 @@
         "creditorCount": 200
       },
       "summary": {
-        "totalProjectsAtRisk": 1,
-        "totalValueAtRisk": 4326300,
         "totalDevelopersAffected": 1,
         "totalLendersAffected": null,
         "projectsWonWithin6Months": 2,
@@ -2388,8 +2174,6 @@
           "contractDate": "2024-03-04",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": null,
@@ -2407,8 +2191,6 @@
           "contractDate": "2023-12-06",
           "status": "verified",
           "contractStatus": "Tendering",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": "Won within 6 months of insolvent trading date.",
@@ -2426,8 +2208,6 @@
           "contractDate": "2023-08-01",
           "status": "verified",
           "contractStatus": "Contract Won",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Paul Reid / IPEX Research",
           "sourceUrl": null,
           "notes": "Won within 6 months of insolvent trading date.",
@@ -2588,21 +2368,7 @@
       "abn_entity_type": "Australian Private Company",
       "abn_gst": null,
       "abn_business_names": [],
-      "abn_entity_name": "PROJECT CO-ORDINATION (NSW) PTY LTD",
-      "windowStats": {
-        "preInsolvency": {
-          "count": 1,
-          "value": 20000000
-        },
-        "insolventTrading": {
-          "count": 1,
-          "value": 4326300
-        },
-        "preAdministration": {
-          "count": 2,
-          "value": 24326300
-        }
-      }
+      "abn_entity_name": "PROJECT CO-ORDINATION (NSW) PTY LTD"
     },
     {
       "id": "smlxl-projects",
@@ -2623,8 +2389,6 @@
         "outcome": "Liquidation"
       },
       "summary": {
-        "totalProjectsAtRisk": 4,
-        "totalValueAtRisk": 5300000,
         "totalDevelopersAffected": 3,
         "totalLendersAffected": null,
         "projectsWonWithin6MonthsOfAdmin": 3,
@@ -2641,8 +2405,6 @@
           "contractDate": "2023-02-01",
           "status": "verified",
           "contractStatus": "Abandoned mid-construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "ChannelNews / Club Statement / Golf clubhouse cost analysis",
           "valueEstimated": true,
           "notes": "1,000sqm renovation @ ~$4,000/sqm. Clubhouse stripped bare when liquidator appointed. Club issued breach notice, sought new contractor. Project managed by HGW Projects, designed by Team 2 Architects.",
@@ -2659,8 +2421,6 @@
           "contractDate": "2023-01-15",
           "status": "verified",
           "contractStatus": "Incomplete",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "ChannelNews",
           "valueEstimated": true,
           "notes": "High-end restaurant fitout. Estimated based on typical restaurant fitout costs.",
@@ -2677,8 +2437,6 @@
           "contractDate": "2023-03-01",
           "status": "verified",
           "contractStatus": "Incomplete",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "ChannelNews",
           "valueEstimated": true,
           "notes": "Restaurant fitout. Estimated based on typical restaurant fitout costs.",
@@ -2695,8 +2453,6 @@
           "contractDate": "2022-01-01",
           "status": "verified",
           "contractStatus": "Unknown",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "ChannelNews",
           "valueEstimated": true
         }
@@ -2731,20 +2487,6 @@
         "confidence": "medium",
         "gaps": "No insolvency start date. Project values unknown. Full project list not available (130 claimed at peak). No creditor count or total debts figure."
       },
-      "windowStats": {
-        "preInsolvency": {
-          "count": 0,
-          "value": 0
-        },
-        "insolventTrading": {
-          "count": 0,
-          "value": 0
-        },
-        "preAdministration": {
-          "count": 0,
-          "value": 0
-        }
-      },
       "context": {
         "founded": "2016",
         "founders": "Dean Ossip",
@@ -2768,7 +2510,7 @@
       "acn": "162738043",
       "entityType": "Australian Private Company",
       "state": "NSW",
-      "status": "research-pending",
+      "status": "insufficient-data",
       "insolvency": {
         "type": "Creditors' Voluntary Liquidation",
         "administrationDate": "2023-08-18",
@@ -2780,11 +2522,9 @@
         "outcome": "Liquidation"
       },
       "summary": {
-        "totalProjectsAtRisk": null,
-        "totalValueAtRisk": null,
         "totalDevelopersAffected": null,
         "totalLendersAffected": null,
-        "narrative": "Australex Group Pty Ltd entered Creditors' Voluntary Liquidation on 18 August 2023. Related entity Australex Construction Pty Ltd (ACN 161924965) was proposed for deregistration in June 2023. Very little public information available."
+        "narrative": "Australex Group Pty Ltd entered Creditors' Voluntary Liquidation on 18 August 2023. Despite being described as an 'award-winning, boutique residential and commercial builder' (LinkedIn), insufficient public information available about projects, debts, or impact. Related entity Australex Construction Pty Ltd (ACN 161924965) was proposed for deregistration in June 2023."
       },
       "projects": [],
       "contacts": [],
@@ -2818,20 +2558,6 @@
             "status": "Proposed deregistration June 2023"
           }
         ]
-      },
-      "windowStats": {
-        "preInsolvency": {
-          "count": 0,
-          "value": 0
-        },
-        "insolventTrading": {
-          "count": 0,
-          "value": 0
-        },
-        "preAdministration": {
-          "count": 0,
-          "value": 0
-        }
       }
     },
     {
@@ -2855,8 +2581,6 @@
         "totalDebts": null
       },
       "summary": {
-        "totalProjectsAtRisk": 13,
-        "totalValueAtRisk": 5000000000,
         "totalDevelopersAffected": 11,
         "totalLendersAffected": null,
         "narrative": "ProBuild was one of Australia's largest builders with $5B in active projects when it collapsed in February 2022. WBHO South Africa withdrew support on 22 February after years of losses. The administrator found the company had been insolvent since at least 1 February \u2014 just 22 days of confirmed insolvent trading. But the scale of impact was enormous: 2,300 creditors, workers owed $14M, and projects from Sydney's tallest residential tower to Perth's Ritz Carlton left in limbo. Roberts Co later purchased ProBuild's VIC operations for just $1."
@@ -2871,8 +2595,6 @@
           "contractDate": "2019-06-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Public records / News",
           "sourceUrl": null,
           "notes": "Active at time of collapse. Contracted prior to insolvency period."
@@ -2886,8 +2608,6 @@
           "contractDate": "2016-01-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Public records / News",
           "sourceUrl": null,
           "notes": "Active at time of collapse. Contracted prior to insolvency period."
@@ -2901,8 +2621,6 @@
           "contractDate": "2018-01-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Public records / News",
           "sourceUrl": null,
           "notes": "Active at time of collapse. Contracted prior to insolvency period."
@@ -2916,8 +2634,6 @@
           "contractDate": "2018-06-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Public records / News",
           "sourceUrl": null,
           "notes": "Active at time of collapse. Contracted prior to insolvency period."
@@ -2931,8 +2647,6 @@
           "contractDate": "2015-10-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Public records / News",
           "sourceUrl": null,
           "notes": "Active at time of collapse. Contracted prior to insolvency period."
@@ -2946,8 +2660,6 @@
           "contractDate": "2017-05-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Public records / News",
           "sourceUrl": null,
           "notes": "Active at time of collapse. Contracted prior to insolvency period."
@@ -2961,8 +2673,6 @@
           "contractDate": "2019-01-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Public records / News",
           "sourceUrl": null,
           "notes": "Active at time of collapse. Contracted prior to insolvency period."
@@ -2976,8 +2686,6 @@
           "contractDate": "2017-01-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Public records / News",
           "sourceUrl": null,
           "notes": "Active at time of collapse. Contracted prior to insolvency period."
@@ -2991,8 +2699,6 @@
           "contractDate": "2019-06-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Public records / News",
           "sourceUrl": null,
           "notes": "Active at time of collapse. Contracted prior to insolvency period."
@@ -3006,8 +2712,6 @@
           "contractDate": "2020-01-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Public records / News",
           "sourceUrl": null,
           "notes": "Active at time of collapse. Contracted prior to insolvency period."
@@ -3021,8 +2725,6 @@
           "contractDate": "2021-01-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Public records / News",
           "sourceUrl": null,
           "notes": "Active at time of collapse. Contracted prior to insolvency period."
@@ -3036,8 +2738,6 @@
           "contractDate": "2021-06-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Public records / News",
           "sourceUrl": null,
           "notes": "Active at time of collapse. Contracted prior to insolvency period."
@@ -3046,13 +2746,11 @@
           "id": "pb-013",
           "projectName": "502 Albert Street",
           "address": "502 Albert Street, East Melbourne VIC 3002",
-          "developer": "TBD",
+          "developer": "Developer Not Yet Identified",
           "estimatedValue": 60000000,
           "contractDate": "2020-06-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Public records / News",
           "sourceUrl": null,
           "notes": "Active at time of collapse. Contracted prior to insolvency period."
@@ -3097,20 +2795,6 @@
         "workersOwed": 14000000,
         "ongoingProjectsValue": 5000000000,
         "industryContext": "One of the largest construction collapses in Australian history. FIRB blocked sale to CSCEC in Jan 2021. Roberts Co later bought VIC operations for $1."
-      },
-      "windowStats": {
-        "preInsolvency": {
-          "count": 0,
-          "value": 0
-        },
-        "insolventTrading": {
-          "count": 0,
-          "value": 0
-        },
-        "preAdministration": {
-          "count": 0,
-          "value": 0
-        }
       }
     },
     {
@@ -3138,8 +2822,6 @@
         "totalDebtsTier": 1
       },
       "summary": {
-        "totalProjectsAtRisk": 1,
-        "totalValueAtRisk": 50000000,
         "totalDevelopersAffected": 1,
         "totalLendersAffected": null,
         "narrative": "Element Five (Aust) Pty Ltd, a boutique multi-residential builder in Melbourne and sister company of VCON, entered voluntary administration on 13 March 2025 owing $3.7M to creditors. The collapse was triggered by a Brighton project dispute that damaged the VCON Group's reputation and cash flow. The Brunswick Yard project ($50M, 122 apartments) suffered $1M+ in sabotage damage from unpaid subcontractors. Director Anthony Morton failed to return mandatory ROCAP report. Joint liquidators Andrew Hewitt & Matt Byrnes (Grant Thornton) appointed June 25, 2025."
@@ -3149,13 +2831,11 @@
           "id": "e5-001",
           "projectName": "Brunswick Yard",
           "address": "Ballarat Street, Brunswick VIC",
-          "developer": "TBD",
+          "developer": "Developer Not Yet Identified",
           "estimatedValue": 50000000,
           "contractDate": "2023-06-01",
           "status": "verified",
           "contractStatus": "Abandoned with damage",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Site Inspections / Herald Sun / Grant Thornton",
           "valueEstimated": true,
           "notes": "122-apartment complex, $840K-$1.4M per unit. $1M+ sabotage damage from unpaid subcontractor. $1M rectification + $300K defects outstanding. $1M security bond with Swiss."
@@ -3196,20 +2876,6 @@
         "sectors": [
           "Multi-residential"
         ]
-      },
-      "windowStats": {
-        "preInsolvency": {
-          "count": 0,
-          "value": 0
-        },
-        "insolventTrading": {
-          "count": 0,
-          "value": 0
-        },
-        "preAdministration": {
-          "count": 0,
-          "value": 0
-        }
       }
     },
     {
@@ -3232,8 +2898,6 @@
         "insolvencyPeriodDays": 103
       },
       "summary": {
-        "totalProjectsAtRisk": 8,
-        "totalValueAtRisk": 2175000000,
         "totalDevelopersAffected": 7,
         "totalLendersAffected": null,
         "narrative": "Roberts Co's Victorian arm collapsed in March 2025 with 8 active projects worth $2.2B. The Craigieburn Amazon warehouse alone \u2014 Australia's largest, the size of 11 MCGs \u2014 lost $56.1M. Five of the 8 projects were inherited from ProBuild's 2022 collapse (purchased for $1). McGrathNicol found potential insolvent trading since December 2024 (103 days). Owner Andrew Roberts (Multiplex heir) stopped funding losses from his personal fortune. NSW arm later sold to UAE's Arada."
@@ -3248,10 +2912,8 @@
           "contractDate": "2023-06-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "API Magazine / AFR",
-          "notes": "Australia's largest automated warehouse. Size of 11 MCGs. Lost $56.1M on this project alone."
+          "notes": "Acquired from ProBuild administration, not won during Roberts Co insolvency period. Australia's largest automated warehouse. Size of 11 MCGs. Lost $56.1M on this project alone."
         },
         {
           "id": "rc-002",
@@ -3263,10 +2925,8 @@
           "contractDate": "2023-01-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "API Magazine",
-          "notes": "702-unit build-to-rent development."
+          "notes": "Acquired from ProBuild administration, not won during Roberts Co insolvency period. 702-unit build-to-rent development."
         },
         {
           "id": "rc-003",
@@ -3278,10 +2938,8 @@
           "contractDate": "2024-01-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": true,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "API Magazine",
-          "notes": "28-level strata office tower."
+          "notes": "Acquired from ProBuild administration, not won during Roberts Co insolvency period. 28-level strata office tower."
         },
         {
           "id": "rc-004",
@@ -3292,8 +2950,6 @@
           "contractDate": "2022-04-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Business News Australia / ArchitectureAU",
           "notes": "Taken over from Probuild administration for $1 in April 2022. $450M combined works value across 5 ex-Probuild projects."
         },
@@ -3307,8 +2963,6 @@
           "contractDate": "2022-04-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Roberts Co website / Business News Australia",
           "notes": "40-storey high-rise office redevelopment. Ex-Probuild project."
         },
@@ -3322,8 +2976,6 @@
           "contractDate": "2022-04-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Lawyers Weekly / Business News Australia",
           "notes": "Hotel project. Ex-Probuild project."
         },
@@ -3336,8 +2988,6 @@
           "contractDate": "2022-04-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Urban Developer / Business News Australia",
           "notes": "Part of $1B Elizabeth North research and education development. Ex-Probuild project."
         },
@@ -3351,8 +3001,6 @@
           "contractDate": "2022-04-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "Roberts Co website",
           "notes": "16-level fitout \u2014 7 office + 9 laboratory levels. Integrated with Elizabeth North Stage 2. Ex-Probuild project."
         }
@@ -3395,20 +3043,6 @@
         "nswArmSoldTo": "UAE's Arada",
         "acquiredProbuildVIC": true,
         "industryContext": "Took over Probuild VIC operations in 2022 for . Another major collapse in the Probuild lineage."
-      },
-      "windowStats": {
-        "preInsolvency": {
-          "count": 0,
-          "value": 0
-        },
-        "insolventTrading": {
-          "count": 0,
-          "value": 0
-        },
-        "preAdministration": {
-          "count": 0,
-          "value": 0
-        }
       }
     },
     {
@@ -3432,8 +3066,6 @@
         "totalDebts": 60000000
       },
       "summary": {
-        "totalProjectsAtRisk": 10,
-        "totalValueAtRisk": 90000000,
         "totalDevelopersAffected": 5,
         "totalLendersAffected": null,
         "narrative": "Quasar Constructions collapsed in September 2024 with $60M owed to 600 creditors and only $6M in assets. 10 projects across Sydney and the Illawarra were impacted, including work on 4 buildings at the new Western Sydney International Airport. 3 projects were abandoned, 3 under review for rectification, and 4 tied up in legal disputes. The Supreme Court found evidence of potential insolvent trading by the director. Entered liquidation in December 2024."
@@ -3448,8 +3080,6 @@
           "contractDate": "2022-01-01",
           "status": "verified",
           "contractStatus": "Under Construction (>90% complete)",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "News / Public Records",
           "sourceUrl": null,
           "notes": ">90% complete at time of collapse.",
@@ -3464,8 +3094,6 @@
           "contractDate": "2022-01-01",
           "status": "verified",
           "contractStatus": "Under Construction (>90% complete)",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "News / Public Records",
           "sourceUrl": null,
           "notes": ">90% complete at time of collapse.",
@@ -3480,8 +3108,6 @@
           "contractDate": "2022-06-01",
           "status": "verified",
           "contractStatus": "Under Construction (>90% complete)",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "News / Public Records",
           "sourceUrl": null,
           "notes": ">90% complete at time of collapse.",
@@ -3496,8 +3122,6 @@
           "contractDate": "2022-06-01",
           "status": "verified",
           "contractStatus": "Under Construction (>90% complete)",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "News / Public Records",
           "sourceUrl": null,
           "notes": ">90% complete at time of collapse.",
@@ -3512,8 +3136,6 @@
           "contractDate": "2023-06-01",
           "status": "verified",
           "contractStatus": "Under Construction",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "News / Public Records",
           "sourceUrl": null,
           "notes": "M project"
@@ -3567,20 +3189,6 @@
           "COVID effects",
           "Disputes and delays"
         ]
-      },
-      "windowStats": {
-        "preInsolvency": {
-          "count": 0,
-          "value": 0
-        },
-        "insolventTrading": {
-          "count": 0,
-          "value": 0
-        },
-        "preAdministration": {
-          "count": 0,
-          "value": 0
-        }
       }
     },
     {
@@ -3604,8 +3212,6 @@
         "totalDebts": 20000000
       },
       "summary": {
-        "totalProjectsAtRisk": 4,
-        "totalValueAtRisk": 73000000,
         "totalDevelopersAffected": null,
         "totalLendersAffected": null,
         "narrative": "Stokes Wheeler, a Gold Coast builder operating for nearly 100 years, collapsed into administration on 3 February 2025, then liquidation on 14 April 2025. Staff owed $1.66M, unsecured creditors $13.5M, Westpac secured debt $2.97M \u2014 total debts ~$20M. All 6 project trust accounts had zero funds. 4 major projects worth $73M were abandoned: Elevaire (40 apartments, Palm Beach), Bounce Hostel (Surfers Paradise), a medical centre (Pimpama), and an aged care facility (Sunnybank). Administrators found the company had traded while insolvent and faced financial pressure for 5 years."
@@ -3621,8 +3227,6 @@
           "contractDate": "2024-05-01",
           "status": "verified",
           "contractStatus": "Abandoned \u2014 5 floors completed",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Urban Developer / Subbies United",
           "notes": "9-storey, 40-apartment luxury development. Was 5 floors into construction when admin hit. Developer seeking replacement builder."
         },
@@ -3636,36 +3240,30 @@
           "contractDate": "2024-03-01",
           "status": "verified",
           "contractStatus": "Abandoned",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Daily Mail / Auburn Times"
         },
         {
           "id": "sw-003",
           "projectName": "Medical Centre \u2014 Pimpama",
           "address": "Pimpama QLD 4209",
-          "developer": "TBD",
+          "developer": "Developer Not Yet Identified",
           "estimatedValue": 8000000,
           "valueEstimated": true,
           "contractDate": "2024-06-01",
           "status": "verified",
           "contractStatus": "Abandoned",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Daily Mail / Auburn Times"
         },
         {
           "id": "sw-004",
           "projectName": "Aged Care Facility \u2014 Sunnybank",
           "address": "Sunnybank QLD 4109",
-          "developer": "TBD",
+          "developer": "Developer Not Yet Identified",
           "estimatedValue": 20000000,
           "valueEstimated": true,
           "contractDate": "2024-01-01",
           "status": "verified",
           "contractStatus": "Abandoned",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": true,
           "source": "Daily Mail / Auburn Times"
         }
       ],
@@ -3711,20 +3309,6 @@
         "trustAccounts": "6 project trust accounts \u2014 all with NO funds",
         "retentionShortfall": 2700000,
         "qbccAction": "Retention account frozen by QBCC"
-      },
-      "windowStats": {
-        "preInsolvency": {
-          "count": 0,
-          "value": 0
-        },
-        "insolventTrading": {
-          "count": 0,
-          "value": 0
-        },
-        "preAdministration": {
-          "count": 0,
-          "value": 0
-        }
       }
     },
     {
@@ -3748,8 +3332,6 @@
         "totalDebts": 75000000
       },
       "summary": {
-        "totalProjectsAtRisk": 68,
-        "totalValueAtRisk": 180000000,
         "totalDevelopersAffected": 68,
         "totalLendersAffected": null,
         "narrative": "Pindan Group, a major WA property and construction company based in Belmont, collapsed into administration on 18 May 2021 with 68 active projects, 280 direct employees, and $70-80M owed to 1,400 creditors (500 subcontractors, 40 suppliers). Major projects included the Kings Square / Walyalup Civic Centre in Fremantle (Kerry Hill Architects), extensive social housing programs across WA, and east coast expansion into the Sunshine Coast. The collapse was blamed on COVID-19 pandemic delays and prompted urgent calls for subcontractor protection reforms in WA."
@@ -3765,8 +3347,6 @@
           "contractDate": "2019-01-01",
           "status": "verified",
           "contractStatus": "Under Construction at collapse",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "ABC News / Fremantle Herald / City of Fremantle",
           "notes": "Designed by Kerry Hill Architects. Modern library, customer service centre, community meeting rooms, gallery spaces. Used inferior Vietnamese steel per CFMEU."
         },
@@ -3780,8 +3360,6 @@
           "contractDate": "2020-01-01",
           "status": "verified",
           "contractStatus": "Multiple projects in progress at collapse",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "ABC News / WA Parliament",
           "notes": "Pindan was a major social and government housing contractor across WA remote and regional areas."
         },
@@ -3795,10 +3373,47 @@
           "contractDate": "2020-06-01",
           "status": "verified",
           "contractStatus": "Under Construction at collapse",
-          "wonDuringInsolvency": false,
-          "wonWithin6MonthsOfAdmin": false,
           "source": "API Magazine",
           "notes": "Part of Pindan's east coast expansion."
+        },
+        {
+          "id": "pin-004",
+          "projectName": "The Leighton",
+          "address": "Rockingham WA 6168",
+          "developer": "Brookfield Multiplex & Rockingham Park",
+          "estimatedValue": 60000000,
+          "valueEstimated": false,
+          "contractDate": "2019-01-01",
+          "status": "verified",
+          "contractStatus": "Completed",
+          "source": "The Construction Source / Pindan marketing",
+          "notes": "Design and construct project completed on schedule and budget."
+        },
+        {
+          "id": "pin-005",
+          "projectName": "Haven Development \u2014 Ridgewood",
+          "address": "Ridgewood WA 6030",
+          "developer": "Southern Cross Care (WA) & WA Department of Communities",
+          "estimatedValue": 48000000,
+          "valueEstimated": false,
+          "contractDate": "2020-01-01",
+          "status": "verified",
+          "contractStatus": "Under Construction at collapse",
+          "source": "The Weekly Source / Villages.com.au",
+          "notes": "104 lots with 54 affordable units and 36 walk-up apartments for over-55s. 6.8ha of government land valued at $7.68M."
+        },
+        {
+          "id": "pin-006",
+          "projectName": "West Kimberley Regional Prison",
+          "address": "Derby WA 6728",
+          "developer": "WA Department of Justice",
+          "estimatedValue": 80000000,
+          "valueEstimated": true,
+          "contractDate": "2018-01-01",
+          "status": "verified",
+          "contractStatus": "Completed",
+          "source": "ArchitectureAu",
+          "notes": "Regional prison facility in WA's Kimberley region."
         }
       ],
       "contacts": [],
@@ -3834,20 +3449,6 @@
           "Sunshine Coast",
           "Australia-wide"
         ]
-      },
-      "windowStats": {
-        "preInsolvency": {
-          "count": 0,
-          "value": 0
-        },
-        "insolventTrading": {
-          "count": 0,
-          "value": 0
-        },
-        "preAdministration": {
-          "count": 0,
-          "value": 0
-        }
       }
     }
   ]

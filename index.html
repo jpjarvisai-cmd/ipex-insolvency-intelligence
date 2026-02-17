@@ -445,11 +445,11 @@ function computeWindows(){
         p.windows.push('pre-insolvency');w1c++;w1v+=val;
       }
       // W2: Insolvent trading — contract between insolvency start and admin
-      if(p.wonDuringInsolvency||(cd&&insStart&&adminDate&&cd>=insStart&&cd<=adminDate)){
+      if(cd&&insStart&&adminDate&&cd>=insStart&&cd<=adminDate){
         if(!p.windows.includes('insolvent-trading')){p.windows.push('insolvent-trading');w2c++;w2v+=val;}
       }
       // W3: Pre-administration — contract in 6mo before admin
-      if(p.wonWithin6MonthsOfAdmin||(cd&&preAdminStart&&adminDate&&cd>=preAdminStart&&cd<=adminDate)){
+      if(cd&&preAdminStart&&adminDate&&cd>=preAdminStart&&cd<=adminDate){
         if(!p.windows.includes('pre-administration')){p.windows.push('pre-administration');w3c++;w3v+=val;}
       }
     });
@@ -486,10 +486,31 @@ function initDash(){
   const w1=wt.preInsolvency||{};
   const w2=wt.insolventTrading||{};
   const w3=wt.preAdministration||{};
-  document.getElementById('s-value').textContent=fmtCur(w2.value||m.totalValueAtRisk);
-  document.getElementById('s-days').textContent=m.avgDaysInsolvent+' days';
-  document.getElementById('s-projects').textContent=w2.count||m.totalProjectsAtRisk;
-  document.getElementById('s-builders').textContent=m.totalBuilders;
+  
+  // Compute stats from actual data
+  const totalBuilders = BD.builders.length;
+  let totalProjectsAtRisk = 0;
+  let totalValueAtRisk = 0;
+  let totalDaysInsolvent = 0;
+  let buildersWithDays = 0;
+  
+  BD.builders.forEach(b => {
+    totalProjectsAtRisk += (b.projects || []).length;
+    (b.projects || []).forEach(p => {
+      totalValueAtRisk += p.estimatedValue || 0;
+    });
+    if(b.insolvency && b.insolvency.insolvencyPeriodDays) {
+      totalDaysInsolvent += b.insolvency.insolvencyPeriodDays;
+      buildersWithDays++;
+    }
+  });
+  
+  const avgDaysInsolvent = buildersWithDays > 0 ? Math.round(totalDaysInsolvent / buildersWithDays) : 0;
+  
+  document.getElementById('s-value').textContent=fmtCur(w2.value||totalValueAtRisk);
+  document.getElementById('s-days').textContent=avgDaysInsolvent+' days';
+  document.getElementById('s-projects').textContent=w2.count||totalProjectsAtRisk;
+  document.getElementById('s-builders').textContent=totalBuilders;
   document.getElementById('s-w1-count').textContent=(w1.count||0)+' projects · '+fmtCur(w1.value||0);
   document.getElementById('s-w2-count').textContent=(w2.count||0)+' projects · '+fmtCur(w2.value||0);
   document.getElementById('s-w3-count').textContent=(w3.count||0)+' projects · '+fmtCur(w3.value||0);
@@ -497,7 +518,7 @@ function initDash(){
   let overlap=0;
   BD.builders.forEach(b=>{(b.projects||[]).forEach(p=>{if((p.windows||[]).length>1)overlap++})});
   document.getElementById('s-overlap').textContent=overlap+' projects';
-  document.getElementById('tile-count').textContent=`${m.totalBuilders} builders tracked`;
+  document.getElementById('tile-count').textContent=`${totalBuilders} builders tracked`;
   
   const grid=document.getElementById('tileGrid');
   grid.innerHTML='';
@@ -521,8 +542,13 @@ function mkTile(b){
   const days=b.insolvency.insolvencyPeriodDays||b.insolvency.daysInsolventTrading;
   const ws=b.windowStats||{};
   const w2=ws.insolventTrading||{};
-  const proj=w2.count||b.summary.totalProjectsAtRisk||0;
-  const val=w2.value||b.summary.totalValueAtRisk||0;
+  const proj=w2.count||(b.projects||[]).length;
+  let val=w2.value||0;
+  if(val === 0) {
+    (b.projects||[]).forEach(p => {
+      val += p.estimatedValue || 0;
+    });
+  }
   const meta=[b.state,dateStr,b.insolvency.administrator].filter(Boolean).join(' · ');
   
   el.innerHTML=`
