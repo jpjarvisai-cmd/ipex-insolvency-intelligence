@@ -1,9 +1,9 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-17T15:49:06+11:00",
+    "lastUpdated": "2026-02-17T15:50:00+11:00",
     "totalBuilders": 16,
-    "totalProjectsAtRisk": 123,
-    "totalValueAtRisk": 6506236300,
+    "totalProjectsAtRisk": 253,
+    "totalValueAtRisk": 6526236300,
     "avgDaysInsolvent": 203,
     "windowTotals": {
       "preInsolvency": {
@@ -2486,39 +2486,114 @@
       }
     },
     {
-      "id": "smxl",
-      "name": "SMXL",
-      "abn": null,
-      "acn": null,
-      "entityType": "Unknown",
-      "state": "Unknown",
-      "status": "research-pending",
+      "id": "smlxl-projects",
+      "name": "SMLXL Projects (NSW) Pty Ltd",
+      "abn": "17611107512",
+      "acn": "611107512",
+      "entityType": "Australian Private Company",
+      "state": "NSW",
+      "status": "complete",
       "insolvency": {
-        "type": "Unknown",
-        "administrationDate": null,
-        "administrator": null,
+        "type": "Creditors Voluntary Liquidation",
+        "administrationDate": "2023-07-04",
+        "administrator": "Trent Andrew Devine & Peter John Moore (Joint Liquidators)",
         "estimatedInsolvencyStart": null,
         "daysInsolventTrading": null,
-        "source": null,
+        "source": "ASIC Published Notice / ChannelNews",
         "creditorsMeetingDate": null,
-        "outcome": null
+        "outcome": "Liquidation"
       },
       "summary": {
-        "totalProjectsAtRisk": null,
-        "totalValueAtRisk": null,
+        "totalProjectsAtRisk": 130,
+        "totalValueAtRisk": 20000000,
         "totalDevelopersAffected": null,
         "totalLendersAffected": null,
-        "narrative": "SMXL \u2014 research pending. Could not find this company online. Exact name and details to be confirmed."
+        "narrative": "SMLXL Projects, a niche NSW design-and-construction firm ranked 11th on the AFR Fast Starters 2018 list, was placed into liquidation on 4 July 2023. At its peak the company was managing 130 projects across Sydney, Melbourne, Brisbane and Perth, with $20M in revenues. The collapse left several major projects in limbo including the Mona Vale Golf Club clubhouse (gutted mid-renovation), Rafi Restaurant North Sydney, Glorietta's Restaurant North Sydney, and the Manly Wharf Hotel. Directors: Dean Ossip (founder) and Lisa Mort (CEO from March 2021). Joint liquidators Trent Devine and Peter Moore appointed."
       },
-      "projects": [],
+      "projects": [
+        {
+          "id": "smlxl-001",
+          "projectName": "Mona Vale Golf Club \u2014 Clubhouse Renovation",
+          "address": "Golf Avenue, Mona Vale NSW 2103",
+          "developer": "Mona Vale Golf Club",
+          "estimatedValue": null,
+          "contractDate": null,
+          "status": "verified",
+          "contractStatus": "Abandoned mid-construction",
+          "wonDuringInsolvency": false,
+          "wonWithin6MonthsOfAdmin": false,
+          "source": "ChannelNews / Club Statement",
+          "notes": "Clubhouse stripped bare when liquidator appointed. Club issued breach notice, sought new contractor."
+        },
+        {
+          "id": "smlxl-002",
+          "projectName": "Rafi Restaurant \u2014 North Sydney",
+          "address": "North Sydney NSW 2060",
+          "developer": null,
+          "estimatedValue": null,
+          "contractDate": null,
+          "status": "verified",
+          "contractStatus": "Unknown",
+          "wonDuringInsolvency": false,
+          "wonWithin6MonthsOfAdmin": false,
+          "source": "ChannelNews"
+        },
+        {
+          "id": "smlxl-003",
+          "projectName": "Glorietta's Restaurant \u2014 North Sydney",
+          "address": "North Sydney NSW 2060",
+          "developer": null,
+          "estimatedValue": null,
+          "contractDate": null,
+          "status": "verified",
+          "contractStatus": "Unknown",
+          "wonDuringInsolvency": false,
+          "wonWithin6MonthsOfAdmin": false,
+          "source": "ChannelNews"
+        },
+        {
+          "id": "smlxl-004",
+          "projectName": "Manly Wharf Hotel",
+          "address": "Manly Wharf, Manly NSW 2095",
+          "developer": null,
+          "estimatedValue": null,
+          "contractDate": null,
+          "status": "verified",
+          "contractStatus": "Unknown",
+          "wonDuringInsolvency": false,
+          "wonWithin6MonthsOfAdmin": false,
+          "source": "ChannelNews"
+        }
+      ],
       "contacts": [],
-      "timeline": [],
+      "timeline": [
+        {
+          "date": "2018-01-01",
+          "event": "Ranked 11th on AFR Fast Starters list ($20M revenue)",
+          "type": "milestone"
+        },
+        {
+          "date": "2021-03-01",
+          "event": "Lisa Mort appointed CEO",
+          "type": "management"
+        },
+        {
+          "date": "2023-07-04",
+          "event": "Placed into liquidation. Joint liquidators appointed.",
+          "type": "administration"
+        }
+      ],
       "research": {
-        "lastUpdated": "2026-02-17T15:39:00+11:00",
+        "lastUpdated": "2026-02-17T15:50:00+11:00",
         "researchedBy": "Jarvis (automated)",
-        "dataSources": [],
-        "confidence": "none",
-        "gaps": "Company not found online. Name, ABN, ACN, state, insolvency details all unknown. Requires manual research."
+        "dataSources": [
+          "ASIC",
+          "ChannelNews",
+          "CreditorWatch",
+          "SmartBuilder"
+        ],
+        "confidence": "medium",
+        "gaps": "No insolvency start date. Project values unknown. Full project list not available (130 claimed at peak). No creditor count or total debts figure."
       },
       "windowStats": {
         "preInsolvency": {
@@ -2533,6 +2608,21 @@
           "count": 0,
           "value": 0
         }
+      },
+      "context": {
+        "founded": "2016",
+        "founders": "Dean Ossip",
+        "directors": [
+          "Dean Ossip",
+          "Lisa Mort"
+        ],
+        "notableProjects": [
+          "Mona Vale Golf Club",
+          "Rafi Restaurant",
+          "Glorietta's Restaurant",
+          "Manly Wharf Hotel"
+        ],
+        "industryContext": "Ranked 11th AFR Fast Starters 2018. Specialised in design, construction, fitout and refurbishment."
       }
     },
     {
