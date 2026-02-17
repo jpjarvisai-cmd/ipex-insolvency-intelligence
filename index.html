@@ -3,354 +3,325 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IPEX Terminal — Builder Insolvency Intelligence</title>
+<title>IPEX — Builder Insolvency Intelligence</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --green:#3DEA7C;--green-dark:#2fd66c;--green-glow:rgba(61,234,124,.12);
-  --navy:#0F172A;--navy-light:#1E293B;--navy-mid:#334155;
-  --card-bg:rgba(30,41,59,.6);--card-border:rgba(255,255,255,.06);
-  --red:#EF4444;--yellow:#F59E0B;--orange:#F97316;
-  --bg:#0F172A;--font:'Poppins',sans-serif;
-  --radius:16px;--text:#CBD5E1;--text-dim:#64748B;--text-bright:#F1F5F9;
+--green:#3DEA7C;--green-dark:#2fd66c;--green-glow:rgba(61,234,124,.08);
+--navy:#0F172A;--navy-light:#1E293B;--navy-mid:#334155;
+--card-bg:rgba(30,41,59,.55);--card-border:rgba(255,255,255,.06);
+--red:#EF4444;--yellow:#F59E0B;--orange:#F97316;
+--bg:#0B0F1A;--font:'Poppins',sans-serif;
+--radius:14px;--text:#94A3B8;--text-dim:#64748B;--text-bright:#E2E8F0;
 }
 [data-theme="light"]{
-  --bg:#F8FAFC;--card-bg:rgba(255,255,255,.9);--card-border:rgba(15,23,42,.08);
-  --text:#475569;--text-dim:#94A3B8;--text-bright:#0F172A;
+--bg:#F1F5F9;--card-bg:rgba(255,255,255,.85);--card-border:rgba(15,23,42,.07);
+--text:#475569;--text-dim:#94A3B8;--text-bright:#0F172A;--navy:#0F172A;--navy-light:#fff;
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--font);font-weight:300;background:var(--bg);color:var(--text);min-height:100vh;display:flex;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);font-weight:300;background:var(--bg);color:var(--text);min-height:100vh;display:flex;font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
 
-/* SIDEBAR */
-.sidebar{width:260px;background:var(--navy);padding:28px 20px;flex-shrink:0;display:flex;flex-direction:column;min-height:100vh;border-right:1px solid var(--card-border);position:sticky;top:0;height:100vh}
+/* ── SIDEBAR ── */
+.sidebar{width:240px;background:var(--navy);padding:24px 16px;flex-shrink:0;display:flex;flex-direction:column;min-height:100vh;border-right:1px solid var(--card-border);position:sticky;top:0;height:100vh;overflow-y:auto}
 [data-theme="light"] .sidebar{background:#fff;border-right:1px solid #E2E8F0}
-.sidebar-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px}
-.sidebar-logo img{height:18px;width:auto}
-.sidebar-logo .logo-light{display:none}
-.sidebar-logo .logo-dark{display:block}
-[data-theme="light"] .sidebar-logo .logo-light{display:block}
-[data-theme="light"] .sidebar-logo .logo-dark{display:none}
-.theme-toggle{width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.12);background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:all .2s}
-[data-theme="light"] .theme-toggle{border-color:#E2E8F0}
-.theme-toggle:hover{border-color:var(--green)}
-.toggle-icon{font-size:.7rem;color:var(--text-dim)}
-.sidebar nav{display:flex;flex-direction:column;gap:2px}
-.sidebar nav a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;color:var(--text-dim);font-size:.85rem;font-weight:400;transition:all .15s;cursor:pointer;letter-spacing:.01em}
-.sidebar nav a:hover{color:var(--text-bright);background:rgba(255,255,255,.05)}
-[data-theme="light"] .sidebar nav a:hover{background:rgba(0,0,0,.03)}
-.sidebar nav a.active{color:var(--text-bright);background:rgba(61,234,124,.08);font-weight:500}
-.nav-icon{width:18px;text-align:center;font-size:.85rem}
-.nav-count{margin-left:auto;background:var(--red);color:#fff;font-size:.6rem;font-weight:600;min-width:18px;height:18px;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 5px}
-.nav-divider{height:1px;background:var(--card-border);margin:12px 0}
-.sidebar-footer{margin-top:auto;padding-top:20px;border-top:1px solid var(--card-border)}
-.sidebar-user{display:flex;align-items:center;gap:10px}
-.sidebar-user .avatar{width:32px;height:32px;border-radius:10px;background:var(--green);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.7rem;color:var(--navy)}
-.sidebar-user .name{font-size:.82rem;color:var(--text-bright);font-weight:400}
-.sidebar-user .role{font-size:.7rem;color:var(--text-dim)}
-.nav-section{margin:16px 0 8px;font-size:.68rem;font-weight:500;color:var(--text-dim);text-transform:uppercase;letter-spacing:.08em;padding-left:14px}
-.nav-builder{position:relative}
-.new-indicator{position:absolute;left:-6px;top:50%;transform:translateY(-50%);width:8px;height:8px;background:var(--red);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:translateY(-50%) scale(1)}50%{opacity:.6;transform:translateY(-50%) scale(1.1)}}
+.sb-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;padding:0 8px}
+.sb-logo img{height:16px}
+.sb-logo .logo-light{display:none}.sb-logo .logo-dark{display:block}
+[data-theme="light"] .sb-logo .logo-light{display:block}
+[data-theme="light"] .sb-logo .logo-dark{display:none}
+.theme-btn{width:26px;height:26px;border-radius:50%;border:1px solid rgba(255,255,255,.1);background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.65rem;color:var(--text-dim);transition:.2s}
+[data-theme="light"] .theme-btn{border-color:#E2E8F0}
+.theme-btn:hover{border-color:var(--green);color:var(--green)}
+nav{display:flex;flex-direction:column;gap:1px}
+nav a{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:8px;color:var(--text-dim);font-size:.8rem;font-weight:400;transition:.15s;cursor:pointer}
+nav a:hover{color:var(--text-bright);background:rgba(255,255,255,.04)}
+[data-theme="light"] nav a:hover{background:rgba(0,0,0,.03)}
+nav a.active{color:var(--text-bright);background:rgba(61,234,124,.07);font-weight:500}
+.nav-i{width:16px;text-align:center;font-size:.78rem;flex-shrink:0}
+.nav-sec{margin:14px 0 6px;font-size:.62rem;font-weight:600;color:var(--text-dim);text-transform:uppercase;letter-spacing:.1em;padding-left:12px}
+.nav-new{position:relative}
+.pulse-dot{position:absolute;left:-4px;top:50%;transform:translateY(-50%);width:7px;height:7px;background:var(--red);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:translateY(-50%) scale(1)}50%{opacity:.5;transform:translateY(-50%) scale(1.15)}}
+.sb-footer{margin-top:auto;padding-top:16px;border-top:1px solid var(--card-border)}
+.sb-user{display:flex;align-items:center;gap:9px;padding:4px 8px}
+.sb-user .av{width:30px;height:30px;border-radius:8px;background:var(--green);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.65rem;color:var(--navy)}
+.sb-user .nm{font-size:.78rem;color:var(--text-bright);font-weight:400}
+.sb-user .rl{font-size:.65rem;color:var(--text-dim)}
 
-/* MAIN */
+/* ── MAIN ── */
 .main{flex:1;min-width:0;overflow-y:auto}
-.page{display:none;animation:fadeIn .3s ease}.page.active{display:block}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.container{max-width:1100px;margin:0 auto;padding:40px 48px}
+.page{display:none;animation:fadeIn .25s ease}.page.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.wrap{max-width:1200px;margin:0 auto;padding:32px 40px}
 
-/* HERO */
-.hero{padding:56px 0 48px;text-align:center}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2);border-radius:24px;padding:6px 16px;font-size:.75rem;font-weight:500;color:var(--red);margin-bottom:24px;letter-spacing:.02em}
-.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:blink 2s infinite}
+/* ── DASHBOARD HEADER ── */
+.dash-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--card-border)}
+.dash-header h1{font-size:1.4rem;font-weight:600;color:var(--text-bright);letter-spacing:-.01em}
+.dash-header h1 span{color:var(--green)}
+.dash-header .sub{font-size:.82rem;color:var(--text-dim);margin-top:4px;font-weight:300}
+.live-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.15);border-radius:20px;padding:5px 14px;font-size:.72rem;font-weight:500;color:var(--red)}
+.live-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.hero h1{font-size:2.4rem;font-weight:700;color:var(--text-bright);line-height:1.2;margin-bottom:16px;letter-spacing:-.02em}
-.hero h1 .accent{color:var(--green)}
-.hero p{font-size:1.05rem;color:var(--text-dim);max-width:640px;margin:0 auto;line-height:1.7;font-weight:300}
 
-/* BIG STATS */
-.big-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--card-border);border-radius:var(--radius);overflow:hidden;margin-bottom:48px}
-.big-stat{background:var(--card-bg);padding:36px 32px;text-align:center;backdrop-filter:blur(12px)}
-[data-theme="light"] .big-stat{background:#fff}
-.big-stat-value{font-size:2.8rem;font-weight:700;color:var(--text-bright);line-height:1;margin-bottom:8px;letter-spacing:-.03em}
-.big-stat-value.red{color:var(--red)}
-.big-stat-value.green{color:var(--green)}
-.big-stat-label{font-size:.8rem;color:var(--text-dim);line-height:1.4;font-weight:300}
+/* ── STAT ROW ── */
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:32px}
+.stat-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);padding:20px;backdrop-filter:blur(12px)}
+[data-theme="light"] .stat-card{background:#fff}
+.stat-card .val{font-size:1.8rem;font-weight:700;line-height:1;margin-bottom:4px;letter-spacing:-.02em}
+.stat-card .val.red{color:var(--red)}
+.stat-card .val.green{color:var(--green)}
+.stat-card .lbl{font-size:.7rem;color:var(--text-dim);font-weight:300;line-height:1.3}
 
-/* BUILDER CARDS */
-.section-label{font-size:.7rem;font-weight:500;color:var(--text-dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
-.builder-list{display:flex;flex-direction:column;gap:8px;margin-bottom:48px}
-.builder-card{background:var(--card-bg);backdrop-filter:blur(12px);border:1px solid var(--card-border);border-radius:14px;padding:20px 28px;display:grid;grid-template-columns:1fr auto auto auto auto;align-items:center;gap:24px;cursor:pointer;transition:all .2s}
-[data-theme="light"] .builder-card{background:#fff;border-color:#E2E8F0}
-.builder-card:hover{border-color:rgba(61,234,124,.25);transform:translateY(-1px);box-shadow:0 8px 32px rgba(0,0,0,.12)}
-.builder-card.highlight{border-left:3px solid var(--red);background:rgba(239,68,68,.03)}
-.bc-info .bc-name{font-size:.95rem;font-weight:600;color:var(--text-bright);margin-bottom:2px}
-.bc-info .bc-meta{font-size:.78rem;color:var(--text-dim);font-weight:300}
-.bc-stat{text-align:right;min-width:80px}
-.bc-stat-value{font-size:1.15rem;font-weight:600;color:var(--text-bright);line-height:1.2}
-.bc-stat-value.red{color:var(--red)}
-.bc-stat-value.yellow{color:var(--yellow)}
-.bc-stat-label{font-size:.65rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.04em;font-weight:400}
-.tag{font-size:.65rem;font-weight:500;padding:4px 12px;border-radius:8px;letter-spacing:.02em;white-space:nowrap}
-.tag.new{background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.2)}
-.tag.done{background:var(--green-glow);color:var(--green);border:1px solid rgba(61,234,124,.15)}
+/* ── TILE GRID ── */
+.tiles-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.tiles-header h2{font-size:.72rem;font-weight:600;color:var(--text-dim);text-transform:uppercase;letter-spacing:.1em}
+.tile-count{font-size:.72rem;color:var(--text-dim)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:40px}
+.tile{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);padding:0;cursor:pointer;transition:.2s;overflow:hidden;backdrop-filter:blur(12px);position:relative}
+[data-theme="light"] .tile{background:#fff;border-color:#E2E8F0}
+.tile:hover{border-color:rgba(61,234,124,.3);transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.15)}
+.tile.is-new{border-color:rgba(239,68,68,.25)}
+.tile.is-new::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--orange))}
+.tile-top{padding:20px 20px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.tile-name{font-size:.92rem;font-weight:600;color:var(--text-bright);line-height:1.3}
+.tile-badge{font-size:.6rem;font-weight:600;padding:3px 10px;border-radius:6px;white-space:nowrap;flex-shrink:0;letter-spacing:.03em}
+.tile-badge.new{background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.15)}
+.tile-badge.complete{background:var(--green-glow);color:var(--green);border:1px solid rgba(61,234,124,.12)}
+.tile-meta{padding:4px 20px 16px;font-size:.72rem;color:var(--text-dim);font-weight:300}
+.tile-stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--card-border);background:rgba(0,0,0,.08)}
+[data-theme="light"] .tile-stats{background:rgba(0,0,0,.02)}
+.tile-stat{padding:14px 12px;text-align:center;border-right:1px solid var(--card-border)}
+.tile-stat:last-child{border-right:none}
+.tile-stat .tv{font-size:1rem;font-weight:600;color:var(--text-bright);line-height:1}
+.tile-stat .tv.red{color:var(--red)}
+.tile-stat .tv.yellow{color:var(--yellow)}
+.tile-stat .tl{font-size:.58rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.05em;margin-top:3px;font-weight:400}
 
-/* DETAIL PAGE */
-.back-link{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;color:var(--text-dim);cursor:pointer;margin-bottom:28px;font-weight:400;transition:color .15s}
-.back-link:hover{color:var(--green)}
-.detail-hero{margin-bottom:40px}
-.detail-hero h2{font-size:1.8rem;font-weight:700;color:var(--text-bright);margin-bottom:6px;letter-spacing:-.01em}
-.detail-hero .meta{font-size:.85rem;color:var(--text-dim);font-weight:300}
+/* ── ACTIVITY STRIP ── */
+.activity-strip{display:flex;gap:20px;padding:16px 20px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:32px;align-items:center;flex-wrap:wrap}
+[data-theme="light"] .activity-strip{background:#fff}
+.activity-strip .icon{font-size:.9rem}
+.activity-strip .txt{font-size:.78rem;color:var(--text);font-weight:300}
+.activity-strip .time{font-size:.7rem;color:var(--text-dim);margin-left:auto}
 
-/* ALERT BANNER */
-.alert-banner{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);border-radius:14px;padding:24px 28px;margin-bottom:32px;display:flex;align-items:center;gap:20px}
-[data-theme="light"] .alert-banner{background:#FEF2F2;border-color:#FECACA}
-.alert-banner .icon{font-size:1.4rem;flex-shrink:0}
-.alert-banner .content{flex:1}
-.alert-banner .label{font-size:.7rem;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
-.alert-banner .detail{font-size:.88rem;color:var(--text);font-weight:300}
-.alert-banner .score{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2);border-radius:12px;padding:12px 16px;text-align:center;flex-shrink:0}
-.alert-banner .score-val{font-size:1.4rem;font-weight:700;color:var(--red)}
-.alert-banner .score-label{font-size:.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.05em}
+/* ── CTA BANNER ── */
+.cta-banner{background:linear-gradient(135deg,rgba(61,234,124,.04),rgba(61,234,124,.01));border:1px solid rgba(61,234,124,.1);border-radius:var(--radius);padding:36px;text-align:center;margin-bottom:32px}
+[data-theme="light"] .cta-banner{background:linear-gradient(135deg,#F0FDF4,#ECFDF5)}
+.cta-banner h3{font-size:1rem;font-weight:600;color:var(--text-bright);margin-bottom:8px}
+.cta-banner p{font-size:.85rem;color:var(--text-dim);max-width:500px;margin:0 auto 16px;font-weight:300}
+.cta-btn{display:inline-flex;align-items:center;gap:6px;background:var(--green);color:var(--navy);font-weight:600;font-size:.82rem;padding:10px 22px;border-radius:8px;transition:.2s;letter-spacing:.01em}
+.cta-btn:hover{background:var(--green-dark);transform:translateY(-1px);box-shadow:0 6px 20px rgba(61,234,124,.2)}
 
-/* INFO GRID */
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:36px}
-.info-item{background:var(--card-bg);backdrop-filter:blur(12px);border:1px solid var(--card-border);border-radius:12px;padding:18px 20px}
-[data-theme="light"] .info-item{background:#fff;border-color:#E2E8F0}
-.info-item .label{font-size:.65rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;font-weight:400}
-.info-item .value{font-size:1rem;font-weight:500;color:var(--text-bright)}
+/* ── DETAIL PAGE ── */
+.back{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;color:var(--text-dim);cursor:pointer;margin-bottom:24px;transition:.15s}
+.back:hover{color:var(--green)}
+.detail-head{margin-bottom:32px}
+.detail-head h2{font-size:1.5rem;font-weight:700;color:var(--text-bright);margin-bottom:4px;letter-spacing:-.01em}
+.detail-head .dmeta{font-size:.82rem;color:var(--text-dim);font-weight:300}
 
-/* FINDINGS */
-.findings{background:linear-gradient(135deg,rgba(239,68,68,.04),rgba(245,158,11,.04));border:1px solid rgba(239,68,68,.12);border-radius:var(--radius);padding:32px;margin-bottom:36px;text-align:center}
-[data-theme="light"] .findings{background:linear-gradient(135deg,#FEF2F2,#FFFBEB)}
-.findings-title{font-size:.8rem;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
-.findings-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.finding .f-value{font-size:2.2rem;font-weight:700;color:var(--red);line-height:1}
-.finding .f-label{font-size:.78rem;color:var(--text-dim);margin-top:6px;font-weight:300;line-height:1.4}
+/* Alert banner */
+.alert-box{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.12);border-radius:var(--radius);padding:20px 24px;margin-bottom:24px;display:flex;align-items:center;gap:16px}
+[data-theme="light"] .alert-box{background:#FEF2F2;border-color:#FECACA}
+.alert-box .a-icon{font-size:1.2rem;flex-shrink:0}
+.alert-box .a-label{font-size:.62rem;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.alert-box .a-text{font-size:.82rem;color:var(--text);font-weight:300;line-height:1.5}
 
-/* TABLE */
-.table-section{margin-bottom:36px}
-.table-header{font-size:.95rem;font-weight:600;color:var(--text-bright);margin-bottom:16px}
+/* Info grid */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:28px}
+.info-box{background:var(--card-bg);border:1px solid var(--card-border);border-radius:10px;padding:16px 18px;backdrop-filter:blur(12px)}
+[data-theme="light"] .info-box{background:#fff;border-color:#E2E8F0}
+.info-box .ib-label{font-size:.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;font-weight:400}
+.info-box .ib-value{font-size:.92rem;font-weight:500;color:var(--text-bright)}
+
+/* Findings */
+.findings-bar{background:linear-gradient(135deg,rgba(239,68,68,.04),rgba(245,158,11,.03));border:1px solid rgba(239,68,68,.1);border-radius:var(--radius);padding:28px;text-align:center;margin-bottom:28px}
+[data-theme="light"] .findings-bar{background:linear-gradient(135deg,#FEF2F2,#FFFBEB)}
+.findings-bar .ft{font-size:.68rem;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+.findings-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.findings-row .fv{font-size:1.8rem;font-weight:700;color:var(--red);line-height:1}
+.findings-row .fl{font-size:.72rem;color:var(--text-dim);margin-top:4px;font-weight:300}
+
+/* Table */
+.tbl-section{margin-bottom:28px}
+.tbl-title{font-size:.88rem;font-weight:600;color:var(--text-bright);margin-bottom:12px}
 table{width:100%;border-collapse:collapse}
-table th{text-align:left;font-size:.65rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;padding:10px 16px;border-bottom:1px solid var(--card-border);font-weight:400}
-table td{padding:14px 16px;font-size:.85rem;border-bottom:1px solid var(--card-border);font-weight:300;color:var(--text)}
-table tr:hover{background:rgba(255,255,255,.02)}
-[data-theme="light"] table tr:hover{background:#F8FAFC}
-.proj-name{font-weight:500;color:var(--text-bright);margin-bottom:1px}
-.proj-addr{font-size:.75rem;color:var(--text-dim)}
-.badge-won{display:inline-block;background:rgba(239,68,68,.1);color:var(--red);font-size:.7rem;font-weight:500;padding:2px 10px;border-radius:6px}
+th{text-align:left;font-size:.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;padding:8px 14px;border-bottom:1px solid var(--card-border);font-weight:400}
+td{padding:12px 14px;font-size:.82rem;border-bottom:1px solid var(--card-border);font-weight:300;color:var(--text)}
+tr:hover{background:rgba(255,255,255,.02)}
+[data-theme="light"] tr:hover{background:#F8FAFC}
+.pn{font-weight:500;color:var(--text-bright);margin-bottom:1px}
+.pa{font-size:.7rem;color:var(--text-dim)}
+.badge-won{display:inline-block;background:rgba(239,68,68,.08);color:var(--red);font-size:.65rem;font-weight:500;padding:2px 8px;border-radius:5px}
 
-/* CTA */
-.cta-card{background:linear-gradient(135deg,var(--navy-light),var(--navy));border:1px solid rgba(61,234,124,.12);border-radius:var(--radius);padding:48px;text-align:center;margin-bottom:36px}
-[data-theme="light"] .cta-card{background:linear-gradient(135deg,#F0FDF4,#ECFDF5);border-color:rgba(61,234,124,.2)}
-.cta-card h3{font-size:1.3rem;font-weight:600;color:var(--text-bright);margin-bottom:12px;letter-spacing:-.01em}
-.cta-card p{font-size:.9rem;color:var(--text-dim);max-width:560px;margin:0 auto 24px;line-height:1.7;font-weight:300}
-.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:var(--navy);font-weight:600;font-size:.88rem;padding:12px 28px;border-radius:10px;text-decoration:none;transition:all .2s;letter-spacing:.01em}
-.cta-btn:hover{background:var(--green-dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(61,234,124,.25)}
+/* Timeline */
+.timeline{margin-bottom:28px}
+.tl-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--card-border)}
+.tl-item:last-child{border:none}
+.tl-dot{width:8px;height:8px;border-radius:50%;margin-top:5px;flex-shrink:0}
+.tl-dot.red{background:var(--red);box-shadow:0 0 6px rgba(239,68,68,.3)}
+.tl-dot.yellow{background:var(--yellow)}
+.tl-dot.green{background:var(--green)}
+.tl-date{font-size:.68rem;color:var(--text-dim);margin-bottom:1px}
+.tl-text{font-size:.82rem;color:var(--text);font-weight:300;line-height:1.5}
 
-/* ARTICLE */
-.article{max-width:680px}
-.article h3{font-size:1.15rem;font-weight:600;color:var(--text-bright);margin:36px 0 16px;letter-spacing:-.01em}
+/* ── ARTICLE ── */
+.article{max-width:640px}
+.article h3{font-size:1.05rem;font-weight:600;color:var(--text-bright);margin:28px 0 12px;letter-spacing:-.01em}
 .article h3:first-child{margin-top:0}
-.article p{font-size:.92rem;color:var(--text);line-height:1.8;margin-bottom:16px;font-weight:300}
-.article ul{margin:0 0 16px 20px;color:var(--text);font-size:.92rem;line-height:2;font-weight:300}
+.article p{font-size:.88rem;color:var(--text);line-height:1.8;margin-bottom:14px;font-weight:300}
+.article ul{margin:0 0 14px 18px;color:var(--text);font-size:.88rem;line-height:2;font-weight:300}
 .article .red{color:var(--red);font-weight:500}
 .article .green{color:var(--green);font-weight:500}
 .article .bold{color:var(--text-bright);font-weight:500}
 
-/* TIMELINE */
-.timeline{margin-bottom:36px}
-.tl-item{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--card-border)}
-.tl-item:last-child{border:none}
-.tl-dot{width:10px;height:10px;border-radius:50%;margin-top:5px;flex-shrink:0}
-.tl-dot.red{background:var(--red);box-shadow:0 0 8px rgba(239,68,68,.3)}
-.tl-dot.yellow{background:var(--yellow)}
-.tl-dot.green{background:var(--green)}
-.tl-date{font-size:.72rem;color:var(--text-dim);margin-bottom:2px;font-weight:400}
-.tl-text{font-size:.88rem;color:var(--text);font-weight:300;line-height:1.6}
-.tl-text strong{color:var(--text-bright);font-weight:500}
+/* ── CONTACTS ── */
+.empty-state{text-align:center;padding:60px 30px;color:var(--text-dim)}
+.empty-state h3{font-size:1rem;margin-bottom:10px;color:var(--text-bright);font-weight:500}
+.empty-state p{font-size:.85rem;line-height:1.6}
+.filters{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.filters select,.filters input{padding:7px 10px;border:1px solid var(--card-border);border-radius:6px;background:var(--card-bg);color:var(--text);font-size:.8rem;font-family:var(--font)}
+[data-theme="light"] .filters select,[data-theme="light"] .filters input{background:#fff}
 
-/* FORM */
-.form-section{margin-bottom:36px}
-.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:20px}
-.form-group{margin-bottom:20px}
-.form-group label{display:block;font-size:.85rem;font-weight:500;color:var(--text-bright);margin-bottom:8px}
-.form-group input,.form-group textarea,.form-group select{width:100%;padding:12px 16px;border:1px solid var(--card-border);border-radius:8px;background:var(--card-bg);color:var(--text);font-size:.9rem;transition:border-color .2s}
-[data-theme="light"] .form-group input,[data-theme="light"] .form-group textarea,[data-theme="light"] .form-group select{background:#fff}
-.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--green)}
-.form-group textarea{resize:vertical;min-height:100px}
-.form-actions{display:flex;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-size:.9rem;font-weight:500;cursor:pointer;transition:all .2s;border:none}
+/* ── FORM ── */
+.form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:16px}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:.8rem;font-weight:500;color:var(--text-bright);margin-bottom:6px}
+.fg input,.fg textarea,.fg select{width:100%;padding:10px 14px;border:1px solid var(--card-border);border-radius:7px;background:var(--card-bg);color:var(--text);font-size:.85rem;font-family:var(--font);transition:.2s}
+[data-theme="light"] .fg input,[data-theme="light"] .fg textarea,[data-theme="light"] .fg select{background:#fff}
+.fg input:focus,.fg textarea:focus,.fg select:focus{outline:none;border-color:var(--green)}
+.fg textarea{resize:vertical;min-height:80px}
+.form-actions{display:flex;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:7px;font-size:.85rem;font-weight:500;cursor:pointer;transition:.2s;border:none;font-family:var(--font)}
 .btn-primary{background:var(--green);color:var(--navy)}
 .btn-primary:hover{background:var(--green-dark)}
 .btn-secondary{background:var(--card-bg);color:var(--text);border:1px solid var(--card-border)}
 .btn-secondary:hover{border-color:var(--green)}
-.success-message{background:rgba(61,234,124,.1);border:1px solid rgba(61,234,124,.2);border-radius:8px;padding:16px;color:var(--green);font-size:.9rem;margin-top:16px;display:none}
-.lookup-group{display:flex;gap:12px}
-.lookup-group input{flex:1}
-.lookup-btn{background:var(--card-bg);border:1px solid var(--card-border);color:var(--text);padding:12px 16px;border-radius:8px;cursor:pointer;transition:all .2s}
+.lookup-row{display:flex;gap:10px}
+.lookup-row input{flex:1}
+.lookup-btn{background:var(--card-bg);border:1px solid var(--card-border);color:var(--text);padding:10px 14px;border-radius:7px;cursor:pointer;transition:.2s;font-family:var(--font);font-size:.85rem}
 .lookup-btn:hover{border-color:var(--green)}
+.success-msg{background:rgba(61,234,124,.08);border:1px solid rgba(61,234,124,.15);border-radius:7px;padding:14px;color:var(--green);font-size:.85rem;margin-top:14px;display:none}
 
-/* CONTACTS */
-.empty-state{text-align:center;padding:80px 40px;color:var(--text-dim)}
-.empty-state h3{font-size:1.1rem;margin-bottom:12px;color:var(--text-bright)}
-.empty-state p{font-size:.9rem;line-height:1.6}
-.filters{display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap}
-.filters select,.filters input{padding:8px 12px;border:1px solid var(--card-border);border-radius:6px;background:var(--card-bg);color:var(--text);font-size:.85rem}
-[data-theme="light"] .filters select,[data-theme="light"] .filters input{background:#fff}
-.contact-status{padding:4px 12px;border-radius:6px;font-size:.75rem;font-weight:500;cursor:pointer}
-.status-not_contacted{background:rgba(148,163,184,.2);color:var(--text-dim)}
-.status-contacted{background:rgba(245,158,11,.2);color:var(--yellow)}
-.status-interested{background:rgba(59,130,246,.2);color:#3B82F6}
-.status-meeting_booked{background:rgba(139,69,193,.2);color:#8B45C1}
-.status-proposal_sent{background:rgba(34,197,94,.2);color:#22C55E}
-.status-won{background:rgba(61,234,124,.2);color:var(--green)}
-.status-not_interested{background:rgba(239,68,68,.2);color:var(--red)}
-
-/* ACTIVITY FEED */
-.activity-feed{margin-top:48px}
-.activity-item{display:flex;align-items:center;gap:12px;padding:12px 0;font-size:.85rem;color:var(--text-dim)}
-.activity-dot{width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0}
-.activity-time{margin-left:auto;font-size:.75rem}
-
-/* RESPONSIVE */
-@media(max-width:960px){
-  .sidebar{display:none}
-  .container{padding:24px 20px}
-  .big-stats{grid-template-columns:1fr}
-  .builder-card{grid-template-columns:1fr;gap:12px}
-  .findings-row{grid-template-columns:1fr}
-  .hero h1{font-size:1.6rem}
-  .form-grid{grid-template-columns:1fr}
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+.sidebar{display:none}
+.wrap{padding:20px 16px}
+.stat-row{grid-template-columns:repeat(2,1fr)}
+.tiles{grid-template-columns:1fr}
+.dash-header{flex-direction:column;align-items:flex-start;gap:12px}
+.findings-row{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
+<!-- ── SIDEBAR ── -->
 <div class="sidebar">
-  <div class="sidebar-top">
-    <div class="sidebar-logo">
-      <img src="ipex-logo-light.svg" alt="IPEX" class="logo-dark">
-      <img src="ipex-logo-dark.svg" alt="IPEX" class="logo-light">
-    </div>
-    <button class="theme-toggle" onclick="toggleTheme()"><span class="toggle-icon">☀</span></button>
+<div class="sb-top">
+  <div class="sb-logo">
+    <img src="ipex-logo-light.svg" alt="IPEX" class="logo-dark">
+    <img src="ipex-logo-dark.svg" alt="IPEX" class="logo-light">
   </div>
-  <nav>
-    <a class="active" id="nav-dash" onclick="go('dashboard')"><span class="nav-icon">📊</span> Dashboard</a>
-    
-    <div class="nav-section">CASES</div>
-    <div id="nav-builders"></div>
-    
-    <div class="nav-section">TOOLS</div>
-    <a id="nav-contacts" onclick="go('contacts')"><span class="nav-icon">👥</span> Contacts</a>
-    <a id="nav-article" onclick="go('article')"><span class="nav-icon">📝</span> The Problem</a>
-    <a id="nav-add-case" onclick="go('addcase')"><span class="nav-icon">➕</span> Add Case</a>
-    
-    <div class="nav-section">SYSTEM</div>
-    <a id="nav-system"><span class="nav-icon">⏰</span> <span id="last-scan-time">No scans yet</span></a>
-  </nav>
-  <div class="sidebar-footer">
-    <div class="sidebar-user">
-      <div class="avatar">PR</div>
-      <div><div class="name">Paul Reid</div><div class="role">CEO • IPEX</div></div>
-    </div>
+  <button class="theme-btn" onclick="toggleTheme()"><span class="ti">☀</span></button>
+</div>
+<nav>
+  <a class="active" id="nav-dashboard" onclick="go('dashboard')"><span class="nav-i">◉</span> Dashboard</a>
+  <div class="nav-sec">Cases</div>
+  <div id="nav-builders"></div>
+  <div class="nav-sec">Tools</div>
+  <a id="nav-contacts" onclick="go('contacts')"><span class="nav-i">⊡</span> Contacts</a>
+  <a id="nav-article" onclick="go('article')"><span class="nav-i">◈</span> The Problem</a>
+  <a id="nav-addcase" onclick="go('addcase')"><span class="nav-i">⊕</span> Add Case</a>
+  <div class="nav-sec">System</div>
+  <a><span class="nav-i">⟳</span> <span id="last-scan">No scans</span></a>
+</nav>
+<div class="sb-footer">
+  <div class="sb-user">
+    <div class="av">PR</div>
+    <div><div class="nm">Paul Reid</div><div class="rl">CEO · IPEX</div></div>
   </div>
 </div>
+</div>
 
+<!-- ── MAIN ── -->
 <div class="main">
 
 <!-- ===== DASHBOARD ===== -->
 <div class="page active" id="p-dashboard">
-<div class="container">
-  <div class="hero">
-    <div class="hero-badge"><span class="dot"></span> Live Intelligence</div>
-    <h1>Builders are winning projects<br>while <span class="accent">trading insolvent</span></h1>
-    <p>Our research reveals a systemic failure in financial due diligence — and the projects caught in the crossfire.</p>
+<div class="wrap">
+  <div class="dash-header">
+    <div>
+      <h1>Builder Insolvency <span>Intelligence</span></h1>
+      <div class="sub">Monitoring Australian construction sector insolvencies in real time</div>
+    </div>
+    <div class="live-badge"><span class="dot"></span> Live Monitoring</div>
   </div>
 
-  <div class="big-stats" id="big-stats">
-    <div class="big-stat">
-      <div class="big-stat-value red" id="stat-value">-</div>
-      <div class="big-stat-label">in projects won by builders<br>during confirmed insolvent trading</div>
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="val red" id="s-value">—</div>
+      <div class="lbl">Total value at risk</div>
     </div>
-    <div class="big-stat">
-      <div class="big-stat-value" id="stat-days">-</div>
-      <div class="big-stat-label">average days trading insolvent<br>before entering administration</div>
+    <div class="stat-card">
+      <div class="val" id="s-days" style="color:var(--text-bright)">—</div>
+      <div class="lbl">Avg days insolvent</div>
     </div>
-    <div class="big-stat">
-      <div class="big-stat-value red" id="stat-projects">-</div>
-      <div class="big-stat-label">projects awarded to builders<br>who couldn't pay their debts</div>
+    <div class="stat-card">
+      <div class="val red" id="s-projects">—</div>
+      <div class="lbl">Projects at risk</div>
+    </div>
+    <div class="stat-card">
+      <div class="val green" id="s-builders">—</div>
+      <div class="lbl">Builders tracked</div>
     </div>
   </div>
 
-  <div class="section-label">Case Files — Builder Analysis</div>
-  <div class="builder-list" id="builderList"></div>
-
-  <div class="activity-feed">
-    <div class="section-label">System Activity</div>
-    <div id="activity-items"></div>
+  <div class="tiles-header">
+    <h2>Case Files</h2>
+    <div class="tile-count" id="tile-count"></div>
   </div>
+  <div class="tiles" id="tileGrid"></div>
 
-  <div class="cta-card">
+  <div id="activity-strip-wrap"></div>
+
+  <div class="cta-banner">
     <h3>Traditional due diligence didn't catch any of these</h3>
-    <p>Every one of these builders passed standard financial checks. Every one continued winning contracts while unable to meet existing obligations. The industry needs a better way.</p>
+    <p>Every builder passed standard financial checks while unable to meet existing obligations.</p>
     <a class="cta-btn" href="mailto:info@ipex.com.au">Talk to IPEX →</a>
   </div>
 </div>
 </div>
 
-<!-- ===== BUILDER CASE FILE ===== -->
+<!-- ===== BUILDER DETAIL ===== -->
 <div class="page" id="p-builder">
-<div class="container">
-  <div class="back-link" onclick="go('dashboard')">← Back to Dashboard</div>
+<div class="wrap">
+  <div class="back" onclick="go('dashboard')">← Dashboard</div>
   <div id="builder-content"></div>
 </div>
 </div>
 
 <!-- ===== CONTACTS ===== -->
 <div class="page" id="p-contacts">
-<div class="container">
-  <div class="back-link" onclick="go('dashboard')">← Back to Dashboard</div>
-  <div class="detail-hero">
-    <h2>Contact Management</h2>
-    <div class="meta">Master directory of all affected parties across case files</div>
-  </div>
-  
+<div class="wrap">
+  <div class="back" onclick="go('dashboard')">← Dashboard</div>
+  <div class="detail-head"><h2>Contacts</h2><div class="dmeta">Affected developers, lenders, and stakeholders</div></div>
   <div class="filters">
-    <select id="filter-type">
-      <option value="">All Types</option>
-      <option value="developer">Developer</option>
-      <option value="lender">Lender</option>
-    </select>
-    <select id="filter-status">
-      <option value="">All Status</option>
-      <option value="not_contacted">Not Contacted</option>
-      <option value="contacted">Contacted</option>
-      <option value="interested">Interested</option>
-      <option value="meeting_booked">Meeting Booked</option>
-      <option value="proposal_sent">Proposal Sent</option>
-      <option value="won">Won</option>
-      <option value="not_interested">Not Interested</option>
-    </select>
-    <select id="filter-builder">
-      <option value="">All Builders</option>
-    </select>
-    <input type="text" id="filter-search" placeholder="Search contacts...">
+    <select id="f-type"><option value="">All Types</option><option>Developer</option><option>Lender</option></select>
+    <select id="f-status"><option value="">All Status</option><option value="not_contacted">Not Contacted</option><option value="contacted">Contacted</option><option value="interested">Interested</option><option value="meeting_booked">Meeting Booked</option></select>
+    <input type="text" id="f-search" placeholder="Search...">
   </div>
-  
-  <div class="empty-state">
-    <h3>No contacts added yet</h3>
-    <p>Contacts will appear here as case files are completed.<br>Our research team is working to populate developer and lender contact information for each affected project.</p>
-  </div>
+  <div class="empty-state"><h3>No contacts yet</h3><p>Contact information will populate as case research is completed.</p></div>
 </div>
 </div>
 
-<!-- ===== THE PROBLEM (Article) ===== -->
+<!-- ===== THE PROBLEM ===== -->
 <div class="page" id="p-article">
-<div class="container">
-  <div class="back-link" onclick="go('dashboard')">← Back to Dashboard</div>
+<div class="wrap">
+  <div class="back" onclick="go('dashboard')">← Dashboard</div>
   <div class="article">
     <h3>'Insolvent' Builders Winning New Projects?</h3>
     <p>When a commercial builder enters administration, headlines naturally gravitate towards what they might owe, before attention turns to why they failed. And while the specific circumstances may vary, each collapse is inevitably chalked up to a version of "difficult market conditions beyond the builder's control."</p>
@@ -361,103 +332,54 @@ table tr:hover{background:rgba(255,255,255,.02)}
       <li>Have won the majority of projects that were in progress at the time they entered administration in the <span class="red">6 months prior to</span> or <span class="red">during</span> the insolvent trading period</li>
     </ul>
     <p>Several were deemed to have been trading insolvent for over 12 months and, while it's disturbing enough to think that a builder could 'satisfy' financial due diligence requirements just months prior to becoming insolvent, it gets worse — <span class="red">most were able to secure at least one new contract during the insolvent trading period</span>.</p>
-
     <h3>'Point in Time' Financial Due Diligence is Failing</h3>
     <p>It's clear why a builder might be tempted to push the boundaries in trying to save their business, but the fact that such dire cashflow troubles were not able to be identified will be keeping developers & lenders up at night.</p>
     <p>Can an external party ever hope to reliably distinguish between realistic & overly 'optimistic' cost-to-complete/cashflow forecasts, or identify when critical financial information is incomplete, out of date, or otherwise misleading?</p>
     <p>And as much as we'd like to think that the worst is behind us, <span class="red">builder insolvency is a perennial risk</span> — up a further 21% on FY24 according to the latest ASIC data, including multiple high-profile casualties. It's not going away.</p>
-
     <h3>Your Builder Doesn't Need to Go Under to Ruin Your Project</h3>
     <p>Although builder insolvencies are still relatively rare within the commercial construction sector, the administrator's findings confirm that <span class="bold">cashflow trouble often begins long before signs of distress become outwardly apparent</span>.</p>
     <p>The main source of nervousness for developers we speak with is the <span class="bold">'contagion effect'</span> — the considerably more likely risk that progress payments might be used to cashflow their builder's troubled projects. They end up (involuntarily) paying another developer's bills, while their project inherits the cash shortfall.</p>
     <p>For every insolvency that makes the news, there are countless other instances in which the developer is quietly strong-armed into paying significant sums of money outside of the contract to get their project to completion.</p>
-
     <h3>'Best Practice' is No Longer Best Practice</h3>
     <p>Developers & lenders are continually asking their builders to prove that they're financially sound and that they pay their subbies. The problem is, the industry-standard checks & balances don't actually 'prove' anything.</p>
     <p>Both legally & practically <span class="green">isolating each development from all others is fast becoming the preferred approach</span>. As more developers & lenders put a 'ring-fence' around progress payments, the pool of projects that a distressed builder can 'borrow' from gets smaller.</p>
     <p>No matter how thorough your builder-vetting process, if you're still paying into your builder's operating account & pinning your hopes on that monthly 'stat dec' being true, the chances of your project being impacted are only going up.</p>
-
-    <div class="cta-card" style="margin-top:40px">
+    <div class="cta-banner" style="margin-top:32px">
       <h3>Want to prevent builder cashflow issues from impacting your project?</h3>
-      <p>IPEX ring-fences progress payments at the project level, ensuring your money stays on your project — not funding someone else's shortfall.</p>
+      <p>IPEX ring-fences progress payments at the project level, ensuring your money stays on your project.</p>
       <a class="cta-btn" href="mailto:info@ipex.com.au">info@ipex.com.au</a>
-      <div style="font-size:.8rem;color:var(--text-dim);margin-top:12px">(03) 8456 8032</div>
+      <div style="font-size:.75rem;color:var(--text-dim);margin-top:8px">(03) 8456 8032</div>
     </div>
-    <p style="font-size:.72rem;color:var(--text-dim);margin-top:20px;font-style:italic">*Insolvent trading period based on the administrator-indicated trading insolvent date. Research conducted by MC & James Curtis.</p>
+    <p style="font-size:.68rem;color:var(--text-dim);margin-top:16px;font-style:italic">*Insolvent trading period based on the administrator-indicated trading insolvent date. Research conducted by MC & James Curtis.</p>
   </div>
 </div>
 </div>
 
 <!-- ===== ADD CASE ===== -->
 <div class="page" id="p-addcase">
-<div class="container">
-  <div class="back-link" onclick="go('dashboard')">← Back to Dashboard</div>
-  <div class="detail-hero">
-    <h2>Add New Case</h2>
-    <div class="meta">Submit a new builder for insolvency intelligence analysis</div>
-  </div>
-
-  <form id="add-case-form" onsubmit="return submitCase(event)">
+<div class="wrap">
+  <div class="back" onclick="go('dashboard')">← Dashboard</div>
+  <div class="detail-head"><h2>Add New Case</h2><div class="dmeta">Submit a builder for insolvency intelligence analysis</div></div>
+  <form id="add-form" onsubmit="return submitCase(event)">
     <div class="form-grid">
-      <div class="form-group">
-        <label for="builder-name">Builder Name *</label>
-        <input type="text" id="builder-name" required>
-      </div>
-      <div class="form-group">
-        <label for="builder-abn">ABN</label>
-        <div class="lookup-group">
-          <input type="text" id="builder-abn" placeholder="12 345 678 901">
-          <button type="button" class="lookup-btn" onclick="lookupABN()">Lookup</button>
-        </div>
-      </div>
+      <div class="fg"><label>Builder Name *</label><input id="f-name" required></div>
+      <div class="fg"><label>ABN</label><div class="lookup-row"><input id="f-abn" placeholder="12 345 678 901"><button type="button" class="lookup-btn" onclick="lookupABN()">Lookup</button></div></div>
     </div>
-    
     <div class="form-grid">
-      <div class="form-group">
-        <label for="admin-date">Administration Date</label>
-        <input type="date" id="admin-date">
-      </div>
-      <div class="form-group">
-        <label for="administrator">Administrator</label>
-        <input type="text" id="administrator" placeholder="e.g., Worrells, McGrathNicol">
-      </div>
+      <div class="fg"><label>Administration Date</label><input type="date" id="f-admin-date"></div>
+      <div class="fg"><label>Administrator</label><input id="f-administrator" placeholder="e.g. McGrathNicol"></div>
     </div>
-    
     <div class="form-grid">
-      <div class="form-group">
-        <label for="admin-type">Type of Administration</label>
-        <select id="admin-type">
-          <option value="">Select type</option>
-          <option value="Voluntary Administration">Voluntary Administration</option>
-          <option value="Liquidation">Liquidation</option>
-          <option value="Receivership">Receivership</option>
-          <option value="DOCA">Deed of Company Arrangement</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="insolvency-start">Est. Insolvency Start Date</label>
-        <input type="date" id="insolvency-start">
-      </div>
+      <div class="fg"><label>Type</label><select id="f-admin-type"><option value="">Select</option><option>Voluntary Administration</option><option>Liquidation</option><option>Receivership</option><option>DOCA</option></select></div>
+      <div class="fg"><label>Est. Insolvency Start</label><input type="date" id="f-ins-start"></div>
     </div>
-    
-    <div class="form-group">
-      <label for="source-url">Source URL</label>
-      <input type="url" id="source-url" placeholder="https://asic.gov.au/...">
-    </div>
-    
-    <div class="form-group">
-      <label for="notes">Notes</label>
-      <textarea id="notes" placeholder="Additional context, source information, or research notes..."></textarea>
-    </div>
-    
+    <div class="fg"><label>Source URL</label><input type="url" id="f-source" placeholder="https://..."></div>
+    <div class="fg"><label>Notes</label><textarea id="f-notes" placeholder="Context, source info, research notes..."></textarea></div>
     <div class="form-actions">
       <button type="submit" class="btn btn-primary">Create Case</button>
-      <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear Form</button>
+      <button type="button" class="btn btn-secondary" onclick="document.getElementById('add-form').reset()">Clear</button>
     </div>
-    
-    <div class="success-message" id="success-message">
-      ✅ Case created. Research pipeline will be triggered.
-    </div>
+    <div class="success-msg" id="success-msg"></div>
   </form>
 </div>
 </div>
@@ -465,527 +387,223 @@ table tr:hover{background:rgba(255,255,255,.02)}
 </div>
 
 <script>
-// Global data
-let buildersData = null;
-let contactsData = null;
-let monitoringData = null;
-let currentBuilder = null;
+let BD=null,CD=null,MD=null;
 
-// Load data on page load
-document.addEventListener('DOMContentLoaded', async function() {
-  try {
-    // Load all data files
-    const [builders, contacts, monitoring] = await Promise.all([
-      fetch('data/builders.json').then(r => r.json()),
-      fetch('data/contacts.json').then(r => r.json()),
-      fetch('data/monitoring.json').then(r => r.json())
+document.addEventListener('DOMContentLoaded',async()=>{
+  try{
+    const[b,c,m]=await Promise.all([
+      fetch('data/builders.json').then(r=>r.json()),
+      fetch('data/contacts.json').then(r=>r.json()),
+      fetch('data/monitoring.json').then(r=>r.json())
     ]);
-    
-    buildersData = builders;
-    contactsData = contacts;
-    monitoringData = monitoring;
-    
-    // Initialize the dashboard
-    initDashboard();
-    initSidebar();
-    
-    // Load theme
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateToggleIcon();
-    
-  } catch (error) {
-    console.error('Error loading data:', error);
-  }
+    BD=b;CD=c;MD=m;
+    initDash();initNav();
+    const t=localStorage.getItem('theme')||'dark';
+    document.documentElement.setAttribute('data-theme',t);
+    updToggle();
+  }catch(e){console.error('Data load error:',e)}
 });
 
-function initDashboard() {
-  if (!buildersData) return;
+function initDash(){
+  if(!BD)return;
+  const m=BD.meta;
+  document.getElementById('s-value').textContent=fmtCur(m.totalValueAtRisk);
+  document.getElementById('s-days').textContent=m.avgDaysInsolvent+' days';
+  document.getElementById('s-projects').textContent=m.totalProjectsAtRisk;
+  document.getElementById('s-builders').textContent=m.totalBuilders;
+  document.getElementById('tile-count').textContent=`${m.totalBuilders} builders tracked`;
   
-  // Update big stats with calculated values
-  const meta = buildersData.meta;
-  document.getElementById('stat-value').textContent = formatCurrency(meta.totalValueAtRisk);
-  document.getElementById('stat-days').textContent = meta.avgDaysInsolvent + ' days';
-  document.getElementById('stat-projects').textContent = meta.totalProjectsAtRisk;
+  const grid=document.getElementById('tileGrid');
+  grid.innerHTML='';
+  const sorted=[...BD.builders].sort((a,b)=>new Date(b.insolvency.administrationDate)-new Date(a.insolvency.administrationDate));
+  sorted.forEach(b=>{grid.appendChild(mkTile(b))});
   
-  // Generate builder cards
-  const builderList = document.getElementById('builderList');
-  builderList.innerHTML = '';
-  
-  // Sort builders by administration date (newest first)
-  const sortedBuilders = [...buildersData.builders].sort((a, b) => {
-    const dateA = new Date(a.insolvency.administrationDate);
-    const dateB = new Date(b.insolvency.administrationDate);
-    return dateB - dateA;
-  });
-  
-  sortedBuilders.forEach(builder => {
-    const card = createBuilderCard(builder);
-    builderList.appendChild(card);
-  });
-  
-  // Update activity feed
-  updateActivityFeed();
-}
-
-function initSidebar() {
-  if (!buildersData) return;
-  
-  // Populate builders navigation
-  const navBuilders = document.getElementById('nav-builders');
-  navBuilders.innerHTML = '';
-  
-  buildersData.builders.forEach(builder => {
-    const navItem = document.createElement('a');
-    navItem.className = 'nav-builder';
-    navItem.onclick = () => go('builder', builder.id);
-    
-    if (builder.status === 'new') {
-      navItem.innerHTML = `<span class="new-indicator"></span><span class="nav-icon">📋</span> ${builder.name}`;
-    } else {
-      navItem.innerHTML = `<span class="nav-icon">📋</span> ${builder.name}`;
-    }
-    
-    navBuilders.appendChild(navItem);
-  });
-  
-  // Update last scan time
-  const lastScanEl = document.getElementById('last-scan-time');
-  if (monitoringData.lastScan) {
-    const scanDate = new Date(monitoringData.lastScan);
-    lastScanEl.textContent = `Last scan: ${scanDate.toLocaleDateString()}`;
-  } else {
-    lastScanEl.textContent = 'No scans yet';
+  // Activity strip
+  const wrap=document.getElementById('activity-strip-wrap');
+  if(MD.lastScan){
+    const d=new Date(MD.lastScan);
+    wrap.innerHTML=`<div class="activity-strip"><span class="icon">⟳</span><span class="txt">Last system scan completed</span><span class="time">${d.toLocaleDateString()} ${d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</span></div>`;
   }
 }
 
-function createBuilderCard(builder) {
-  const card = document.createElement('div');
-  card.className = `builder-card ${builder.status === 'new' ? 'highlight' : ''}`;
-  card.onclick = () => go('builder', builder.id);
+function mkTile(b){
+  const el=document.createElement('div');
+  el.className=`tile${b.status==='new'?' is-new':''}`;
+  el.onclick=()=>go('builder',b.id);
+  const ad=new Date(b.insolvency.administrationDate);
+  const dateStr=ad.toLocaleDateString('en-AU',{day:'2-digit',month:'short',year:'numeric'});
+  const days=b.insolvency.daysInsolventTrading;
+  const proj=b.summary.totalProjectsAtRisk||0;
+  const val=b.summary.totalValueAtRisk||0;
+  const meta=[b.state,dateStr,b.insolvency.administrator].filter(Boolean).join(' · ');
   
-  const adminDate = new Date(builder.insolvency.administrationDate);
-  const formattedDate = adminDate.toLocaleDateString('en-AU', { day: '2-digit', month: 'short', year: 'numeric' });
-  
-  // Calculate stats
-  const daysInsolvent = builder.insolvency.daysInsolventTrading;
-  const projectsAtRisk = builder.summary.totalProjectsAtRisk || 0;
-  const valueAtRisk = builder.summary.totalValueAtRisk || 0;
-  
-  let meta = `${builder.state} • Administration: ${formattedDate}`;
-  if (builder.abn) meta = `${builder.state} • ABN ${builder.abn} • ${formattedDate}`;
-  if (builder.insolvency.administrator) meta += ` • ${builder.insolvency.administrator}`;
-  
-  card.innerHTML = `
-    <div class="bc-info">
-      <div class="bc-name">${builder.name}</div>
-      <div class="bc-meta">${meta}</div>
+  el.innerHTML=`
+    <div class="tile-top">
+      <div class="tile-name">${b.name}</div>
+      <span class="tile-badge ${b.status==='new'?'new':'complete'}">${b.status==='new'?'NEW':'COMPLETE'}</span>
     </div>
-    <div class="bc-stat">
-      <div class="bc-stat-value ${daysInsolvent === null ? 'yellow' : (daysInsolvent > 0 ? 'red' : 'yellow')}">
-        ${daysInsolvent === null ? 'Pending' : (daysInsolvent === 0 ? '0 days' : daysInsolvent + ' days')}
+    <div class="tile-meta">${meta}</div>
+    <div class="tile-stats">
+      <div class="tile-stat">
+        <div class="tv ${days===null?'yellow':(days>0?'red':'yellow')}">${days===null?'TBC':days+'d'}</div>
+        <div class="tl">Insolvent</div>
       </div>
-      <div class="bc-stat-label">Insolvent Period</div>
-    </div>
-    <div class="bc-stat">
-      <div class="bc-stat-value ${projectsAtRisk > 0 ? 'red' : 'yellow'}">
-        ${projectsAtRisk || 'TBC'}
+      <div class="tile-stat">
+        <div class="tv ${proj>0?'red':'yellow'}">${proj||'TBC'}</div>
+        <div class="tl">Projects</div>
       </div>
-      <div class="bc-stat-label">Projects at Risk</div>
-    </div>
-    <div class="bc-stat">
-      <div class="bc-stat-value ${valueAtRisk > 0 ? 'red' : 'yellow'}">
-        ${valueAtRisk ? formatCurrency(valueAtRisk) : 'TBC'}
+      <div class="tile-stat">
+        <div class="tv ${val>0?'red':'yellow'}">${val?fmtCur(val):'TBC'}</div>
+        <div class="tl">Value</div>
       </div>
-      <div class="bc-stat-label">Value</div>
-    </div>
-    <span class="tag ${builder.status === 'new' ? 'new' : 'done'}">
-      ${builder.status === 'new' ? '● NEW CASE' : 'Complete'}
-    </span>
-  `;
-  
-  return card;
+    </div>`;
+  return el;
 }
 
-function updateActivityFeed() {
-  const activityItems = document.getElementById('activity-items');
-  activityItems.innerHTML = '';
-  
-  // Add monitoring activity
-  if (monitoringData.lastScan) {
-    const scanDate = new Date(monitoringData.lastScan);
-    const item = document.createElement('div');
-    item.className = 'activity-item';
-    item.innerHTML = `
-      <div class="activity-dot"></div>
-      <div>System scan completed for new builder administrations</div>
-      <div class="activity-time">${scanDate.toLocaleTimeString()}</div>
-    `;
-    activityItems.appendChild(item);
-  }
-  
-  // Add recent builder updates
-  const recentBuilders = buildersData.builders
-    .filter(b => b.status === 'new')
-    .slice(0, 3);
-    
-  recentBuilders.forEach(builder => {
-    const adminDate = new Date(builder.insolvency.administrationDate);
-    const item = document.createElement('div');
-    item.className = 'activity-item';
-    item.innerHTML = `
-      <div class="activity-dot" style="background: var(--red)"></div>
-      <div>New case: ${builder.name} entered administration</div>
-      <div class="activity-time">${adminDate.toLocaleDateString()}</div>
-    `;
-    activityItems.appendChild(item);
+function initNav(){
+  const nb=document.getElementById('nav-builders');
+  nb.innerHTML='';
+  BD.builders.forEach(b=>{
+    const a=document.createElement('a');
+    a.className='nav-new';
+    a.onclick=()=>go('builder',b.id);
+    a.innerHTML=`${b.status==='new'?'<span class="pulse-dot"></span>':''}<span class="nav-i">◻</span> ${b.name.replace(/ (Pty Ltd|Constructions?|Group)$/i,'')}`;
+    nb.appendChild(a);
   });
-  
-  if (activityItems.children.length === 0) {
-    activityItems.innerHTML = '<div class="activity-item"><div class="activity-dot"></div><div>System monitoring active</div></div>';
+  if(MD.lastScan){
+    const d=new Date(MD.lastScan);
+    document.getElementById('last-scan').textContent=`Scan: ${d.toLocaleDateString()}`;
   }
 }
 
-function go(page, builderId = null) {
-  // Hide all pages
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  
-  // Update navigation
-  document.querySelectorAll('.sidebar nav a').forEach(a => a.classList.remove('active'));
-  
-  // Show target page
-  if (page === 'builder' && builderId) {
-    showBuilderDetail(builderId);
+function go(page,id=null){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
+  if(page==='builder'&&id){
+    showBuilder(id);
     document.getElementById('p-builder').classList.add('active');
-  } else {
-    document.getElementById(`p-${page}`).classList.add('active');
-    
-    // Update active nav
-    const navEl = document.getElementById(`nav-${page}`);
-    if (navEl) navEl.classList.add('active');
+  }else{
+    document.getElementById('p-'+page).classList.add('active');
+    const n=document.getElementById('nav-'+page);
+    if(n)n.classList.add('active');
   }
 }
 
-function showBuilderDetail(builderId) {
-  const builder = buildersData.builders.find(b => b.id === builderId);
-  if (!builder) return;
+function showBuilder(id){
+  const b=BD.builders.find(x=>x.id===id);
+  if(!b)return;
+  const c=document.getElementById('builder-content');
+  let h=`<div class="detail-head"><h2>${b.name}</h2><div class="dmeta">${[b.state,b.abn?'ABN '+b.abn:'',b.acn?'ACN '+b.acn:''].filter(Boolean).join(' · ')}</div></div>`;
   
-  currentBuilder = builder;
-  const content = document.getElementById('builder-content');
-  
-  // Build the detail page content
-  let html = `
-    <div class="detail-hero">
-      <h2>${builder.name}</h2>
-      <div class="meta">${builder.state}${builder.abn ? ` • ABN ${builder.abn}` : ''}${builder.acn ? ` • ACN ${builder.acn}` : ''}</div>
-    </div>
-  `;
-  
-  // Status banner for new cases
-  if (builder.status === 'new') {
-    html += `
-      <div class="alert-banner">
-        <div class="icon">🔴</div>
-        <div class="content">
-          <div class="label">New Case — Research in Progress</div>
-          <div class="detail">${builder.insolvency.administrator ? builder.insolvency.administrator + ' appointed as administrators on ' + new Date(builder.insolvency.administrationDate).toLocaleDateString() + '. ' : ''}${builder.summary.narrative}</div>
-        </div>
-      </div>
-    `;
+  if(b.status==='new'){
+    h+=`<div class="alert-box"><div class="a-icon">🔴</div><div><div class="a-label">New Case — Research In Progress</div><div class="a-text">${b.summary.narrative}</div></div></div>`;
   }
   
-  // Key stats bar
-  html += `
-    <div class="info-grid">
-      <div class="info-item">
-        <div class="label">Projects at Risk</div>
-        <div class="value" style="color: ${builder.summary.totalProjectsAtRisk > 0 ? 'var(--red)' : 'var(--yellow)'}">${builder.summary.totalProjectsAtRisk || 'TBC'}</div>
-      </div>
-      <div class="info-item">
-        <div class="label">Total Value</div>
-        <div class="value" style="color: ${builder.summary.totalValueAtRisk > 0 ? 'var(--red)' : 'var(--yellow)'}">${builder.summary.totalValueAtRisk ? formatCurrency(builder.summary.totalValueAtRisk) : 'TBC'}</div>
-      </div>
-      <div class="info-item">
-        <div class="label">Developers Affected</div>
-        <div class="value">${builder.summary.totalDevelopersAffected || 'TBC'}</div>
-      </div>
-      <div class="info-item">
-        <div class="label">Lenders Affected</div>
-        <div class="value">${builder.summary.totalLendersAffected || 'TBC'}</div>
-      </div>
-    </div>
-  `;
+  h+=`<div class="info-grid">
+    <div class="info-box"><div class="ib-label">Projects at Risk</div><div class="ib-value" style="color:${b.summary.totalProjectsAtRisk>0?'var(--red)':'var(--yellow)'}">${b.summary.totalProjectsAtRisk||'TBC'}</div></div>
+    <div class="info-box"><div class="ib-label">Total Value</div><div class="ib-value" style="color:${b.summary.totalValueAtRisk>0?'var(--red)':'var(--yellow)'}">${b.summary.totalValueAtRisk?fmtCur(b.summary.totalValueAtRisk):'TBC'}</div></div>
+    <div class="info-box"><div class="ib-label">Developers Affected</div><div class="ib-value">${b.summary.totalDevelopersAffected||'TBC'}</div></div>
+    <div class="info-box"><div class="ib-label">Lenders Affected</div><div class="ib-value">${b.summary.totalLendersAffected||'TBC'}</div></div>
+  </div>`;
   
-  // More info grid
-  html += `
-    <div class="info-grid">
-      <div class="info-item">
-        <div class="label">Administration Date</div>
-        <div class="value" style="color:var(--red)">${new Date(builder.insolvency.administrationDate).toLocaleDateString()}</div>
-      </div>
-      <div class="info-item">
-        <div class="label">Administrator</div>
-        <div class="value">${builder.insolvency.administrator || 'TBC'}</div>
-      </div>
-      <div class="info-item">
-        <div class="label">Est Insolvency Start</div>
-        <div class="value" style="color: ${builder.insolvency.estimatedInsolvencyStart ? 'var(--red)' : 'var(--yellow)'}">${builder.insolvency.estimatedInsolvencyStart ? new Date(builder.insolvency.estimatedInsolvencyStart).toLocaleDateString() : 'Pending Report'}</div>
-      </div>
-      <div class="info-item">
-        <div class="label">Days Insolvent</div>
-        <div class="value" style="color: ${builder.insolvency.daysInsolventTrading > 0 ? 'var(--red)' : 'var(--yellow)'}">${builder.insolvency.daysInsolventTrading === null ? 'Pending' : builder.insolvency.daysInsolventTrading + ' days'}</div>
-      </div>
-      <div class="info-item">
-        <div class="label">Creditors Meeting</div>
-        <div class="value">${builder.insolvency.creditorsMeetingDate ? new Date(builder.insolvency.creditorsMeetingDate).toLocaleDateString() : 'TBC'}</div>
-      </div>
-    </div>
-  `;
+  h+=`<div class="info-grid">
+    <div class="info-box"><div class="ib-label">Administration Date</div><div class="ib-value" style="color:var(--red)">${new Date(b.insolvency.administrationDate).toLocaleDateString()}</div></div>
+    <div class="info-box"><div class="ib-label">Administrator</div><div class="ib-value">${b.insolvency.administrator||'TBC'}</div></div>
+    <div class="info-box"><div class="ib-label">Est. Insolvency Start</div><div class="ib-value" style="color:${b.insolvency.estimatedInsolvencyStart?'var(--red)':'var(--yellow)'}">${b.insolvency.estimatedInsolvencyStart?new Date(b.insolvency.estimatedInsolvencyStart).toLocaleDateString():'Pending'}</div></div>
+    <div class="info-box"><div class="ib-label">Days Insolvent</div><div class="ib-value" style="color:${b.insolvency.daysInsolventTrading>0?'var(--red)':'var(--yellow)'}">${b.insolvency.daysInsolventTrading===null?'Pending':b.insolvency.daysInsolventTrading+' days'}</div></div>
+    ${b.insolvency.creditorsMeetingDate?`<div class="info-box"><div class="ib-label">Creditors Meeting</div><div class="ib-value">${new Date(b.insolvency.creditorsMeetingDate).toLocaleDateString()}</div></div>`:''}
+  </div>`;
   
-  // Key findings banner (if projects exist)
-  if (builder.projects && builder.projects.length > 0) {
-    const projectsWonDuring = builder.projects.filter(p => p.wonDuringInsolvency).length;
-    const valueWonDuring = builder.projects
-      .filter(p => p.wonDuringInsolvency)
-      .reduce((sum, p) => sum + (p.estimatedValue || 0), 0);
+  if(b.projects&&b.projects.length>0){
+    const wonDuring=b.projects.filter(p=>p.wonDuringInsolvency);
+    const valWon=wonDuring.reduce((s,p)=>s+(p.estimatedValue||0),0);
+    h+=`<div class="findings-bar"><div class="ft">Key Findings</div><div class="findings-row">
+      <div><div class="fv">${wonDuring.length}</div><div class="fl">Projects won during insolvency</div></div>
+      <div><div class="fv">${fmtCur(valWon)}</div><div class="fl">Value won while insolvent</div></div>
+      <div><div class="fv">${b.summary.totalDevelopersAffected||0}</div><div class="fl">Developers affected</div></div>
+    </div></div>`;
     
-    html += `
-      <div class="findings">
-        <div class="findings-title">Key Findings</div>
-        <div class="findings-row">
-          <div class="finding">
-            <div class="f-value">${projectsWonDuring}</div>
-            <div class="f-label">Projects won during<br>insolvent trading period</div>
-          </div>
-          <div class="finding">
-            <div class="f-value">${formatCurrency(valueWonDuring)}</div>
-            <div class="f-label">Value of projects won<br>while trading insolvent</div>
-          </div>
-          <div class="finding">
-            <div class="f-value">${builder.summary.totalDevelopersAffected || 0}</div>
-            <div class="f-label">Developers affected by<br>insolvent trading</div>
-          </div>
-        </div>
-      </div>
-    `;
-  }
-  
-  // Projects table
-  if (builder.projects && builder.projects.length > 0) {
-    const insolvencyProjects = builder.projects.filter(p => p.wonDuringInsolvency);
-    
-    html += `
-      <div class="table-section">
-        <div class="table-header">Projects Won During Insolvent Trading Period</div>
-        <div style="overflow-x:auto">
-          <table>
-            <thead>
-              <tr>
-                <th>Project</th>
-                <th>Developer</th>
-                <th>Value</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-    `;
-    
-    insolvencyProjects.forEach(project => {
-      html += `
-        <tr>
-          <td>
-            <div class="proj-name">${project.projectName}</div>
-            <div class="proj-addr">${project.address}</div>
-          </td>
-          <td>${project.developer || '—'}</td>
-          <td style="font-weight:500;color:var(--text-bright)">${formatCurrency(project.estimatedValue)}</td>
-          <td><span class="badge-won">${project.contractStatus}</span></td>
-        </tr>
-      `;
+    h+=`<div class="tbl-section"><div class="tbl-title">Projects Won During Insolvent Trading</div><div style="overflow-x:auto"><table><thead><tr><th>Project</th><th>Developer</th><th>Value</th><th>Status</th></tr></thead><tbody>`;
+    wonDuring.forEach(p=>{
+      h+=`<tr><td><div class="pn">${p.projectName}</div><div class="pa">${p.address}</div></td><td>${p.developer||'—'}</td><td style="font-weight:500;color:var(--text-bright)">${fmtCur(p.estimatedValue)}</td><td><span class="badge-won">${p.contractStatus}</span></td></tr>`;
     });
-    
-    html += '</tbody></table></div></div>';
+    h+=`</tbody></table></div></div>`;
   }
   
-  // Timeline
-  if (builder.timeline && builder.timeline.length > 0) {
-    html += '<div class="section-label" style="margin-top:36px">Timeline</div><div class="timeline">';
-    
-    builder.timeline.forEach(event => {
-      const dotColor = event.type === 'administration' ? 'red' : 
-                      event.type === 'insolvency' ? 'red' : 
-                      event.type === 'project_won' ? 'yellow' : 'green';
-      
-      html += `
-        <div class="tl-item">
-          <div class="tl-dot ${dotColor}"></div>
-          <div>
-            <div class="tl-date">${new Date(event.date).toLocaleDateString()}</div>
-            <div class="tl-text">${event.event}</div>
-          </div>
-        </div>
-      `;
+  if(b.timeline&&b.timeline.length>0){
+    h+=`<div class="tiles-header" style="margin-top:24px"><h2>Timeline</h2></div><div class="timeline">`;
+    b.timeline.forEach(e=>{
+      const dc=e.type==='administration'||e.type==='insolvency'?'red':e.type==='project_won'?'yellow':'green';
+      h+=`<div class="tl-item"><div class="tl-dot ${dc}"></div><div><div class="tl-date">${new Date(e.date).toLocaleDateString()}</div><div class="tl-text">${e.event}</div></div></div>`;
     });
-    
-    html += '</div>';
+    h+=`</div>`;
   }
   
-  // Contacts section
-  html += `
-    <div class="section-label" style="margin-top:36px">Contacts</div>
-    <div class="empty-state" style="padding:40px 20px">
-      <h3>No contacts yet</h3>
-      <p>Contact information will be populated as research is completed.</p>
-    </div>
-  `;
-  
-  // IPEX narrative
-  if (builder.summary.narrative) {
-    html += `
-      <div class="section-label" style="margin-top:36px">IPEX Analysis</div>
-      <p style="font-size:.92rem;line-height:1.7;margin-bottom:24px">${builder.summary.narrative}</p>
-    `;
+  if(b.summary.narrative&&b.status!=='new'){
+    h+=`<div class="tiles-header" style="margin-top:24px"><h2>IPEX Analysis</h2></div><p style="font-size:.88rem;line-height:1.7;margin-bottom:20px">${b.summary.narrative}</p>`;
   }
   
-  // Research metadata
-  if (builder.research) {
-    html += `
-      <div class="section-label">Research Metadata</div>
-      <div class="info-grid">
-        <div class="info-item">
-          <div class="label">Last Updated</div>
-          <div class="value">${new Date(builder.research.lastUpdated).toLocaleDateString()}</div>
-        </div>
-        <div class="info-item">
-          <div class="label">Research Team</div>
-          <div class="value">${builder.research.researchedBy}</div>
-        </div>
-        <div class="info-item">
-          <div class="label">Confidence Level</div>
-          <div class="value" style="text-transform:capitalize">${builder.research.confidence}</div>
-        </div>
-        <div class="info-item">
-          <div class="label">Data Sources</div>
-          <div class="value" style="font-size:.85rem">${builder.research.dataSources.join(', ')}</div>
-        </div>
-      </div>
-    `;
-    
-    if (builder.research.gaps) {
-      html += `<p style="font-size:.85rem;color:var(--text-dim);margin:16px 0;"><strong>Research Gaps:</strong> ${builder.research.gaps}</p>`;
-    }
+  if(b.research){
+    h+=`<div class="tiles-header" style="margin-top:24px"><h2>Research</h2></div><div class="info-grid">
+      <div class="info-box"><div class="ib-label">Last Updated</div><div class="ib-value">${new Date(b.research.lastUpdated).toLocaleDateString()}</div></div>
+      <div class="info-box"><div class="ib-label">Team</div><div class="ib-value">${b.research.researchedBy}</div></div>
+      <div class="info-box"><div class="ib-label">Confidence</div><div class="ib-value" style="text-transform:capitalize">${b.research.confidence}</div></div>
+    </div>`;
+    if(b.research.gaps)h+=`<p style="font-size:.8rem;color:var(--text-dim);margin-bottom:20px"><strong>Gaps:</strong> ${b.research.gaps}</p>`;
   }
   
-  // CTA
-  const valueLost = builder.summary.totalValueAtRisk || 0;
-  const ctaText = valueLost > 0 ? 
-    `${builder.projects?.filter(p => p.wonDuringInsolvency).length || 0} projects worth ${formatCurrency(valueLost)} won while trading insolvent` :
-    'This case file will be updated as information becomes available';
+  const valLost=b.summary.totalValueAtRisk||0;
+  h+=`<div class="cta-banner"><h3>${valLost>0?`${(b.projects||[]).filter(p=>p.wonDuringInsolvency).length} projects worth ${fmtCur(valLost)} won while trading insolvent`:'Case file will update as information becomes available'}</h3><p>${valLost>0?'Traditional due diligence didn\'t catch it.':'Analysis methodology will be applied once the administrator\'s report is published.'}</p><a class="cta-btn" href="mailto:info@ipex.com.au">Learn How IPEX Prevents This →</a></div>`;
   
-  const ctaSubtext = valueLost > 0 ?
-    'Traditional due diligence didn\'t catch it. Every one of these developers had no way of knowing.' :
-    `Our analysis methodology will be applied once the administrator's report is published.`;
-  
-  html += `
-    <div class="cta-card">
-      <h3>${ctaText}</h3>
-      <p>${ctaSubtext}</p>
-      <a class="cta-btn" href="mailto:info@ipex.com.au">Learn How IPEX Prevents This →</a>
-    </div>
-  `;
-  
-  content.innerHTML = html;
+  c.innerHTML=h;
 }
 
-function toggleTheme() {
-  const current = document.documentElement.getAttribute('data-theme');
-  const newTheme = current === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
-  updateToggleIcon();
+function toggleTheme(){
+  const c=document.documentElement.getAttribute('data-theme');
+  const n=c==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',n);
+  localStorage.setItem('theme',n);
+  updToggle();
+}
+function updToggle(){
+  const t=document.documentElement.getAttribute('data-theme');
+  document.querySelector('.ti').textContent=t==='dark'?'☀':'🌙';
+}
+function fmtCur(a){
+  if(!a)return'$0';
+  if(a>=1e6)return'$'+(a/1e6).toFixed(1)+'M';
+  if(a>=1e3)return'$'+(a/1e3).toFixed(0)+'K';
+  return'$'+a.toLocaleString();
 }
 
-function updateToggleIcon() {
-  const theme = document.documentElement.getAttribute('data-theme');
-  const icon = document.querySelector('.toggle-icon');
-  icon.textContent = theme === 'dark' ? '☀' : '🌙';
-}
-
-function formatCurrency(amount) {
-  if (!amount) return '$0';
-  
-  if (amount >= 1000000) {
-    return '$' + (amount / 1000000).toFixed(1) + 'M';
-  } else if (amount >= 1000) {
-    return '$' + (amount / 1000).toFixed(1) + 'K';
-  }
-  return '$' + amount.toLocaleString();
-}
-
-function submitCase(event) {
-  event.preventDefault();
-  
-  // Collect form data
-  const formData = {
-    builderName: document.getElementById('builder-name').value,
-    abn: document.getElementById('builder-abn').value,
-    administrationDate: document.getElementById('admin-date').value,
-    administrator: document.getElementById('administrator').value,
-    adminType: document.getElementById('admin-type').value,
-    estimatedInsolvencyStart: document.getElementById('insolvency-start').value,
-    sourceUrl: document.getElementById('source-url').value,
-    notes: document.getElementById('notes').value,
-    submitted: new Date().toISOString()
+function submitCase(e){
+  e.preventDefault();
+  const fd={
+    builderName:document.getElementById('f-name').value,
+    abn:document.getElementById('f-abn').value,
+    administrationDate:document.getElementById('f-admin-date').value,
+    administrator:document.getElementById('f-administrator').value,
+    adminType:document.getElementById('f-admin-type').value,
+    insolvencyStart:document.getElementById('f-ins-start').value,
+    sourceUrl:document.getElementById('f-source').value,
+    notes:document.getElementById('f-notes').value,
+    submitted:new Date().toISOString()
   };
+  const drafts=JSON.parse(localStorage.getItem('ipex-case-drafts')||'[]');
+  drafts.push(fd);
+  localStorage.setItem('ipex-case-drafts',JSON.stringify(drafts));
   
-  // Store locally as backup
-  const existingDrafts = JSON.parse(localStorage.getItem('ipex-case-drafts') || '[]');
-  existingDrafts.push(formData);
-  localStorage.setItem('ipex-case-drafts', JSON.stringify(existingDrafts));
+  const title=`[NEW CASE] ${fd.builderName}`;
+  const body=[`**Builder:** ${fd.builderName}`,fd.abn?`**ABN:** ${fd.abn}`:'',fd.administrationDate?`**Date:** ${fd.administrationDate}`:'',fd.administrator?`**Administrator:** ${fd.administrator}`:'',fd.adminType?`**Type:** ${fd.adminType}`:'',fd.notes?`\n**Notes:**\n${fd.notes}`:''].filter(Boolean).join('\n');
+  const ghUrl=`https://github.com/jpjarvisai-cmd/ipex-terminal-demo/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}&labels=new-case`;
   
-  // Create GitHub issue for the monitoring pipeline to pick up
-  const issueTitle = `[NEW CASE] ${formData.builderName}`;
-  const issueBody = [
-    `**Builder:** ${formData.builderName}`,
-    formData.abn ? `**ABN:** ${formData.abn}` : '',
-    formData.administrationDate ? `**Administration Date:** ${formData.administrationDate}` : '',
-    formData.administrator ? `**Administrator:** ${formData.administrator}` : '',
-    formData.adminType ? `**Type:** ${formData.adminType}` : '',
-    formData.estimatedInsolvencyStart ? `**Est. Insolvency Start:** ${formData.estimatedInsolvencyStart}` : '',
-    formData.sourceUrl ? `**Source:** ${formData.sourceUrl}` : '',
-    formData.notes ? `\n**Notes:**\n${formData.notes}` : '',
-    `\n---\n_Submitted via IPEX Terminal at ${new Date().toLocaleString()}_`
-  ].filter(Boolean).join('\n');
-  
-  // Open GitHub issue creation (pre-filled)
-  const ghUrl = `https://github.com/jpjarvisai-cmd/ipex-terminal-demo/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}&labels=new-case`;
-  
-  // Also send via mailto as backup
-  const mailBody = issueBody.replace(/\*\*/g, '').replace(/\n/g, '%0A');
-  const mailUrl = `mailto:jp.jarvis.ai@gmail.com?subject=${encodeURIComponent(issueTitle)}&body=${mailBody}`;
-  
-  // Show success with action links
-  const successEl = document.getElementById('success-message');
-  successEl.innerHTML = `✅ Case saved locally. <a href="${ghUrl}" target="_blank" style="color:var(--green);text-decoration:underline">Submit to pipeline →</a> or <a href="${mailUrl}" style="color:var(--green);text-decoration:underline">Email to team</a>`;
-  successEl.style.display = 'block';
-  
-  // Clear form after delay
-  setTimeout(() => {
-    clearForm();
-  }, 5000);
-  
+  const s=document.getElementById('success-msg');
+  s.innerHTML=`✅ Case saved. <a href="${ghUrl}" target="_blank" style="color:var(--green);text-decoration:underline">Submit to pipeline →</a>`;
+  s.style.display='block';
+  setTimeout(()=>{document.getElementById('add-form').reset()},3000);
   return false;
 }
-
-function clearForm() {
-  document.getElementById('add-case-form').reset();
-}
-
-function lookupABN() {
-  // Placeholder for ABN lookup functionality
-  alert('ABN lookup functionality will be implemented in Phase 2. For now, please enter ABN manually if known.');
-}
+function lookupABN(){alert('ABN lookup available in Phase 2. Enter ABN manually if known.')}
 </script>
-
 </body>
 </html>
