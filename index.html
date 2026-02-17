@@ -680,7 +680,7 @@ function submitCase(e){
   
   const title=`[NEW CASE] ${fd.builderName}`;
   const body=[`**Builder:** ${fd.builderName}`,fd.abn?`**ABN:** ${fd.abn}`:'',fd.administrationDate?`**Date:** ${fd.administrationDate}`:'',fd.administrator?`**Administrator:** ${fd.administrator}`:'',fd.adminType?`**Type:** ${fd.adminType}`:'',fd.notes?`\n**Notes:**\n${fd.notes}`:''].filter(Boolean).join('\n');
-  const ghUrl=`https://github.com/jpjarvisai-cmd/ipex-terminal-demo/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}&labels=new-case`;
+  const ghUrl=`https://github.com/jpjarvisai-cmd/ipex-insolvency-intelligence/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}&labels=new-case`;
   
   const s=document.getElementById('success-msg');
   s.innerHTML=`✅ Case saved. <a href="${ghUrl}" target="_blank" style="color:var(--green);text-decoration:underline">Submit to pipeline →</a>`;
