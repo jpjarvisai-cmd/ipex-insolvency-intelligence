@@ -230,8 +230,8 @@ tr:hover{background:rgba(255,255,255,.02)}
 </div>
 <nav>
   <a class="active" id="nav-dashboard" onclick="go('dashboard')"><span class="nav-i">◉</span> Dashboard</a>
-  <div class="nav-sec">Cases</div>
-  <div id="nav-builders"></div>
+  <div class="nav-sec" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none" onclick="toggleCases()">Cases <span id="cases-arrow" style="font-size:.55rem;transition:.2s">▼</span></div>
+  <div id="nav-builders" style="max-height:999px;overflow:hidden;transition:max-height .3s ease"></div>
   <div class="nav-sec">Tools</div>
   <a id="nav-contacts" onclick="go('contacts')"><span class="nav-i">⊡</span> Contacts</a>
   <a id="nav-article" onclick="go('article')"><span class="nav-i">◈</span> The Problem</a>
@@ -416,12 +416,68 @@ document.addEventListener('DOMContentLoaded',async()=>{
       fetch('data/monitoring.json').then(r=>r.json())
     ]);
     BD=b;CD=c;MD=m;
+    computeWindows();
     initDash();initNav();
     const t=localStorage.getItem('theme')||'dark';
     document.documentElement.setAttribute('data-theme',t);
     updToggle();
   }catch(e){console.error('Data load error:',e)}
 });
+
+function computeWindows(){
+  if(!BD)return;
+  BD.builders.forEach(b=>{
+    const ins=b.insolvency||{};
+    const insStart=ins.estimatedInsolvencyStart?new Date(ins.estimatedInsolvencyStart):null;
+    const adminDate=ins.administrationDate?new Date(ins.administrationDate):null;
+    // Compute 6mo before insolvency start
+    const preInsStart=insStart?new Date(insStart.getTime()-180*86400000):null;
+    // Compute 6mo before admin
+    const preAdminStart=adminDate?new Date(adminDate.getTime()-180*86400000):null;
+    
+    let w1c=0,w1v=0,w2c=0,w2v=0,w3c=0,w3v=0;
+    (b.projects||[]).forEach(p=>{
+      const cd=p.contractDate?new Date(p.contractDate):null;
+      const val=p.estimatedValue||0;
+      p.windows=[];
+      // W1: Pre-insolvency — contract in 6mo before insolvency start
+      if(cd&&preInsStart&&insStart&&cd>=preInsStart&&cd<insStart){
+        p.windows.push('pre-insolvency');w1c++;w1v+=val;
+      }
+      // W2: Insolvent trading — contract between insolvency start and admin
+      if(p.wonDuringInsolvency||(cd&&insStart&&adminDate&&cd>=insStart&&cd<=adminDate)){
+        if(!p.windows.includes('insolvent-trading')){p.windows.push('insolvent-trading');w2c++;w2v+=val;}
+      }
+      // W3: Pre-administration — contract in 6mo before admin
+      if(p.wonWithin6MonthsOfAdmin||(cd&&preAdminStart&&adminDate&&cd>=preAdminStart&&cd<=adminDate)){
+        if(!p.windows.includes('pre-administration')){p.windows.push('pre-administration');w3c++;w3v+=val;}
+      }
+    });
+    b.windowStats={
+      preInsolvency:{count:w1c,value:w1v},
+      insolventTrading:{count:w2c,value:w2v},
+      preAdministration:{count:w3c,value:w3v}
+    };
+  });
+  // Recompute global window totals
+  let gw1c=0,gw1v=0,gw2c=0,gw2v=0,gw3c=0,gw3v=0;
+  BD.builders.forEach(b=>{
+    const ws=b.windowStats||{};
+    gw1c+=(ws.preInsolvency||{}).count||0;gw1v+=(ws.preInsolvency||{}).value||0;
+    gw2c+=(ws.insolventTrading||{}).count||0;gw2v+=(ws.insolventTrading||{}).value||0;
+    gw3c+=(ws.preAdministration||{}).count||0;gw3v+=(ws.preAdministration||{}).value||0;
+  });
+  BD.meta.windowTotals={preInsolvency:{count:gw1c,value:gw1v},insolventTrading:{count:gw2c,value:gw2v},preAdministration:{count:gw3c,value:gw3v}};
+}
+
+let casesOpen=true;
+function toggleCases(){
+  const nb=document.getElementById('nav-builders');
+  const arrow=document.getElementById('cases-arrow');
+  casesOpen=!casesOpen;
+  nb.style.maxHeight=casesOpen?'999px':'0px';
+  arrow.style.transform=casesOpen?'rotate(0)':'rotate(-90deg)';
+}
 
 function initDash(){
   if(!BD)return;
