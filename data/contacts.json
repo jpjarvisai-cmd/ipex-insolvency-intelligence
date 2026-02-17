@@ -4,5 +4,25 @@
     "totalContacts": 0,
     "note": "Contact data to be populated by Paul's team. Developers and lenders affected by each builder case."
   },
-  "contacts": []
+  "contacts": [
+    {
+      "company": "Contract Administrators",
+      "type": "developer",
+      "source": "https://www.jobsandskills.gov.au/data/occupation-and-industry-profiles/occupations/511111-contract-administrators",
+      "builder": "Novati Constructions Pty Ltd"
+    },
+    {
+      "company": "Contract Administrators",
+      "type": "developer",
+      "source": "https://www.mastt.com/guide/contract-administration-australia",
+      "builder": "Novati Constructions Pty Ltd"
+    },
+    {
+      "company": "Contract Administrators",
+      "type": "developer",
+      "source": "https://contractsadministrator.com.au/blogs/contracts-administrator-nsw",
+      "builder": "Novati Constructions Pty Ltd"
+    }
+  ],
+  "lastUpdated": "2026-02-17T14:54:00.459234"
 }

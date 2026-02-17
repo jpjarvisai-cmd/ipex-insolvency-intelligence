@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-17T14:39:15.528156",
+    "lastUpdated": "2026-02-17T14:54:00.456632",
     "totalBuilders": 8,
     "totalProjectsAtRisk": 20,
     "totalValueAtRisk": 396236300,
@@ -10,8 +10,8 @@
     {
       "id": "novati-constructions",
       "name": "Novati Constructions Pty Ltd",
-      "abn": "52000785021",
-      "acn": "000785021",
+      "abn": "92001714905",
+      "acn": "001714905",
       "entityType": "Australian Private Company",
       "state": "NSW",
       "status": "new",
@@ -47,14 +47,138 @@
         }
       ],
       "research": {
-        "lastUpdated": "2026-02-17T14:00:00+11:00",
+        "lastUpdated": "2026-02-17T14:53:29.578636",
         "researchedBy": "Jarvis (automated)",
         "dataSources": [
           "ASIC",
           "News (API Magazine, Daily Mail, Lawyerly)"
         ],
         "confidence": "low",
-        "gaps": "Administrator report not yet available. Insolvent trading period unknown. Projects not yet researched. No developer or lender contacts."
+        "gaps": "Administrator report not yet available. Insolvent trading period unknown. Projects not yet researched. No developer or lender contacts.",
+        "latestNews": [
+          {
+            "title": "Novati Constructions Pty Ltd Enters Administration | Worrells",
+            "url": "https://worrells.net.au/resources/press-releases/novati-constructions-pty-ltd-enters-administration",
+            "snippet": "Mr Beattie said, \u201cThe administration has only just commenced, and we are working diligently to establish Novati\u2019s financial position. This includes identifying assets available for realisation and qua"
+          },
+          {
+            "title": "Novati Constructions | LinkedIn",
+            "url": "https://au.linkedin.com/company/novati-constructions",
+            "snippet": "Novati Constructions co-ordinates the services and efforts of all various tradesman, labourers and suppliers, in conjunction with consultants and project managers, who are involved with the constructi"
+          },
+          {
+            "title": "Novati Constructions Pty Ltd - Company Profile and News - Bloomberg Markets",
+            "url": "https://www.bloomberg.com/profile/company/9678363Z:AU",
+            "snippet": "Company profile page for Novati Constructions Pty Ltd including stock price, company news, executives, board members, and contact information"
+          },
+          {
+            "title": "Novati Constructions - Leichhardt NSW",
+            "url": "https://hipages.com.au/connect/novati",
+            "snippet": "Novati Constructions co-ordinates the services and efforts of all various tradesman, labourers and suppliers, in conjunction with consultants and project managers, who are involved with the constructi"
+          },
+          {
+            "title": "NOVATI CONSTRUCTIONS PTY LTD - ABN 92001714905 - ACN 001714905 - Business Profile / Credit Report",
+            "url": "https://creditorwatch.com.au/credit/profile/92001714905/NOVATI-CONSTRUCTIONS-PTY-LTD",
+            "snippet": "Novati Constructions Pty Ltd (ABN 92 001 714 905 / ACN 001 714 905): Novati Constructions is a registered proprietary company limited by shares and was first registered with ASIC in 1979. Novati Const"
+          }
+        ],
+        "projectResearch": {
+          "searchesRun": 8,
+          "totalResults": 23,
+          "projectMentions": 12,
+          "developersFound": [
+            "Contract Administrators"
+          ],
+          "affectedProjectArticles": [
+            {
+              "source": "https://seniorsdiscountclub.com.au/threads/behind-generations-of-homes-is-a-business%E2%80%A6-and-this-firm-is-crumbling-under-pressure.89839/",
+              "title": "Behind generations of homes is a business\u2026 and this firm is crumbling under pressure | Seniors Discount Club",
+              "snippet": "According to ASIC data, 1,567 construction firms have entered administration since July 2025, following a record 3,596 collapses in 2024. That\u2019s <strong>thousands of businesses forced to shut their do"
+            }
+          ],
+          "rawFindings": [
+            {
+              "source": "https://www.apimagazine.com.au/news/article/veteran-sydney-builder-novati-constructions-collapses-into-voluntary-administration",
+              "title": "Veteran Sydney builder Novati Constructions collapses into voluntary administration - latest building and construction n",
+              "snippet": "The company also received industry ... a 2017 award from the Master Builders Association of NSW for excellence in the <strong>$10 million-$15 million category for its work on a disability accommodatio",
+              "estimatedValue": 10000000,
+              "address": null,
+              "developer": null
+            },
+            {
+              "source": "https://novati.com.au/project/st-augustines-college/",
+              "title": "ST AUGUSTINE'S COLLEGE - SYDNEY - Novati Constructions",
+              "snippet": "Novati Constructions was awarded the contract to undertake all construction works at St Augustine\u2019s College at Brookvale on Sydney\u2019s Northern Beaches. Stage One of the project, involved a redevelopmen",
+              "estimatedValue": null,
+              "address": null,
+              "developer": null
+            },
+            {
+              "source": "https://novati.com.au/",
+              "title": "Home - Novati Constructions",
+              "snippet": "Learn more about Novati Constructions \u00b7 PROJECTS \u00b7 LUCY CHIENG AGED CARE \u00b7 PROJECTS \u00b7 More details about our Projects \u00b7 VIDEOS \u00b7 MANLY CIVIC CLUB \u00b7",
+              "estimatedValue": null,
+              "address": null,
+              "developer": null
+            },
+            {
+              "source": "https://www.dailymail.co.uk/news/article-15548631/Sydney-Novati-Constructions.html",
+              "title": "Aussie construction company folds after almost 50 years in business amid record collapses in the industry | Daily Mail O",
+              "snippet": "Novati won an award for excellence in the $10m-$15m category from the Master Builders Association NSW in 2017. It received the award for its construction of the <strong>short-term disability accomodat",
+              "estimatedValue": 10000000,
+              "address": null,
+              "developer": null
+            },
+            {
+              "source": "https://novati.com.au/home-cn/",
+              "title": "Novati Constructions",
+              "snippet": "Our focus is on building long term ... of our projects from repeat clients. \u201cThey displayed an inherent desire to maintain their image as a high quality, reliable and honest builder\u2026 Novati Constructi",
+              "estimatedValue": null,
+              "address": null,
+              "developer": null
+            },
+            {
+              "source": "https://au.linkedin.com/company/novati-constructions",
+              "title": "Novati Constructions | LinkedIn",
+              "snippet": "Development: p3living &amp; North East Corp Architecture &amp; Interior Design: SJB Landscape Architecture: Dangar Barin Smith Pty Ltd Construction: Novati Constructions Sales &amp; Marketing: Ray Whi",
+              "estimatedValue": null,
+              "address": null,
+              "developer": "Contract Administrators"
+            },
+            {
+              "source": "https://hipages.com.au/connect/novati",
+              "title": "Novati Constructions - Leichhardt NSW",
+              "snippet": "Novati Constructions Pty Ltd provide ... construction phase of a project. About Us As a privately owned family company, Novati Constructions Pty Ltd have been providing a range of building services si",
+              "estimatedValue": null,
+              "address": null,
+              "developer": null
+            },
+            {
+              "source": "https://novati.com.au/company-overview/",
+              "title": "Company Overview - Novati Constructions",
+              "snippet": "What began as Peter Novati\u2019s vision has evolved into a company that delivers exceptional projects across education, industrial, commercial, accommodation, and residential sectors. Guided by a dedicate",
+              "estimatedValue": null,
+              "address": null,
+              "developer": null
+            },
+            {
+              "source": "http://novati.com.au/project/no1-wharf-rd/",
+              "title": "No1 Wharf Rd - Novati Constructions",
+              "snippet": "The Development consent incorporated a Voluntary Planning Agreement which required road closure and acquisition of Council property, the top of Wharf Rd has now been converted into the new public plaz",
+              "estimatedValue": null,
+              "address": "1 Wharf Rd",
+              "developer": null
+            },
+            {
+              "source": "https://novati.com.au/current-projects/",
+              "title": "Current Projects - Novati Constructions",
+              "snippet": "PROUD MEMBERS OF: | \u00b7 COPYRIGHT 2020. NOVATI CONSTRUCTIONS. ALL RIGHTS RESERVED",
+              "estimatedValue": null,
+              "address": null,
+              "developer": null
+            }
+          ]
+        }
       },
       "context": {
         "founded": "1971",
@@ -70,13 +194,17 @@
           "Sargood on Collaroy (MBA Award 2017)"
         ],
         "industryContext": "1,567 construction companies entered administration during FY25"
-      }
+      },
+      "abn_status": "Active",
+      "abn_entity_type": "Australian Private Company",
+      "abn_gst": "2000-07-01",
+      "abn_business_names": []
     },
     {
       "id": "lanskey-constructions",
       "name": "Lanskey Constructions",
-      "abn": null,
-      "acn": null,
+      "abn": "27051015409",
+      "acn": "",
       "entityType": "Australian Private Company",
       "state": "Multi-state (NSW, QLD, VIC, WA)",
       "status": "complete",
@@ -249,10 +377,35 @@
           "date": "2022-12-12",
           "event": "Entered administration",
           "type": "administration"
+        },
+        {
+          "date": "2026-02-17",
+          "event": "Liquidation proceedings",
+          "type": "liquidation"
+        },
+        {
+          "date": "2026-02-17",
+          "event": "Liquidation proceedings",
+          "type": "liquidation"
+        },
+        {
+          "date": "2026-02-17",
+          "event": "Liquidation proceedings",
+          "type": "liquidation"
+        },
+        {
+          "date": "2026-02-17",
+          "event": "Liquidation proceedings",
+          "type": "liquidation"
+        },
+        {
+          "date": "2026-02-17",
+          "event": "Liquidation proceedings",
+          "type": "liquidation"
         }
       ],
       "research": {
-        "lastUpdated": "2026-02-17T14:00:00+11:00",
+        "lastUpdated": "2026-02-17T14:53:44.590030",
         "researchedBy": "Paul Reid / MC / James Curtis",
         "dataSources": [
           "ASIC",
@@ -261,14 +414,45 @@
           "Builder Website"
         ],
         "confidence": "high",
-        "gaps": "ABN/ACN not yet populated. No developer/lender contacts. Vermont development details incomplete."
-      }
+        "gaps": "ABN/ACN not yet populated. No developer/lender contacts. Vermont development details incomplete.",
+        "latestNews": [
+          {
+            "title": "Lanskey Constructions Pty. Ltd. 010 636 512 | Court Liquidation | Meeting | QLD | Published : 06/09/2024 | ASIC Notice Details",
+            "url": "https://publishednotices.asic.gov.au/browsesearch-notices/notice-details/Lanskey-Constructions-Pty-Ltd-010636512/1de3f70d-26fc-4698-b3e0-0228d9f089ba",
+            "snippet": "NOTICE OF MEETING OF CREDITORS Schedule 2 - Insolvency Practice Schedule (Corporations) s75-10(a) Insolvency Practice Rules (Corporations) 2016 s75-40(1) - In Liquidation | Published : 06/09/2024 | Ap"
+          },
+          {
+            "title": "Lanskey Constructions QLD goes into administration | The Property Tribune",
+            "url": "https://thepropertytribune.com.au/business-industry/lanskey-constructions-goes-into-administration/",
+            "snippet": "A Brisbane-based builder with a presence across Australia and overseas has become the latest casualty of the construction sector crisis"
+          },
+          {
+            "title": "Brisbane building company Lanskey Constructions QLD goes into liquidation - Company Liquidation Brisbane",
+            "url": "https://companyliquidationbrisbane.com.au/brisbane-building-company-lanskey-constructions-qld-goes-into-liquidation/",
+            "snippet": "<strong>On Monday, Brisbane-based builder Lanskey Constructions QLD Pty Ltd went into liquidation</strong>."
+          },
+          {
+            "title": "$80m collapse of Melbourne Cup winner\u2019s building firm hits subbies - Subbies United",
+            "url": "https://subbiesunited.com.au/80m-collapse-of-melbourne-cup-winners-building-firm-hits-subbies/",
+            "snippet": "Subbies and contractors caught up in the $80m collapse of national building firm Lanskey Constructions may not see a cent of their money returned."
+          },
+          {
+            "title": "Liquidators Appointed to Lanskey Constructions\u2019 Queensland Arm | The Urban Developer",
+            "url": "https://www.theurbandeveloper.com/articles/lanskey-constructions-queensland-liquidation-fti-consulting",
+            "snippet": "The Queensland arm of builder Lanskey Constructions went into liquidation on Monday after the company appointed FTI Consultings\u2019 Ben Campbell and John Park as liquidators of the troubled company..."
+          }
+        ]
+      },
+      "abn_status": "Cancelled",
+      "abn_entity_type": "Individual/Sole Trader",
+      "abn_gst": null,
+      "abn_business_names": []
     },
     {
       "id": "lloyd-group",
       "name": "Lloyd Group",
-      "abn": null,
-      "acn": null,
+      "abn": "96069674479",
+      "acn": "069674479",
       "entityType": "Australian Private Company",
       "state": "Multi-state (VIC, NSW, QLD)",
       "status": "complete",
@@ -436,10 +620,15 @@
           "date": "2023-03-31",
           "event": "Entered administration",
           "type": "administration"
+        },
+        {
+          "date": "2026-02-17",
+          "event": "Creditors' meeting held",
+          "type": "creditors"
         }
       ],
       "research": {
-        "lastUpdated": "2026-02-17T14:00:00+11:00",
+        "lastUpdated": "2026-02-17T14:53:47.852126",
         "researchedBy": "Paul Reid / MC / James Curtis",
         "dataSources": [
           "ASIC",
@@ -448,16 +637,47 @@
           "Builder Website"
         ],
         "confidence": "high",
-        "gaps": "ABN/ACN not yet populated. No developer/lender contacts."
-      }
+        "gaps": "ABN/ACN not yet populated. No developer/lender contacts.",
+        "latestNews": [
+          {
+            "title": "Lloyd Group | Deloitte Australia | Restructuring, Insolvency & Financial Advisory",
+            "url": "https://www.deloitte.com/au/en/services/financial-advisory/notices/lloyd-group.html",
+            "snippet": "<strong>Sam Marsden, Sal Algeri, Jason Tracy and Tim Norman were appointed Joint and Several Voluntary Administrators (Administrators) of the Companies on 31 March 2023</strong>, pursuant to Section 4"
+          },
+          {
+            "title": "School builder Lloyd Group slumps into administration, dozens of projects affected",
+            "url": "https://www.smh.com.au/business/companies/school-builder-lloyd-group-slumps-into-administration-dozens-of-projects-affected-20230331-p5cx1f.html",
+            "snippet": "<strong>Civil design and building firm Lloyd Group has been placed into voluntary administration</strong>, the second construction company to collapse in 24 hours."
+          },
+          {
+            "title": "Lloyd Group enters voluntary administration: Council statement | Upper Lachlan Shire Council",
+            "url": "https://upperlachlan.nsw.gov.au/latest-news/lloyd-group-enters-voluntary-administration-council-statement/",
+            "snippet": "Today (Friday 31 March 2023) Council was informed that the principal contractor working on the construction of the Crookwell pool project, Lloyd Group,"
+          },
+          {
+            "title": "LLOYD GROUP PROPERTIES PTY LTD 164 434 039 | Voluntary Administration | Meeting | VIC | Published : 10/05/2023 | ASIC Notice Details",
+            "url": "https://publishednotices.asic.gov.au/browsesearch-notices/notice-details/LLOYD-GROUP-PROPERTIES-PTY-LTD-164434039/3178bc0e-8d0d-4034-824c-13947c10abfd",
+            "snippet": "NOTICE OF SECOND MEETING OF CREDITORS OF COMPANY UNDER ADMINISTRATION Subsection 439A(1) Insolvency Practice Rules (Corporations) 2016 s75-40(1) - Administrators Appointed | Published : 10/05/2023 | A"
+          },
+          {
+            "title": "Home builder Porter Davis collapses affecting 1,700 homes, LLoyd Group enters voluntary administration - ABC News",
+            "url": "https://www.abc.net.au/news/2023-03-31/home-builder-porter-davis-liquidation-lloyd-group-administration/102170136",
+            "snippet": "<strong>A major Victorian builder has collapsed and another construction firm has entered voluntary administration</strong>, in a further sign pressures on the construction industry are not going away"
+          }
+        ]
+      },
+      "abn_status": "Active",
+      "abn_entity_type": "Australian Private Company",
+      "abn_gst": "2011-03-01",
+      "abn_business_names": []
     },
     {
       "id": "gcb-constructions",
       "name": "GCB Constructions",
-      "abn": null,
-      "acn": null,
+      "abn": "25589157234",
+      "acn": "",
       "entityType": "Australian Private Company",
-      "state": "QLD",
+      "state": "NSW",
       "status": "complete",
       "insolvency": {
         "type": "Voluntary Administration",
@@ -528,10 +748,15 @@
           "date": "2023-07-26",
           "event": "Entered administration",
           "type": "administration"
+        },
+        {
+          "date": "2026-02-17",
+          "event": "Liquidation proceedings",
+          "type": "liquidation"
         }
       ],
       "research": {
-        "lastUpdated": "2026-02-17T14:00:00+11:00",
+        "lastUpdated": "2026-02-17T14:53:50.284828",
         "researchedBy": "Paul Reid / MC / James Curtis",
         "dataSources": [
           "ASIC",
@@ -539,14 +764,45 @@
           "Cordell"
         ],
         "confidence": "high",
-        "gaps": "ABN/ACN not yet populated. No developer/lender contacts."
-      }
+        "gaps": "ABN/ACN not yet populated. No developer/lender contacts.",
+        "latestNews": [
+          {
+            "title": "Gold Coast's GCB Constructions goes into administration a day after licence suspended - ABC News",
+            "url": "https://www.abc.net.au/news/2023-07-26/gcb-constructions-goes-into-administration/102648426",
+            "snippet": "<strong>The Queensland Building and Construction Commission (QBCC) forced Gold Coast company GCB Constructions to stop work by cancelling it&#x27;s licence on Tuesday, after it allegedly failed to pay"
+          },
+          {
+            "title": "Uniting Yamba builder GCB Constructions in administration \u2013 Clarence Valley Independent",
+            "url": "https://clarencevalleynews.com.au/uniting-yamba-builder-gcb-constructions-in-administration/",
+            "snippet": "The news of the company being placed into administration came just a day after the Queensland Building and Construction Commission suspended GCB\u2019s building licence for \u2018failure to pay debts\u2019, bringing"
+          },
+          {
+            "title": "GCB Constructions goes into administration",
+            "url": "https://www.businessnewsaustralia.com/articles/gold-coast-builder-gcb-constructions-goes-bust.html",
+            "snippet": "<strong>Gold Coast builder GCB Constructions has gone into administration today after more than 40 years developing projects in the region</strong>, including several that are s"
+          },
+          {
+            "title": "Fate of GCB Constructions' creditors hangs on $17m claims",
+            "url": "https://www.businessnewsaustralia.com/articles/fate-of-gcb-construction-s-creditors-hinges-on-legal-stoushes-totalling--17m.html",
+            "snippet": "Creditors to Gold Coast building company GCB Constructions were told by administrators today that <strong>they will have to wait on the outcome of two legal stoushes totalling $17 million if they are "
+          },
+          {
+            "title": "A Tale of Trusts: Separating Myths from Reality in SOP",
+            "url": "https://helix.legal/insight/a-tale-of-trusts-separating-myths-from-reality-in-sop/",
+            "snippet": "However, given the dreadful overall financial position of GCB Constructions as reported by the liquidator, I think it is highly unlikely that amounts legitimately due and owing to subcontractors who d"
+          }
+        ]
+      },
+      "abn_status": "Cancelled",
+      "abn_entity_type": "Family Partnership",
+      "abn_gst": null,
+      "abn_business_names": []
     },
     {
       "id": "eq-projects",
       "name": "EQ Projects",
-      "abn": null,
-      "acn": null,
+      "abn": "79617648254",
+      "acn": "617648254",
       "entityType": "Australian Private Company",
       "state": "NSW",
       "status": "complete",
@@ -607,21 +863,37 @@
         }
       ],
       "research": {
-        "lastUpdated": "2026-02-17T14:00:00+11:00",
+        "lastUpdated": "2026-02-17T14:53:52.760432",
         "researchedBy": "Paul Reid / MC / James Curtis",
         "dataSources": [
           "ASIC",
           "Administrator Report"
         ],
         "confidence": "high",
-        "gaps": "ABN/ACN not yet populated. Developer identity unknown (TBD). No contacts."
-      }
+        "gaps": "ABN/ACN not yet populated. Developer identity unknown (TBD). No contacts.",
+        "latestNews": [
+          {
+            "title": "EQ Construction enters administration as latest construction company collapses | Daily Mail Online",
+            "url": "https://www.dailymail.co.uk/news/article-11743425/EQ-Construction-enters-administration-latest-construction-company-collapses.html",
+            "snippet": "The NSW-based company, also known as EQ Projects, <strong>collapsed earlier this month and owes money to between 400 and 500 creditors</strong>."
+          },
+          {
+            "title": "EQ PROJECTS LIMITED overview - Find and update company information - GOV.UK",
+            "url": "https://find-and-update.company-information.service.gov.uk/company/03728419",
+            "snippet": "EQ PROJECTS LIMITED - Free company information from Companies House including registered office address, filing history, accounts, annual return, officers, charges, business activity"
+          }
+        ]
+      },
+      "abn_status": "Cancelled",
+      "abn_entity_type": "Australian Private Company",
+      "abn_gst": null,
+      "abn_business_names": []
     },
     {
       "id": "st-hilliers",
       "name": "St Hilliers",
-      "abn": null,
-      "acn": null,
+      "abn": "91073951176",
+      "acn": "073951176",
       "entityType": "Australian Private Company",
       "state": "Multi-state (QLD, NSW, WA)",
       "status": "complete",
@@ -752,7 +1024,7 @@
         }
       ],
       "research": {
-        "lastUpdated": "2026-02-17T14:00:00+11:00",
+        "lastUpdated": "2026-02-17T14:53:55.013111",
         "researchedBy": "Paul Reid / MC / James Curtis",
         "dataSources": [
           "ASIC",
@@ -760,14 +1032,45 @@
           "Cordell"
         ],
         "confidence": "high",
-        "gaps": "ABN/ACN not yet populated. No developer/lender contacts. Opal Healthcare project value unknown."
-      }
+        "gaps": "ABN/ACN not yet populated. No developer/lender contacts. Opal Healthcare project value unknown.",
+        "latestNews": [
+          {
+            "title": "No guarantees for 21 construction projects left in limbo after St Hilliers' voluntary administration - ABC News",
+            "url": "https://www.abc.net.au/news/2024-02-15/st-hilliers-voluntary-administration-21-construction-projects/103470708",
+            "snippet": "The administrators of construction ... <strong>there are no guarantees that work on multimillion-dollar projects will resume. Administrators took over the company&#x27;s construction division last wee"
+          },
+          {
+            "title": "Top 13 Construction Company Collapses in Australia",
+            "url": "https://www.mastt.com/blogs/top-construction-company-collapses-australia",
+            "snippet": "<strong>St Hilliers entered voluntary administration after cash flow insolvency in February 2024</strong>, and roughly 21 active construction sites were immediately paused while administrators assesse"
+          },
+          {
+            "title": "Major Defence, public works supplier St Hilliers collapses",
+            "url": "https://www.themandarin.com.au/238863-major-defence-public-works-supplier-st-hilliers-collapses/",
+            "snippet": "The full impact of the financial collapse of a key arm of Department of Defence construction supplier St Hilliers remains unclear after the local firm called-in financial administrators for the second"
+          },
+          {
+            "title": "St Hilliers\u2019 construction business collapses into administration",
+            "url": "https://www.afr.com/property/commercial/st-hilliers-construction-business-collapses-into-administration-20240205-p5f2fc",
+            "snippet": "<strong>The company told staff an injection of more than $32 million over two years had not been enough to keep the division going</strong>. Its development arm is unaffected."
+          },
+          {
+            "title": "Australian construction company St Hilliers goes into administration - ABC News",
+            "url": "https://www.abc.net.au/news/2024-02-05/construction-company-st-hilliers-goes-into-admininistration/103428320",
+            "snippet": "<strong>Major construction company St Hilliers has been placed into voluntary administration, halting work on 21 multimillion-dollar development projects around Australia</strong>."
+          }
+        ]
+      },
+      "abn_status": "Cancelled",
+      "abn_entity_type": "Australian Private Company",
+      "abn_gst": null,
+      "abn_business_names": []
     },
     {
       "id": "stevens-constructions",
       "name": "Stevens Constructions",
-      "abn": null,
-      "acn": null,
+      "abn": "58572630185",
+      "acn": "",
       "entityType": "Australian Private Company",
       "state": "NSW",
       "status": "complete",
@@ -875,24 +1178,45 @@
           "date": "2024-05-27",
           "event": "Entered administration",
           "type": "administration"
+        },
+        {
+          "date": "2026-02-17",
+          "event": "Liquidation proceedings",
+          "type": "liquidation"
         }
       ],
       "research": {
-        "lastUpdated": "2026-02-17T14:00:00+11:00",
+        "lastUpdated": "2026-02-17T14:53:57.688700",
         "researchedBy": "Paul Reid / MC / James Curtis",
         "dataSources": [
           "ASIC",
           "Administrator Report (530 report)"
         ],
         "confidence": "medium",
-        "gaps": "ABN/ACN not yet populated. 530 report does not provide specific insolvency date \u2014 estimate used. No developer/lender contacts. Note: Paul's Overall Summary spreadsheet has a formula error for Stevens ($3.69M instead of $10.39M for value won after insolvency)."
-      }
+        "gaps": "ABN/ACN not yet populated. 530 report does not provide specific insolvency date \u2014 estimate used. No developer/lender contacts. Note: Paul's Overall Summary spreadsheet has a formula error for Stevens ($3.69M instead of $10.39M for value won after insolvency).",
+        "latestNews": [
+          {
+            "title": "Stevens Construction (NSW) Pty Limited (In Liquidation) EXAD Portal",
+            "url": "https://exad.com.au/bri/stevensconstruction/",
+            "snippet": "Receive updates on Stevens Construction (NSW) Pty Limited (In Liquidation) plus submit your proof of debt vote on resolutions and attend meetings of creditors"
+          },
+          {
+            "title": "Stevens Constructions: Major building company enters voluntary administration amid 'unprecedented disruptions' | Daily Mail Online",
+            "url": "https://www.dailymail.co.uk/news/article-13463205/Stevens-Constructions-administraction-construction.html",
+            "snippet": "Stevens Construction, based on the NSW Central Coast, <strong>announced on Monday that it had fallen into administration having faced &#x27;unprecedented disruptions&#x27; during recent constructions<"
+          }
+        ]
+      },
+      "abn_status": "Cancelled",
+      "abn_entity_type": "Individual/Sole Trader",
+      "abn_gst": null,
+      "abn_business_names": []
     },
     {
       "id": "project-coordination",
       "name": "Project Coordination",
-      "abn": null,
-      "acn": null,
+      "abn": "76100120027",
+      "acn": "100120027",
       "entityType": "Australian Private Company",
       "state": "Multi-state (NSW, ACT)",
       "status": "complete",
@@ -989,15 +1313,26 @@
         }
       ],
       "research": {
-        "lastUpdated": "2026-02-17T14:00:00+11:00",
+        "lastUpdated": "2026-02-17T14:54:00.136516",
         "researchedBy": "Paul Reid / MC / James Curtis",
         "dataSources": [
           "ASIC",
           "Administrator Report"
         ],
         "confidence": "high",
-        "gaps": "ABN/ACN not yet populated. No developer/lender contacts."
-      }
+        "gaps": "ABN/ACN not yet populated. No developer/lender contacts.",
+        "latestNews": [
+          {
+            "title": "Risky business: why builders are leading insolvency numbers",
+            "url": "https://www.canberratimes.com.au/story/8572071/australia-tracks-for-worst-period-of-business-collapses-in-years/",
+            "snippet": "Well-established builders <strong>Project Coordination and Rork Projects were among four Canberra construction firms that went bust within a month</strong>. Insolvencies across all industries have bee"
+          }
+        ]
+      },
+      "abn_status": "Active",
+      "abn_entity_type": "Australian Private Company",
+      "abn_gst": "2016-04-01",
+      "abn_business_names": []
     }
   ]
 }
