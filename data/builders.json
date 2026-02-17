@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-17T14:54:00.456632",
+    "lastUpdated": "2026-02-17T14:54:50.397486",
     "totalBuilders": 8,
     "totalProjectsAtRisk": 20,
     "totalValueAtRisk": 396236300,
@@ -47,11 +47,12 @@
         }
       ],
       "research": {
-        "lastUpdated": "2026-02-17T14:53:29.578636",
+        "lastUpdated": "2026-02-17T14:54:50.397439",
         "researchedBy": "Jarvis (automated)",
         "dataSources": [
           "ASIC",
-          "News (API Magazine, Daily Mail, Lawyerly)"
+          "News (API Magazine, Daily Mail, Lawyerly)",
+          "ABR"
         ],
         "confidence": "low",
         "gaps": "Administrator report not yet available. Insolvent trading period unknown. Projects not yet researched. No developer or lender contacts.",
@@ -198,13 +199,14 @@
       "abn_status": "Active",
       "abn_entity_type": "Australian Private Company",
       "abn_gst": "2000-07-01",
-      "abn_business_names": []
+      "abn_business_names": [],
+      "abn_entity_name": "NOVATI CONSTRUCTIONS PTY LTD"
     },
     {
       "id": "lanskey-constructions",
       "name": "Lanskey Constructions",
-      "abn": "27051015409",
-      "acn": "",
+      "abn": "66010636512",
+      "acn": "010636512",
       "entityType": "Australian Private Company",
       "state": "Multi-state (NSW, QLD, VIC, WA)",
       "status": "complete",
@@ -405,13 +407,14 @@
         }
       ],
       "research": {
-        "lastUpdated": "2026-02-17T14:53:44.590030",
+        "lastUpdated": "2026-02-17T14:54:50.397454",
         "researchedBy": "Paul Reid / MC / James Curtis",
         "dataSources": [
           "ASIC",
           "Administrator Report",
           "Cordell",
-          "Builder Website"
+          "Builder Website",
+          "ABR"
         ],
         "confidence": "high",
         "gaps": "ABN/ACN not yet populated. No developer/lender contacts. Vermont development details incomplete.",
@@ -443,10 +446,11 @@
           }
         ]
       },
-      "abn_status": "Cancelled",
-      "abn_entity_type": "Individual/Sole Trader",
-      "abn_gst": null,
-      "abn_business_names": []
+      "abn_status": "Active",
+      "abn_entity_type": "Australian Private Company",
+      "abn_gst": "2000-07-01",
+      "abn_business_names": [],
+      "abn_entity_name": "LANSKEY CONSTRUCTIONS PTY. LTD."
     },
     {
       "id": "lloyd-group",
@@ -628,13 +632,14 @@
         }
       ],
       "research": {
-        "lastUpdated": "2026-02-17T14:53:47.852126",
+        "lastUpdated": "2026-02-17T14:54:50.397459",
         "researchedBy": "Paul Reid / MC / James Curtis",
         "dataSources": [
           "ASIC",
           "Administrator Report",
           "Cordell",
-          "Builder Website"
+          "Builder Website",
+          "ABR"
         ],
         "confidence": "high",
         "gaps": "ABN/ACN not yet populated. No developer/lender contacts.",
@@ -669,13 +674,14 @@
       "abn_status": "Active",
       "abn_entity_type": "Australian Private Company",
       "abn_gst": "2011-03-01",
-      "abn_business_names": []
+      "abn_business_names": [],
+      "abn_entity_name": "LLOYD GROUP PTY LTD"
     },
     {
       "id": "gcb-constructions",
       "name": "GCB Constructions",
-      "abn": "25589157234",
-      "acn": "",
+      "abn": "26151244254",
+      "acn": "151244254",
       "entityType": "Australian Private Company",
       "state": "NSW",
       "status": "complete",
@@ -756,12 +762,13 @@
         }
       ],
       "research": {
-        "lastUpdated": "2026-02-17T14:53:50.284828",
+        "lastUpdated": "2026-02-17T14:54:50.397462",
         "researchedBy": "Paul Reid / MC / James Curtis",
         "dataSources": [
           "ASIC",
           "Administrator Report",
-          "Cordell"
+          "Cordell",
+          "ABR"
         ],
         "confidence": "high",
         "gaps": "ABN/ACN not yet populated. No developer/lender contacts.",
@@ -793,10 +800,13 @@
           }
         ]
       },
-      "abn_status": "Cancelled",
-      "abn_entity_type": "Family Partnership",
-      "abn_gst": null,
-      "abn_business_names": []
+      "abn_status": "Active",
+      "abn_entity_type": "Australian Private Company",
+      "abn_gst": "2011-06-02",
+      "abn_business_names": [
+        "G C B CONSTRUCTIONS"
+      ],
+      "abn_entity_name": "G C B CONSTRUCTIONS PTY LTD"
     },
     {
       "id": "eq-projects",
@@ -863,11 +873,12 @@
         }
       ],
       "research": {
-        "lastUpdated": "2026-02-17T14:53:52.760432",
+        "lastUpdated": "2026-02-17T14:54:50.397465",
         "researchedBy": "Paul Reid / MC / James Curtis",
         "dataSources": [
           "ASIC",
-          "Administrator Report"
+          "Administrator Report",
+          "ABR"
         ],
         "confidence": "high",
         "gaps": "ABN/ACN not yet populated. Developer identity unknown (TBD). No contacts.",
@@ -887,13 +898,14 @@
       "abn_status": "Cancelled",
       "abn_entity_type": "Australian Private Company",
       "abn_gst": null,
-      "abn_business_names": []
+      "abn_business_names": [],
+      "abn_entity_name": "OFFICE EQ PROJECTS PTY LIMITED"
     },
     {
       "id": "st-hilliers",
       "name": "St Hilliers",
-      "abn": "91073951176",
-      "acn": "073951176",
+      "abn": "66082729039",
+      "acn": "082729039",
       "entityType": "Australian Private Company",
       "state": "Multi-state (QLD, NSW, WA)",
       "status": "complete",
@@ -1024,12 +1036,13 @@
         }
       ],
       "research": {
-        "lastUpdated": "2026-02-17T14:53:55.013111",
+        "lastUpdated": "2026-02-17T14:54:50.397468",
         "researchedBy": "Paul Reid / MC / James Curtis",
         "dataSources": [
           "ASIC",
           "Administrator Report",
-          "Cordell"
+          "Cordell",
+          "ABR"
         ],
         "confidence": "high",
         "gaps": "ABN/ACN not yet populated. No developer/lender contacts. Opal Healthcare project value unknown.",
@@ -1061,16 +1074,17 @@
           }
         ]
       },
-      "abn_status": "Cancelled",
+      "abn_status": "Active",
       "abn_entity_type": "Australian Private Company",
-      "abn_gst": null,
-      "abn_business_names": []
+      "abn_gst": "2000-07-01",
+      "abn_business_names": [],
+      "abn_entity_name": "ST HILLIERS CONTRACTING PTY LIMITED"
     },
     {
       "id": "stevens-constructions",
       "name": "Stevens Constructions",
-      "abn": "58572630185",
-      "acn": "",
+      "abn": "65121684348",
+      "acn": "121684348",
       "entityType": "Australian Private Company",
       "state": "NSW",
       "status": "complete",
@@ -1186,11 +1200,12 @@
         }
       ],
       "research": {
-        "lastUpdated": "2026-02-17T14:53:57.688700",
+        "lastUpdated": "2026-02-17T14:54:50.397470",
         "researchedBy": "Paul Reid / MC / James Curtis",
         "dataSources": [
           "ASIC",
-          "Administrator Report (530 report)"
+          "Administrator Report (530 report)",
+          "ABR"
         ],
         "confidence": "medium",
         "gaps": "ABN/ACN not yet populated. 530 report does not provide specific insolvency date \u2014 estimate used. No developer/lender contacts. Note: Paul's Overall Summary spreadsheet has a formula error for Stevens ($3.69M instead of $10.39M for value won after insolvency).",
@@ -1207,16 +1222,17 @@
           }
         ]
       },
-      "abn_status": "Cancelled",
-      "abn_entity_type": "Individual/Sole Trader",
-      "abn_gst": null,
-      "abn_business_names": []
+      "abn_status": "Active",
+      "abn_entity_type": "Australian Private Company",
+      "abn_gst": "2006-09-13",
+      "abn_business_names": [],
+      "abn_entity_name": "STEVENS CONSTRUCTION (NSW) PTY LIMITED"
     },
     {
       "id": "project-coordination",
       "name": "Project Coordination",
-      "abn": "76100120027",
-      "acn": "100120027",
+      "abn": "85101877945",
+      "acn": "101877945",
       "entityType": "Australian Private Company",
       "state": "Multi-state (NSW, ACT)",
       "status": "complete",
@@ -1313,11 +1329,12 @@
         }
       ],
       "research": {
-        "lastUpdated": "2026-02-17T14:54:00.136516",
+        "lastUpdated": "2026-02-17T14:54:50.397472",
         "researchedBy": "Paul Reid / MC / James Curtis",
         "dataSources": [
           "ASIC",
-          "Administrator Report"
+          "Administrator Report",
+          "ABR"
         ],
         "confidence": "high",
         "gaps": "ABN/ACN not yet populated. No developer/lender contacts.",
@@ -1329,10 +1346,11 @@
           }
         ]
       },
-      "abn_status": "Active",
+      "abn_status": "Cancelled",
       "abn_entity_type": "Australian Private Company",
-      "abn_gst": "2016-04-01",
-      "abn_business_names": []
+      "abn_gst": null,
+      "abn_business_names": [],
+      "abn_entity_name": "PROJECT CO-ORDINATION (NSW) PTY LTD"
     }
   ]
 }
