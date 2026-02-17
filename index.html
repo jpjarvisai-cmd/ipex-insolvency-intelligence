@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IPEX Terminal — Construction Intelligence Platform</title>
+<title>IPEX Terminal — Builder Insolvency Intelligence</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,12 +14,9 @@
 --card-bg:#1A2332;--sidebar-bg:#0B1120;
 --red:#EF4444;--yellow:#F59E0B;--blue:#3B82F6;--orange:#F97316;
 --bg:#0B1120;--font:'Poppins',sans-serif;
---radius:12px;--shadow:0 2px 8px rgba(0,0,0,.3);
+--radius:12px;
 }
-[data-theme="light"]{
---bg:#F5F7FA;--card-bg:#FFFFFF;--sidebar-bg:#FFFFFF;
---navy:#0B1120;
-}
+[data-theme="light"]{--bg:#F5F7FA;--card-bg:#FFFFFF;--sidebar-bg:#FFFFFF}
 body{font-family:var(--font);font-weight:300;background:var(--bg);color:#fff;min-height:100vh;display:flex}
 [data-theme="light"] body{color:#1a1a2e}
 a{color:var(--green);text-decoration:none}
@@ -29,187 +26,168 @@ button{font-family:var(--font);cursor:pointer;border:none;font-size:.9rem;border
 .sidebar{width:270px;background:var(--sidebar-bg);padding:20px 16px;flex-shrink:0;display:flex;flex-direction:column;min-height:100vh;border-right:1px solid rgba(255,255,255,.08)}
 [data-theme="light"] .sidebar{border-right:1px solid #e5e7eb}
 .sidebar-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px}
-.sidebar-logo{display:flex;align-items:center}
 .sidebar-logo img{height:20px;width:auto}
 .sidebar-logo .logo-light{display:none}
 .sidebar-logo .logo-dark{display:block}
 [data-theme="light"] .sidebar-logo .logo-light{display:block}
 [data-theme="light"] .sidebar-logo .logo-dark{display:none}
-.theme-toggle{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:all .2s}
+.theme-toggle{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
 [data-theme="light"] .theme-toggle{border-color:#d1d5db}
-.theme-toggle .toggle-icon{font-size:.75rem;color:rgba(255,255,255,.5)}
-[data-theme="light"] .theme-toggle .toggle-icon{color:#6b7280}
+.toggle-icon{font-size:.75rem;color:rgba(255,255,255,.5)}
+[data-theme="light"] .toggle-icon{color:#6b7280}
 .sidebar nav{display:flex;flex-direction:column;gap:4px}
-.sidebar nav a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;color:#c0c8d4;font-size:.88rem;transition:all .2s;text-decoration:none;cursor:pointer}
+.sidebar nav a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;color:#c0c8d4;font-size:.88rem;transition:all .2s;cursor:pointer}
 [data-theme="light"] .sidebar nav a{color:#6b7280}
 .sidebar nav a:hover,.sidebar nav a.active{background:rgba(255,255,255,.08);color:#fff}
 [data-theme="light"] .sidebar nav a:hover,[data-theme="light"] .sidebar nav a.active{background:rgba(0,0,0,.05);color:#0B1120}
 .nav-icon{width:20px;text-align:center;flex-shrink:0}
-.nav-badge{margin-left:auto;background:var(--red);color:#fff;font-size:.65rem;font-weight:700;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.nav-badge.green{background:var(--green);color:#0B1120}
+.nav-badge{margin-left:auto;background:var(--red);color:#fff;font-size:.65rem;font-weight:700;min-width:20px;height:20px;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:0 6px}
 .nav-spacer{height:16px}
 .sidebar-bottom{margin-top:auto;display:flex;align-items:center;gap:10px;padding:8px 4px}
-.sidebar-bottom .avatar{width:32px;height:32px;border-radius:50%;background:#2d3e50;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.75rem;color:#c0c8d4;flex-shrink:0}
-.sidebar-bottom .user-info{flex:1}
+.sidebar-bottom .avatar{width:32px;height:32px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.75rem;color:#0B1120;flex-shrink:0}
 .sidebar-bottom .user-name{font-size:.85rem;color:#c0c8d4;display:block}
 [data-theme="light"] .sidebar-bottom .user-name{color:#374151}
 .sidebar-bottom .user-role{font-size:.7rem;color:#667}
 
 /* MAIN */
 .main{flex:1;padding:28px 36px;overflow-y:auto;background:var(--bg)}
-.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.page{display:none}.page.active{display:block}
+
+/* HEADER */
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px}
 .page-title{font-size:1.5rem;font-weight:700}
+.page-subtitle{font-size:.85rem;color:#667;margin-top:2px}
 .header-right{display:flex;align-items:center;gap:12px}
-.search-bar{background:var(--card-bg);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 14px;color:#fff;font-family:var(--font);font-size:.85rem;width:280px;outline:none;transition:border-color .2s}
+.search-bar{background:var(--card-bg);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 14px;color:#fff;font-family:var(--font);font-size:.85rem;width:300px;outline:none}
 [data-theme="light"] .search-bar{border-color:#e5e7eb;color:#374151;background:#fff}
 .search-bar:focus{border-color:var(--green)}
 .search-bar::placeholder{color:#667}
-.live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.live-label{font-size:.75rem;color:#667;display:flex;align-items:center;gap:6px}
 
-/* METRIC CARDS */
-.metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
-.metric-card{background:var(--card-bg);border-radius:var(--radius);padding:20px;border-left:4px solid transparent}
-.metric-card.red{border-left-color:var(--red)}
-.metric-card.yellow{border-left-color:var(--yellow)}
-.metric-card.green{border-left-color:var(--green)}
-.metric-card.blue{border-left-color:var(--blue)}
-.metric-label{font-size:.75rem;color:#667;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
-.metric-value{font-size:2rem;font-weight:700;margin-bottom:4px}
-.metric-sub{font-size:.8rem;color:#667}
-.metric-change{font-size:.75rem;font-weight:600;display:inline-flex;align-items:center;gap:2px}
-.metric-change.up{color:var(--red)}
-.metric-change.down{color:var(--green)}
+/* STATS ROW */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
+.stat-card{background:var(--card-bg);border-radius:var(--radius);padding:20px;border-left:4px solid transparent}
+[data-theme="light"] .stat-card{border:1px solid #e5e7eb;border-left:4px solid transparent}
+.stat-card.red{border-left-color:var(--red)}
+.stat-card.yellow{border-left-color:var(--yellow)}
+.stat-card.green{border-left-color:var(--green)}
+.stat-card.blue{border-left-color:var(--blue)}
+.stat-label{font-size:.7rem;color:#667;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.stat-value{font-size:1.8rem;font-weight:700}
+.stat-sub{font-size:.78rem;color:#667;margin-top:2px}
 
-/* ALERTS PANEL */
-.section-title{font-size:1.1rem;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.section-title .count{background:var(--red);color:#fff;font-size:.7rem;font-weight:700;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.alerts-list{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
-.alert-card{background:var(--card-bg);border-radius:var(--radius);padding:16px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;transition:all .2s;border:1px solid transparent}
-.alert-card:hover{border-color:rgba(255,255,255,.15);transform:translateX(4px)}
-[data-theme="light"] .alert-card:hover{border-color:#e5e7eb}
-.alert-severity{width:10px;height:10px;border-radius:50%;flex-shrink:0}
-.alert-severity.critical{background:var(--red);box-shadow:0 0 8px rgba(239,68,68,.5)}
-.alert-severity.high{background:var(--orange)}
-.alert-severity.medium{background:var(--yellow)}
-.alert-body{flex:1}
-.alert-title{font-size:.9rem;font-weight:600;margin-bottom:2px}
-.alert-detail{font-size:.8rem;color:#667}
-.alert-time{font-size:.7rem;color:#667;white-space:nowrap}
-.alert-tag{font-size:.65rem;padding:2px 8px;border-radius:4px;font-weight:600;white-space:nowrap}
-.alert-tag.insolvency{background:rgba(239,68,68,.15);color:var(--red)}
-.alert-tag.payment{background:rgba(245,158,11,.15);color:var(--yellow)}
-.alert-tag.risk{background:rgba(249,115,22,.15);color:var(--orange)}
+/* BUILDER LIST */
+.builder-grid{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.builder-row{background:var(--card-bg);border-radius:var(--radius);padding:18px 24px;display:flex;align-items:center;gap:20px;cursor:pointer;transition:all .2s;border:1px solid transparent}
+[data-theme="light"] .builder-row{border-color:#e5e7eb}
+.builder-row:hover{border-color:rgba(61,230,128,.3);transform:translateX(4px)}
+.builder-row.new{border-left:4px solid var(--red)}
+.builder-status{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.builder-status.admin{background:var(--red);box-shadow:0 0 8px rgba(239,68,68,.4)}
+.builder-status.research{background:var(--yellow)}
+.builder-info{flex:1;min-width:0}
+.builder-name{font-size:1rem;font-weight:600;margin-bottom:2px}
+.builder-meta{font-size:.8rem;color:#667}
+.builder-stat{text-align:center;min-width:90px}
+.builder-stat-value{font-size:1.1rem;font-weight:700}
+.builder-stat-label{font-size:.65rem;color:#667;text-transform:uppercase;letter-spacing:.5px}
+.builder-stat-value.red{color:var(--red)}
+.builder-stat-value.yellow{color:var(--yellow)}
+.builder-stat-value.green{color:var(--green)}
+.tag{font-size:.65rem;padding:3px 10px;border-radius:12px;font-weight:600;white-space:nowrap}
+.tag.new-case{background:rgba(239,68,68,.15);color:var(--red);animation:pulse-tag 2s infinite}
+.tag.complete{background:rgba(61,230,128,.12);color:var(--green)}
+.tag.in-progress{background:rgba(245,158,11,.15);color:var(--yellow)}
+@keyframes pulse-tag{0%,100%{opacity:1}50%{opacity:.6}}
 
-/* TWO COLUMN LAYOUT */
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px}
-.panel{background:var(--card-bg);border-radius:var(--radius);padding:20px 24px}
-.panel-title{font-size:.95rem;font-weight:600;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between}
-.panel-title .badge{font-size:.7rem;padding:3px 10px;border-radius:12px;font-weight:600}
+/* DETAIL PAGE */
+.back-btn{background:rgba(255,255,255,.08);color:#c0c8d4;border:1px solid rgba(255,255,255,.1);padding:8px 16px;border-radius:8px;font-size:.85rem;cursor:pointer;margin-bottom:20px;display:inline-flex;align-items:center;gap:6px}
+[data-theme="light"] .back-btn{background:#f3f4f6;color:#374151;border-color:#e5e7eb}
+.back-btn:hover{border-color:rgba(255,255,255,.25);color:#fff;transform:none;box-shadow:none}
+[data-theme="light"] .back-btn:hover{color:#0B1120;border-color:#d1d5db}
 
-/* RISK TABLE */
-.risk-table{width:100%;border-collapse:collapse}
-.risk-table th{text-align:left;font-size:.7rem;color:#667;text-transform:uppercase;letter-spacing:.5px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-[data-theme="light"] .risk-table th{border-bottom-color:#e5e7eb}
-.risk-table td{padding:10px 0;font-size:.85rem;border-bottom:1px solid rgba(255,255,255,.04)}
-[data-theme="light"] .risk-table td{border-bottom-color:#f3f4f6}
-.risk-score{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;font-weight:700;font-size:.8rem}
-.risk-score.critical{background:rgba(239,68,68,.15);color:var(--red)}
-.risk-score.high{background:rgba(249,115,22,.15);color:var(--orange)}
-.risk-score.medium{background:rgba(245,158,11,.15);color:var(--yellow)}
-.risk-score.low{background:rgba(61,230,128,.15);color:var(--green)}
-.company-name{font-weight:500}
-.company-abn{font-size:.7rem;color:#667;display:block}
-.status-pill{font-size:.7rem;padding:3px 10px;border-radius:12px;font-weight:600}
-.status-pill.admin{background:rgba(239,68,68,.15);color:var(--red)}
-.status-pill.watch{background:rgba(245,158,11,.15);color:var(--yellow)}
-.status-pill.active{background:rgba(61,230,128,.15);color:var(--green)}
+.detail-header{background:var(--card-bg);border-radius:var(--radius);padding:28px 32px;margin-bottom:24px;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}
+[data-theme="light"] .detail-header{border:1px solid #e5e7eb}
+.detail-title{font-size:1.4rem;font-weight:700;margin-bottom:4px}
+.detail-meta{font-size:.85rem;color:#667}
+
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px}
+.info-card{background:var(--card-bg);border-radius:10px;padding:16px 20px}
+[data-theme="light"] .info-card{border:1px solid #e5e7eb}
+.info-label{font-size:.7rem;color:#667;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.info-value{font-size:1rem;font-weight:600}
+
+/* KEY FINDINGS */
+.findings-banner{background:linear-gradient(135deg,rgba(239,68,68,.08),rgba(245,158,11,.08));border:1px solid rgba(239,68,68,.2);border-radius:var(--radius);padding:24px 28px;margin-bottom:24px}
+[data-theme="light"] .findings-banner{background:linear-gradient(135deg,#fef2f2,#fffbeb)}
+.findings-title{font-size:1rem;font-weight:700;margin-bottom:12px;color:var(--red)}
+.findings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.finding-item{text-align:center}
+.finding-value{font-size:1.6rem;font-weight:700;color:var(--red)}
+.finding-label{font-size:.75rem;color:#667;margin-top:2px}
+
+/* PROJECTS TABLE */
+.section-title{font-size:1.05rem;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.projects-table{width:100%;border-collapse:collapse;margin-bottom:28px}
+.projects-table th{text-align:left;font-size:.7rem;color:#667;text-transform:uppercase;letter-spacing:.5px;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.08);white-space:nowrap}
+[data-theme="light"] .projects-table th{border-bottom-color:#e5e7eb}
+.projects-table td{padding:12px;font-size:.85rem;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top}
+[data-theme="light"] .projects-table td{border-bottom-color:#f3f4f6}
+.projects-table tr:hover{background:rgba(255,255,255,.03)}
+[data-theme="light"] .projects-table tr:hover{background:#f9fafb}
+.project-name{font-weight:500;margin-bottom:2px}
+.project-addr{font-size:.75rem;color:#667}
+.won-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-size:.7rem}
+.won-badge.yes{background:rgba(239,68,68,.15);color:var(--red)}
+.won-badge.no{color:#334155}
 
 /* TIMELINE */
-.timeline{position:relative;padding-left:20px}
-.timeline::before{content:'';position:absolute;left:5px;top:0;bottom:0;width:2px;background:rgba(255,255,255,.08)}
+.timeline-section{background:var(--card-bg);border-radius:var(--radius);padding:24px 28px;margin-bottom:24px}
+[data-theme="light"] .timeline-section{border:1px solid #e5e7eb}
+.timeline{position:relative;padding-left:24px}
+.timeline::before{content:'';position:absolute;left:6px;top:4px;bottom:4px;width:2px;background:rgba(255,255,255,.08)}
 [data-theme="light"] .timeline::before{background:#e5e7eb}
-.timeline-item{position:relative;padding:0 0 20px 16px;font-size:.85rem}
-.timeline-item:last-child{padding-bottom:0}
-.timeline-item::before{content:'';position:absolute;left:-18px;top:4px;width:10px;height:10px;border-radius:50%;border:2px solid var(--green);background:var(--bg)}
-.timeline-item.critical::before{border-color:var(--red);background:var(--red)}
-.timeline-item.warning::before{border-color:var(--yellow)}
-.timeline-date{font-size:.7rem;color:#667;margin-bottom:2px}
-.timeline-text{color:#c0c8d4}
-[data-theme="light"] .timeline-text{color:#374151}
-.timeline-text strong{color:#fff;font-weight:600}
-[data-theme="light"] .timeline-text strong{color:#0B1120}
+.tl-item{position:relative;padding:0 0 20px 20px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:'';position:absolute;left:-21px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--card-bg);border:2px solid var(--green)}
+.tl-item.red::before{border-color:var(--red);background:var(--red)}
+.tl-item.yellow::before{border-color:var(--yellow)}
+.tl-date{font-size:.7rem;color:#667}
+.tl-text{font-size:.85rem;color:#c0c8d4;margin-top:2px}
+[data-theme="light"] .tl-text{color:#374151}
+.tl-text strong{color:#fff;font-weight:600}
+[data-theme="light"] .tl-text strong{color:#0B1120}
 
-/* ENTITY DETAIL MODAL */
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;z-index:100;opacity:0;pointer-events:none;transition:opacity .3s}
-.overlay.open{opacity:1;pointer-events:all}
-.modal{background:var(--card-bg);border-radius:16px;width:740px;max-width:95vw;max-height:90vh;overflow-y:auto;transform:scale(.95);transition:transform .3s;box-shadow:0 20px 60px rgba(0,0,0,.4)}
-[data-theme="light"] .modal{background:#fff}
-.overlay.open .modal{transform:scale(1)}
-.modal-header{padding:24px 28px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between}
-[data-theme="light"] .modal-header{border-bottom-color:#e5e7eb}
-.modal-header h2{font-size:1.2rem;font-weight:700}
-.modal-close{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:#667;border:none;transition:all .2s}
-.modal-close:hover{background:rgba(255,255,255,.15);color:#fff}
-.modal-body{padding:24px 28px}
-.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
-.detail-item{background:rgba(255,255,255,.04);border-radius:8px;padding:14px 16px}
-[data-theme="light"] .detail-item{background:#f9fafb;border:1px solid #e5e7eb}
-.detail-label{font-size:.7rem;color:#667;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
-.detail-value{font-size:1rem;font-weight:600}
+/* CTA */
+.cta-section{background:linear-gradient(135deg,#0B1120,#1A2332);border:1px solid rgba(61,230,128,.2);border-radius:var(--radius);padding:32px;text-align:center;margin-bottom:24px}
+[data-theme="light"] .cta-section{background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border-color:rgba(61,230,128,.3)}
+.cta-title{font-size:1.2rem;font-weight:700;margin-bottom:8px}
+.cta-text{font-size:.9rem;color:#667;margin-bottom:16px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6}
+.cta-btn{background:var(--green);color:#0B1120;font-weight:700;padding:12px 28px;border-radius:8px;font-size:.95rem;display:inline-block}
+.cta-btn:hover{background:var(--green-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(61,230,128,.3)}
 
-/* HEATMAP */
-.heatmap-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;margin-bottom:8px}
-.heatmap-cell{aspect-ratio:1;border-radius:4px;position:relative;cursor:pointer;transition:transform .15s}
-.heatmap-cell:hover{transform:scale(1.3);z-index:2}
-.heatmap-cell.g1{background:rgba(61,230,128,.15)}
-.heatmap-cell.g2{background:rgba(61,230,128,.35)}
-.heatmap-cell.g3{background:rgba(61,230,128,.6)}
-.heatmap-cell.y1{background:rgba(245,158,11,.2)}
-.heatmap-cell.y2{background:rgba(245,158,11,.45)}
-.heatmap-cell.r1{background:rgba(239,68,68,.25)}
-.heatmap-cell.r2{background:rgba(239,68,68,.5)}
-.heatmap-cell.r3{background:rgba(239,68,68,.8)}
-.heatmap-legend{display:flex;align-items:center;gap:6px;font-size:.7rem;color:#667;justify-content:center}
-.heatmap-legend span{width:12px;height:12px;border-radius:2px}
-
-/* INDUSTRY STATS */
-.stat-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04)}
-[data-theme="light"] .stat-row{border-bottom-color:#f3f4f6}
-.stat-row:last-child{border:none}
-.stat-label{font-size:.85rem;color:#c0c8d4}
-[data-theme="light"] .stat-label{color:#6b7280}
-.stat-value{font-size:.85rem;font-weight:600}
-
-/* EXPOSURE BAR */
-.exposure-bar{display:flex;height:24px;border-radius:6px;overflow:hidden;margin:8px 0}
-.exposure-segment{transition:width .6s}
-.exposure-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
-.exposure-legend-item{display:flex;align-items:center;gap:4px;font-size:.75rem;color:#667}
-.exposure-legend-item span{width:10px;height:10px;border-radius:2px}
-
-/* CHARTS (simple CSS bars) */
-.bar-chart{display:flex;align-items:flex-end;gap:8px;height:120px;padding:8px 0}
-.bar-col{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1}
-.bar{width:100%;border-radius:4px 4px 0 0;transition:height .6s;min-height:2px}
-.bar.green{background:var(--green)}
-.bar.red{background:var(--red)}
-.bar.yellow{background:var(--yellow)}
-.bar-label{font-size:.6rem;color:#667;text-align:center;white-space:nowrap}
+/* ARTICLE SECTION */
+.article-section{background:var(--card-bg);border-radius:var(--radius);padding:28px 32px;margin-bottom:24px}
+[data-theme="light"] .article-section{border:1px solid #e5e7eb}
+.article-section h3{font-size:1rem;font-weight:700;margin-bottom:16px}
+.article-section p{font-size:.88rem;color:#c0c8d4;line-height:1.7;margin-bottom:14px}
+[data-theme="light"] .article-section p{color:#4b5563}
+.article-section .highlight{color:var(--red);font-weight:600}
+.article-section .ipex-highlight{color:var(--green);font-weight:600}
 
 /* RESPONSIVE */
 @media(max-width:900px){
   .sidebar{display:none}
-  .metrics-row{grid-template-columns:repeat(2,1fr)}
-  .two-col{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .findings-grid{grid-template-columns:1fr}
+  .builder-row{flex-wrap:wrap}
+  .projects-table{font-size:.75rem}
 }
 </style>
 </head>
 <body>
 
 <!-- SIDEBAR -->
-<div class="sidebar" id="sidebar">
+<div class="sidebar">
   <div class="sidebar-top">
     <div class="sidebar-logo">
       <img src="ipex-logo-dark.svg" alt="IPEX" class="logo-dark">
@@ -218,443 +196,681 @@ button{font-family:var(--font);cursor:pointer;border:none;font-size:.9rem;border
     <button class="theme-toggle" onclick="toggleTheme()"><span class="toggle-icon">☀</span></button>
   </div>
   <nav>
-    <a class="active" onclick="showPage('dashboard')"><span class="nav-icon">📊</span> Dashboard <span class="nav-badge">3</span></a>
-    <a onclick="showPage('watchlist')"><span class="nav-icon">👁</span> Watchlist</a>
-    <a onclick="showPage('entities')"><span class="nav-icon">🏢</span> Entities</a>
-    <a onclick="showPage('payments')"><span class="nav-icon">💳</span> Payment Intel</a>
-    <a onclick="showPage('verify')"><span class="nav-icon">✓</span> QS Verify</a>
+    <a class="active" id="nav-dashboard" onclick="showDashboard()"><span class="nav-icon">📊</span> Dashboard <span class="nav-badge">8</span></a>
+    <a id="nav-article" onclick="showArticle()"><span class="nav-icon">📝</span> The Problem</a>
     <div class="nav-spacer"></div>
-    <a onclick="showPage('reports')"><span class="nav-icon">📋</span> Reports</a>
-    <a onclick="showPage('settings')"><span class="nav-icon">⚙</span> Settings</a>
+    <a><span class="nav-icon">⚙</span> Settings</a>
   </nav>
   <div class="sidebar-bottom">
-    <div class="avatar">JD</div>
-    <div class="user-info">
-      <span class="user-name">Jane Davidson</span>
-      <span class="user-role">Risk Analyst • ABC Developer</span>
-    </div>
-  </div>
-</div>
-
-<!-- MAIN CONTENT -->
-<div class="main">
-  <!-- HEADER -->
-  <div class="page-header">
+    <div class="avatar">PR</div>
     <div>
-      <div class="page-title">IPEX Terminal</div>
-      <div class="live-label"><span class="live-dot"></span> Live monitoring • 14,832 entities tracked</div>
-    </div>
-    <div class="header-right">
-      <input type="text" class="search-bar" placeholder="Search entity, ABN, or project..." id="searchBar">
-      <div style="font-size:.75rem;color:#667;text-align:right">
-        <div style="font-weight:600;color:#c0c8d4">Feb 17, 2026</div>
-        <div>2:30 PM AEDT</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- METRIC CARDS -->
-  <div class="metrics-row">
-    <div class="metric-card red">
-      <div class="metric-label">Active Insolvencies</div>
-      <div class="metric-value">23</div>
-      <div class="metric-sub">This month <span class="metric-change up">↑ 4 from Jan</span></div>
-    </div>
-    <div class="metric-card yellow">
-      <div class="metric-label">Watchlist Entities</div>
-      <div class="metric-value">147</div>
-      <div class="metric-sub">Elevated risk <span class="metric-change up">↑ 12 this week</span></div>
-    </div>
-    <div class="metric-card blue">
-      <div class="metric-label">Payment Anomalies</div>
-      <div class="metric-value">38</div>
-      <div class="metric-sub">Last 30 days <span class="metric-change down">↓ 6 from Jan</span></div>
-    </div>
-    <div class="metric-card green">
-      <div class="metric-label">Your Exposure</div>
-      <div class="metric-value">$4.2M</div>
-      <div class="metric-sub">Across 12 active projects</div>
-    </div>
-  </div>
-
-  <!-- ALERTS -->
-  <div class="section-title">🚨 Priority Alerts <span class="count">3</span></div>
-  <div class="alerts-list">
-    <div class="alert-card" onclick="showNovatiDetail()">
-      <div class="alert-severity critical"></div>
-      <div class="alert-body">
-        <div class="alert-title">Novati Constructions — Voluntary Administration</div>
-        <div class="alert-detail">Founded 1971 • ABN 52 000 785 021 • Worrells appointed as administrators. First creditors' meeting 18 Feb. 3 active projects affected, $2.1M in outstanding claims.</div>
-      </div>
-      <span class="alert-tag insolvency">INSOLVENCY</span>
-      <div class="alert-time">2 days ago</div>
-    </div>
-    <div class="alert-card">
-      <div class="alert-severity high"></div>
-      <div class="alert-body">
-        <div class="alert-title">Summit Building Group — Payment Delays Escalating</div>
-        <div class="alert-detail">ABN 61 145 892 337 • Average payment days increased from 34 to 67 over 90 days. 4 subcontractor complaints logged. Risk score elevated to 78/100.</div>
-      </div>
-      <span class="alert-tag payment">PAYMENT</span>
-      <div class="alert-time">5 hrs ago</div>
-    </div>
-    <div class="alert-card">
-      <div class="alert-severity medium"></div>
-      <div class="alert-body">
-        <div class="alert-title">Greenfield Developments — Director Change + ASIC Filing</div>
-        <div class="alert-detail">ABN 44 218 903 556 • New director appointed, 2 resigned. PPSR filings increased 300% in 60 days. Monitoring escalated.</div>
-      </div>
-      <span class="alert-tag risk">RISK SIGNAL</span>
-      <div class="alert-time">1 day ago</div>
-    </div>
-  </div>
-
-  <!-- TWO COLUMN -->
-  <div class="two-col">
-    <!-- RISK TABLE -->
-    <div class="panel">
-      <div class="panel-title">
-        Highest Risk Entities
-        <span class="badge" style="background:rgba(239,68,68,.15);color:var(--red)">Top 8</span>
-      </div>
-      <table class="risk-table">
-        <thead>
-          <tr><th>Entity</th><th>Status</th><th>Risk</th><th>Exposure</th></tr>
-        </thead>
-        <tbody>
-          <tr onclick="showNovatiDetail()" style="cursor:pointer">
-            <td><span class="company-name">Novati Constructions</span><span class="company-abn">ABN 52 000 785 021</span></td>
-            <td><span class="status-pill admin">ADMIN</span></td>
-            <td><span class="risk-score critical">97</span></td>
-            <td style="font-weight:600">$2.1M</td>
-          </tr>
-          <tr>
-            <td><span class="company-name">Summit Building Group</span><span class="company-abn">ABN 61 145 892 337</span></td>
-            <td><span class="status-pill watch">WATCH</span></td>
-            <td><span class="risk-score high">78</span></td>
-            <td style="font-weight:600">$890K</td>
-          </tr>
-          <tr>
-            <td><span class="company-name">Greenfield Developments</span><span class="company-abn">ABN 44 218 903 556</span></td>
-            <td><span class="status-pill watch">WATCH</span></td>
-            <td><span class="risk-score high">72</span></td>
-            <td style="font-weight:600">$1.4M</td>
-          </tr>
-          <tr>
-            <td><span class="company-name">Pacific Interiors</span><span class="company-abn">ABN 33 601 445 218</span></td>
-            <td><span class="status-pill watch">WATCH</span></td>
-            <td><span class="risk-score medium">64</span></td>
-            <td style="font-weight:600">$520K</td>
-          </tr>
-          <tr>
-            <td><span class="company-name">CrestView Builders</span><span class="company-abn">ABN 87 290 113 667</span></td>
-            <td><span class="status-pill watch">WATCH</span></td>
-            <td><span class="risk-score medium">58</span></td>
-            <td style="font-weight:600">$340K</td>
-          </tr>
-          <tr>
-            <td><span class="company-name">Albion Civil Works</span><span class="company-abn">ABN 19 778 234 501</span></td>
-            <td><span class="status-pill active">ACTIVE</span></td>
-            <td><span class="risk-score low">31</span></td>
-            <td style="font-weight:600">$1.8M</td>
-          </tr>
-          <tr>
-            <td><span class="company-name">Hargraves Construction</span><span class="company-abn">ABN 56 412 990 881</span></td>
-            <td><span class="status-pill active">ACTIVE</span></td>
-            <td><span class="risk-score low">24</span></td>
-            <td style="font-weight:600">$2.3M</td>
-          </tr>
-          <tr>
-            <td><span class="company-name">Meridian Projects</span><span class="company-abn">ABN 70 553 219 840</span></td>
-            <td><span class="status-pill active">ACTIVE</span></td>
-            <td><span class="risk-score low">18</span></td>
-            <td style="font-weight:600">$950K</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- INDUSTRY OVERVIEW -->
-    <div class="panel">
-      <div class="panel-title">
-        Industry Pulse
-        <span class="badge" style="background:rgba(61,230,128,.12);color:var(--green)">FY 2025-26</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">Construction insolvencies (FY25)</span>
-        <span class="stat-value" style="color:var(--red)">1,567</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">Insolvencies FY24</span>
-        <span class="stat-value">3,596</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">FY26 YTD (Jul–Feb)</span>
-        <span class="stat-value" style="color:var(--yellow)">1,142</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">Avg days to payment (industry)</span>
-        <span class="stat-value">47 days</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">IPEX-monitored entities</span>
-        <span class="stat-value" style="color:var(--green)">14,832</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">Active payment streams</span>
-        <span class="stat-value" style="color:var(--green)">$8.4B</span>
-      </div>
-
-      <div style="margin-top:20px">
-        <div style="font-size:.8rem;font-weight:600;margin-bottom:8px">Monthly Insolvencies (FY26)</div>
-        <div class="bar-chart">
-          <div class="bar-col"><div class="bar red" style="height:60%"></div><div class="bar-label">Jul</div></div>
-          <div class="bar-col"><div class="bar red" style="height:52%"></div><div class="bar-label">Aug</div></div>
-          <div class="bar-col"><div class="bar red" style="height:70%"></div><div class="bar-label">Sep</div></div>
-          <div class="bar-col"><div class="bar red" style="height:58%"></div><div class="bar-label">Oct</div></div>
-          <div class="bar-col"><div class="bar red" style="height:65%"></div><div class="bar-label">Nov</div></div>
-          <div class="bar-col"><div class="bar red" style="height:48%"></div><div class="bar-label">Dec</div></div>
-          <div class="bar-col"><div class="bar red" style="height:75%"></div><div class="bar-label">Jan</div></div>
-          <div class="bar-col"><div class="bar yellow" style="height:85%"></div><div class="bar-label">Feb</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECOND ROW -->
-  <div class="two-col">
-    <!-- RISK HEATMAP -->
-    <div class="panel">
-      <div class="panel-title">Risk Heatmap — Your Portfolio</div>
-      <div style="font-size:.75rem;color:#667;margin-bottom:12px">Each cell = 1 entity on your active projects</div>
-      <div class="heatmap-grid">
-        <div class="heatmap-cell g1"></div><div class="heatmap-cell g2"></div><div class="heatmap-cell g1"></div>
-        <div class="heatmap-cell g1"></div><div class="heatmap-cell g3"></div><div class="heatmap-cell g1"></div>
-        <div class="heatmap-cell g2"></div><div class="heatmap-cell y1"></div><div class="heatmap-cell g1"></div>
-        <div class="heatmap-cell g1"></div><div class="heatmap-cell g2"></div><div class="heatmap-cell g1"></div>
-        <div class="heatmap-cell g1"></div><div class="heatmap-cell g1"></div><div class="heatmap-cell y2"></div>
-        <div class="heatmap-cell g2"></div><div class="heatmap-cell g1"></div><div class="heatmap-cell g1"></div>
-        <div class="heatmap-cell y1"></div><div class="heatmap-cell g1"></div><div class="heatmap-cell g3"></div>
-        <div class="heatmap-cell g1"></div><div class="heatmap-cell r1"></div><div class="heatmap-cell g1"></div>
-        <div class="heatmap-cell g2"></div><div class="heatmap-cell g1"></div><div class="heatmap-cell g1"></div>
-        <div class="heatmap-cell g1"></div><div class="heatmap-cell g1"></div><div class="heatmap-cell y1"></div>
-        <div class="heatmap-cell g1"></div><div class="heatmap-cell r3" title="Novati Constructions — Critical"></div><div class="heatmap-cell g1"></div>
-        <div class="heatmap-cell g2"></div><div class="heatmap-cell g1"></div><div class="heatmap-cell r1"></div>
-      </div>
-      <div class="heatmap-legend">
-        <span style="background:rgba(61,230,128,.15)"></span> Low
-        <span style="background:rgba(61,230,128,.6)"></span> Normal
-        <span style="background:rgba(245,158,11,.45)"></span> Elevated
-        <span style="background:rgba(239,68,68,.5)"></span> High
-        <span style="background:rgba(239,68,68,.8)"></span> Critical
-      </div>
-    </div>
-
-    <!-- EXPOSURE BREAKDOWN -->
-    <div class="panel">
-      <div class="panel-title">Exposure by Risk Tier</div>
-      <div class="exposure-bar">
-        <div class="exposure-segment" style="width:8%;background:var(--red)" title="Critical: $2.1M"></div>
-        <div class="exposure-segment" style="width:15%;background:var(--orange)" title="High: $2.3M"></div>
-        <div class="exposure-segment" style="width:22%;background:var(--yellow)" title="Elevated: $3.8M"></div>
-        <div class="exposure-segment" style="width:55%;background:var(--green)" title="Normal: $9.1M"></div>
-      </div>
-      <div class="exposure-legend">
-        <div class="exposure-legend-item"><span style="background:var(--red)"></span> Critical $2.1M (8%)</div>
-        <div class="exposure-legend-item"><span style="background:var(--orange)"></span> High $2.3M (15%)</div>
-        <div class="exposure-legend-item"><span style="background:var(--yellow)"></span> Elevated $3.8M (22%)</div>
-        <div class="exposure-legend-item"><span style="background:var(--green)"></span> Normal $9.1M (55%)</div>
-      </div>
-
-      <div style="margin-top:24px">
-        <div style="font-size:.8rem;font-weight:600;margin-bottom:12px">Recent Payment Intelligence</div>
-        <div class="timeline">
-          <div class="timeline-item critical">
-            <div class="timeline-date">Feb 15, 2026</div>
-            <div class="timeline-text"><strong>Novati Constructions</strong> — All payments frozen. Worrells appointed. Subcontractor claims portal opening.</div>
-          </div>
-          <div class="timeline-item warning">
-            <div class="timeline-date">Feb 14, 2026</div>
-            <div class="timeline-text"><strong>Summit Building</strong> — Invoice #4421 overdue 33 days ($127K). Third consecutive late payment.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">Feb 13, 2026</div>
-            <div class="timeline-text"><strong>Hargraves Construction</strong> — All Q4 invoices settled. Payment health: excellent.</div>
-          </div>
-          <div class="timeline-item warning">
-            <div class="timeline-date">Feb 12, 2026</div>
-            <div class="timeline-text"><strong>Greenfield Dev</strong> — PPSR registrations detected: 3 new security interests filed in 7 days.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">Feb 10, 2026</div>
-            <div class="timeline-text"><strong>Meridian Projects</strong> — Progress claim #8 certified and paid within 14 days. On track.</div>
-          </div>
-        </div>
-      </div>
+      <span class="user-name">Paul Reid</span>
+      <span class="user-role">CEO • IPEX</span>
     </div>
   </div>
 </div>
 
-<!-- NOVATI DETAIL MODAL -->
-<div class="overlay" id="overlay" onclick="if(event.target===this)closeModal()">
-  <div class="modal" id="modal">
-    <div class="modal-header">
+<!-- MAIN -->
+<div class="main">
+
+  <!-- ========== DASHBOARD PAGE ========== -->
+  <div class="page active" id="page-dashboard">
+    <div class="page-header">
       <div>
-        <h2>Novati Constructions Pty Ltd</h2>
-        <div style="font-size:.8rem;color:#667;margin-top:2px">ABN 52 000 785 021 • Sydney, NSW • Founded 1971</div>
+        <div class="page-title">Builder Insolvency Intelligence</div>
+        <div class="page-subtitle">Track builders entering administration, their insolvent trading periods, and the projects won during financial distress</div>
       </div>
-      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="header-right">
+        <input type="text" class="search-bar" placeholder="Search builder name..." id="searchBar" oninput="filterBuilders()">
+      </div>
     </div>
-    <div class="modal-body">
-      <!-- Status Banner -->
-      <div style="background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:10px;padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;gap:12px">
-        <span style="font-size:1.5rem">🔴</span>
-        <div>
-          <div style="font-weight:700;color:var(--red);font-size:.95rem">VOLUNTARY ADMINISTRATION</div>
-          <div style="font-size:.8rem;color:#667">Worrells appointed 13 Feb 2026 • First creditors' meeting: 18 Feb 2026</div>
+
+    <!-- AGGREGATE STATS -->
+    <div class="stats-row">
+      <div class="stat-card red">
+        <div class="stat-label">Builders Analysed</div>
+        <div class="stat-value">8</div>
+        <div class="stat-sub">Including Novati (latest)</div>
+      </div>
+      <div class="stat-card yellow">
+        <div class="stat-label">Avg Insolvent Trading</div>
+        <div class="stat-value">214 days</div>
+        <div class="stat-sub">~7 months before administration</div>
+      </div>
+      <div class="stat-card blue">
+        <div class="stat-label">Projects Won While Insolvent</div>
+        <div class="stat-value">20</div>
+        <div class="stat-sub">During confirmed insolvent trading</div>
+      </div>
+      <div class="stat-card green">
+        <div class="stat-label">Value at Risk</div>
+        <div class="stat-value">$389M</div>
+        <div class="stat-sub">Won during insolvent trading period</div>
+      </div>
+    </div>
+
+    <!-- BUILDER LIST -->
+    <div class="section-title">🔍 Builder Case Files</div>
+    <div class="builder-grid" id="builderList">
+
+      <!-- NOVATI — NEW -->
+      <div class="builder-row new" onclick="showDetail('novati')">
+        <div class="builder-status admin"></div>
+        <div class="builder-info">
+          <div class="builder-name">Novati Constructions Pty Ltd</div>
+          <div class="builder-meta">Sydney, NSW • ABN 52 000 785 021 • Founded 1971 — Worrells appointed 13 Feb 2026</div>
         </div>
-        <div style="margin-left:auto"><span class="risk-score critical" style="width:48px;height:48px;font-size:1.1rem">97</span></div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">NEW</div>
+          <div class="builder-stat-label">Case Status</div>
+        </div>
+        <div class="builder-stat">
+          <div class="builder-stat-value">TBC</div>
+          <div class="builder-stat-label">Insolvent Period</div>
+        </div>
+        <div class="builder-stat">
+          <div class="builder-stat-value">TBC</div>
+          <div class="builder-stat-label">Projects at Risk</div>
+        </div>
+        <span class="tag new-case">🔴 NEW CASE</span>
       </div>
 
-      <!-- Detail Grid -->
-      <div class="detail-grid">
-        <div class="detail-item">
-          <div class="detail-label">Directors</div>
-          <div class="detail-value" style="font-size:.9rem">Luisa Novati, Marco Novati</div>
+      <!-- LANSKEY -->
+      <div class="builder-row" onclick="showDetail('lanskey')">
+        <div class="builder-status admin"></div>
+        <div class="builder-info">
+          <div class="builder-name">Lanskey Constructions</div>
+          <div class="builder-meta">Multi-state • Administration: 12 Dec 2022 • Est. insolvent from: Dec 2021</div>
         </div>
-        <div class="detail-item">
-          <div class="detail-label">Administrator</div>
-          <div class="detail-value" style="font-size:.9rem">Worrells</div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">376 days</div>
+          <div class="builder-stat-label">Insolvent Period</div>
         </div>
-        <div class="detail-item">
-          <div class="detail-label">Your Exposure</div>
-          <div class="detail-value" style="color:var(--red)">$2,147,830</div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">7</div>
+          <div class="builder-stat-label">Projects Won Insolvent</div>
         </div>
-        <div class="detail-item">
-          <div class="detail-label">Active Projects</div>
-          <div class="detail-value">3 projects affected</div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">$87.0M</div>
+          <div class="builder-stat-label">Value at Risk</div>
         </div>
-        <div class="detail-item">
-          <div class="detail-label">Last Payment Received</div>
-          <div class="detail-value" style="font-size:.9rem">23 Jan 2026 — $184,200</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">Outstanding Claims</div>
-          <div class="detail-value" style="color:var(--yellow)">$2,147,830</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">Payment Trend (90d)</div>
-          <div class="detail-value" style="color:var(--red);font-size:.9rem">↓ Deteriorating — avg 58 days</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">IPEX Risk Score History</div>
-          <div class="detail-value" style="font-size:.9rem">42 → 61 → 78 → <span style="color:var(--red)">97</span></div>
-        </div>
+        <span class="tag complete">COMPLETE</span>
       </div>
 
-      <!-- Risk Timeline -->
-      <div style="font-size:.9rem;font-weight:600;margin-bottom:12px">📈 Risk Escalation Timeline</div>
-      <div style="font-size:.8rem;color:#667;margin-bottom:12px">IPEX detected warning signals 47 days before administration</div>
-      <div class="timeline" style="margin-bottom:24px">
-        <div class="timeline-item critical">
-          <div class="timeline-date">Feb 13, 2026 — Risk Score: 97</div>
-          <div class="timeline-text"><strong>Voluntary administration.</strong> Worrells appointed. All payments frozen.</div>
+      <!-- LLOYD GROUP -->
+      <div class="builder-row" onclick="showDetail('lloyd')">
+        <div class="builder-status admin"></div>
+        <div class="builder-info">
+          <div class="builder-name">Lloyd Group</div>
+          <div class="builder-meta">VIC / NSW / QLD • Administration: 31 Mar 2023 • Est. insolvent from: Sep 2022</div>
         </div>
-        <div class="timeline-item critical">
-          <div class="timeline-date">Feb 10, 2026 — Risk Score: 89</div>
-          <div class="timeline-text"><strong>ASIC filing detected.</strong> Application for administration lodged. IPEX alert issued to all connected parties.</div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">210 days</div>
+          <div class="builder-stat-label">Insolvent Period</div>
         </div>
-        <div class="timeline-item warning">
-          <div class="timeline-date">Jan 28, 2026 — Risk Score: 78</div>
-          <div class="timeline-text"><strong>Payment pattern anomaly.</strong> 3 subcontractor invoices >45 days overdue. PPSR: 2 new security interests filed.</div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">8</div>
+          <div class="builder-stat-label">Projects Won Insolvent</div>
         </div>
-        <div class="timeline-item warning">
-          <div class="timeline-date">Jan 15, 2026 — Risk Score: 61</div>
-          <div class="timeline-text"><strong>Director changes flagged.</strong> Company secretary resigned. Credit enquiry volume increased 4x.</div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">$63.0M</div>
+          <div class="builder-stat-label">Value at Risk</div>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-date">Dec 28, 2025 — Risk Score: 42</div>
-          <div class="timeline-text"><strong>⚡ First IPEX early warning.</strong> Payment days trending up (28→41 days). Added to elevated watchlist.</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">Nov 2025 — Risk Score: 24</div>
-          <div class="timeline-text">Normal operations. Payments on time. No anomalies detected.</div>
-        </div>
+        <span class="tag complete">COMPLETE</span>
       </div>
 
-      <!-- Affected Projects -->
-      <div style="font-size:.9rem;font-weight:600;margin-bottom:12px">🏗️ Affected Projects</div>
-      <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px">
-        <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between">
-          <div>
-            <div style="font-weight:500;font-size:.9rem">Harbour View Apartments — Cronulla</div>
-            <div style="font-size:.75rem;color:#667">Contract value: $4.2M • 67% complete</div>
-          </div>
-          <div style="font-weight:600;color:var(--red);font-size:.9rem">$1,260,000</div>
+      <!-- GCB -->
+      <div class="builder-row" onclick="showDetail('gcb')">
+        <div class="builder-status admin"></div>
+        <div class="builder-info">
+          <div class="builder-name">GCB Constructions</div>
+          <div class="builder-meta">QLD • Administration: 26 Jul 2023 • Est. insolvent from: Jan 2023</div>
         </div>
-        <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between">
-          <div>
-            <div style="font-weight:500;font-size:.9rem">Kurnell Distribution Centre</div>
-            <div style="font-size:.75rem;color:#667">Contract value: $2.8M • 45% complete</div>
-          </div>
-          <div style="font-weight:600;color:var(--red);font-size:.9rem">$630,830</div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">205 days</div>
+          <div class="builder-stat-label">Insolvent Period</div>
         </div>
-        <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between">
-          <div>
-            <div style="font-weight:500;font-size:.9rem">Manly Commercial Fit-out</div>
-            <div style="font-size:.75rem;color:#667">Contract value: $890K • 82% complete</div>
-          </div>
-          <div style="font-weight:600;color:var(--yellow);font-size:.9rem">$257,000</div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">1</div>
+          <div class="builder-stat-label">Projects Won Insolvent</div>
         </div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">$193M</div>
+          <div class="builder-stat-label">Value at Risk</div>
+        </div>
+        <span class="tag complete">COMPLETE</span>
       </div>
 
-      <!-- Actions -->
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <button style="background:var(--green);color:#0B1120;font-weight:600;padding:10px 20px;border-radius:8px">📄 Generate Risk Report</button>
-        <button style="background:rgba(255,255,255,.08);color:#fff;padding:10px 20px;border-radius:8px;border:1px solid rgba(255,255,255,.15)">📧 Alert Stakeholders</button>
-        <button style="background:rgba(255,255,255,.08);color:#fff;padding:10px 20px;border-radius:8px;border:1px solid rgba(255,255,255,.15)">📋 Lodge Claim</button>
-        <button style="background:rgba(255,255,255,.08);color:#fff;padding:10px 20px;border-radius:8px;border:1px solid rgba(255,255,255,.15)">🔗 ASIC Filing</button>
+      <!-- EQ PROJECTS -->
+      <div class="builder-row" onclick="showDetail('eq')">
+        <div class="builder-status admin"></div>
+        <div class="builder-info">
+          <div class="builder-name">EQ Projects</div>
+          <div class="builder-meta">NSW • Administration: 3 Feb 2023 • Est. insolvent from: Dec 2021</div>
+        </div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">422 days</div>
+          <div class="builder-stat-label">Insolvent Period</div>
+        </div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">1</div>
+          <div class="builder-stat-label">Projects Won Insolvent</div>
+        </div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">$38.6M</div>
+          <div class="builder-stat-label">Value at Risk</div>
+        </div>
+        <span class="tag complete">COMPLETE</span>
       </div>
+
+      <!-- ST HILLIERS -->
+      <div class="builder-row" onclick="showDetail('sthilliers')">
+        <div class="builder-status admin"></div>
+        <div class="builder-info">
+          <div class="builder-name">St Hilliers</div>
+          <div class="builder-meta">Multi-state • Administration: 4 Feb 2024 • Est. insolvent from: 4 Feb 2024</div>
+        </div>
+        <div class="builder-stat">
+          <div class="builder-stat-value yellow">0 days</div>
+          <div class="builder-stat-label">Insolvent Period</div>
+        </div>
+        <div class="builder-stat">
+          <div class="builder-stat-value">—</div>
+          <div class="builder-stat-label">Projects Won Insolvent</div>
+        </div>
+        <div class="builder-stat">
+          <div class="builder-stat-value yellow">$62.3M</div>
+          <div class="builder-stat-label">Won 6m Before Admin</div>
+        </div>
+        <span class="tag complete">COMPLETE</span>
+      </div>
+
+      <!-- STEVENS -->
+      <div class="builder-row" onclick="showDetail('stevens')">
+        <div class="builder-status admin"></div>
+        <div class="builder-info">
+          <div class="builder-name">Stevens Constructions</div>
+          <div class="builder-meta">NSW • Administration: 27 May 2024 • Est. insolvent from: Sep 2023</div>
+        </div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">237 days</div>
+          <div class="builder-stat-label">Insolvent Period</div>
+        </div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">2</div>
+          <div class="builder-stat-label">Projects Won Insolvent</div>
+        </div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">$3.7M</div>
+          <div class="builder-stat-label">Value at Risk</div>
+        </div>
+        <span class="tag complete">COMPLETE</span>
+      </div>
+
+      <!-- PROJECT COORDINATION -->
+      <div class="builder-row" onclick="showDetail('projcoord')">
+        <div class="builder-status admin"></div>
+        <div class="builder-info">
+          <div class="builder-name">Project Coordination</div>
+          <div class="builder-meta">NSW / ACT • Administration: 19 Mar 2024 • Est. insolvent from: 31 Jan 2024</div>
+        </div>
+        <div class="builder-stat">
+          <div class="builder-stat-value yellow">49 days</div>
+          <div class="builder-stat-label">Insolvent Period</div>
+        </div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">1</div>
+          <div class="builder-stat-label">Projects Won Insolvent</div>
+        </div>
+        <div class="builder-stat">
+          <div class="builder-stat-value red">$4.3M</div>
+          <div class="builder-stat-label">Value at Risk</div>
+        </div>
+        <span class="tag complete">COMPLETE</span>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM CTA -->
+    <div class="cta-section">
+      <div class="cta-title">Your builder doesn't need to go under to ruin your project</div>
+      <div class="cta-text">For every insolvency that makes the news, there are countless instances where developers are quietly strong-armed into paying significant sums outside the contract to get their project to completion. IPEX ring-fences progress payments so your money stays on your project.</div>
+      <a class="cta-btn" href="mailto:info@ipex.com.au">Get in Touch →</a>
     </div>
   </div>
-</div>
+
+  <!-- ========== ARTICLE PAGE ========== -->
+  <div class="page" id="page-article">
+    <button class="back-btn" onclick="showDashboard()">← Back to Dashboard</button>
+    <div class="article-section">
+      <h3>🔴 'Insolvent' Builders Winning New Projects?</h3>
+      <p>When a commercial builder enters administration, headlines naturally gravitate towards what they might owe, before attention turns to why they failed. And while the specific circumstances may vary, each collapse is inevitably chalked up to a version of "difficult market conditions beyond the builder's control."</p>
+      <p>But there's a third element that's rarely discussed. Even if we accept that the ultimate outcome was unavoidable, we may need to start questioning <strong>the timing</strong> of these decisions. When should these builders have entered administration? Were the impacted developers (and subcontractors) all truly just 'unlucky', or did some engage builders who were <span class="highlight">already in significant financial distress</span>?</p>
+      <p>You'd assume that an inability to meet existing financial obligations would rule out any possibility of a builder winning a new contract, but our review of builders that have entered administration since early 2023 reveals that it is <strong>typical</strong> for commercial builders to:</p>
+      <ul style="margin:0 0 16px 24px;color:#c0c8d4;font-size:.88rem;line-height:1.8">
+        <li>Have been <span class="highlight">trading insolvent for approximately 6 months</span></li>
+        <li>Have won the majority of projects that were in progress at the time they entered administration in the <span class="highlight">6 months prior to</span> or <span class="highlight">during</span> the insolvent trading period</li>
+      </ul>
+      <p>Several were deemed to have been trading insolvent for over 12 months and, while it's disturbing enough to think that a builder could 'satisfy' financial due diligence requirements just months prior to becoming insolvent, it gets worse — <span class="highlight">most were able to secure at least one new contract during the insolvent trading period</span>.</p>
+
+      <h3 style="margin-top:28px">📋 'Point in Time' Financial Due Diligence is Failing</h3>
+      <p>It's clear why a builder might be tempted to push the boundaries in trying to save their business, but the fact that such dire cashflow troubles were not able to be identified will be keeping developers & lenders up at night.</p>
+      <p>Can an external party ever hope to reliably distinguish between realistic & overly 'optimistic' cost-to-complete/cashflow forecasts, or identify when critical financial information is incomplete, out of date, or otherwise misleading?</p>
+      <p>And as much as we'd like to think that the worst is behind us, <span class="highlight">builder insolvency is a perennial risk</span> — up a further 21% on FY24 according to the latest ASIC data, including multiple high-profile casualties. It's not going away.</p>
+      <p>Many lenders have reportedly tightened due diligence requirements in response, but few appear to have addressed the underlying limitations of this process — more of the same is unlikely to change the outcome.</p>
+
+      <h3 style="margin-top:28px">💰 Your Builder Doesn't Need to Go Under to Ruin Your Project</h3>
+      <p>Although builder insolvencies are still relatively rare within the commercial construction sector, the administrator's findings confirm that <strong>cashflow trouble often begins long before signs of distress become outwardly apparent</strong>.</p>
+      <p>The main source of nervousness for developers we speak with is the <strong>'contagion effect'</strong> — the considerably more likely risk that progress payments might be used to cashflow their builder's troubled projects. They end up (involuntarily) paying another developer's bills, while their project inherits the cash shortfall.</p>
+      <p>Of course, the ever-widening gap between the on-paper & actual cost-to-complete will eventually need to be filled. For every insolvency that makes the news, there are countless other instances in which the developer is quietly strong-armed into paying significant sums of money outside of the contract to get their project to completion.</p>
+
+      <h3 style="margin-top:28px;color:var(--green)">✅ 'Best Practice' is No Longer Best Practice</h3>
+      <p>Developers & lenders are continually asking their builders to prove that they're financially sound and that they pay their subbies. The problem is, the industry-standard checks & balances don't actually 'prove' anything.</p>
+      <p>Both legally & practically <span class="ipex-highlight">isolating each development from all others is fast becoming the preferred approach</span>. As more developers & lenders put a 'ring-fence' around progress payments, the pool of projects that a distressed builder can 'borrow' from gets smaller.</p>
+      <p>No matter how thorough your builder-vetting process, if you're still paying into your builder's operating account & pinning your hopes on that monthly 'stat dec' being true, the chances of your project being impacted are only going up.</p>
+
+      <div class="cta-section" style="margin-top:28px">
+        <div class="cta-title">Want to prevent builder cashflow issues from impacting your project?</div>
+        <div class="cta-text">IPEX ring-fences progress payments at the project level, ensuring your money stays on your project — not funding someone else's shortfall.</div>
+        <a class="cta-btn" href="mailto:info@ipex.com.au">info@ipex.com.au</a>
+        <div style="font-size:.8rem;color:#667;margin-top:10px">(03) 8456 8032</div>
+      </div>
+
+      <p style="font-size:.75rem;color:#667;margin-top:16px;font-style:italic">*Insolvent trading period based on the administrator-indicated trading insolvent date (not provided for all builders that entered administration). Research conducted by MC & James Curtis.</p>
+    </div>
+  </div>
+
+  <!-- ========== DETAIL PAGES ========== -->
+
+  <!-- NOVATI DETAIL -->
+  <div class="page" id="page-novati">
+    <button class="back-btn" onclick="showDashboard()">← Back to Dashboard</button>
+    <div class="detail-header">
+      <div>
+        <div class="detail-title">Novati Constructions Pty Ltd</div>
+        <div class="detail-meta">ABN 52 000 785 021 • Sydney, NSW • Founded 1971 • Directors: Luisa Novati, Marco Novati</div>
+      </div>
+      <span class="tag new-case" style="font-size:.8rem;padding:6px 16px">🔴 NEW CASE — Research in Progress</span>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-label">Administration Date</div>
+        <div class="info-value" style="color:var(--red)">13 February 2026</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Administrator</div>
+        <div class="info-value">Worrells</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">First Creditors' Meeting</div>
+        <div class="info-value">18 February 2026</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Est. Insolvent Trading Period</div>
+        <div class="info-value" style="color:var(--yellow)">Pending Administrator's Report</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Projects Won During Insolvency</div>
+        <div class="info-value" style="color:var(--yellow)">Research Underway</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Industry Context</div>
+        <div class="info-value" style="font-size:.85rem">1,567 construction insolvencies in FY25</div>
+      </div>
+    </div>
+
+    <div class="timeline-section">
+      <div class="section-title">📰 What We Know</div>
+      <div class="timeline">
+        <div class="tl-item red">
+          <div class="tl-date">13 Feb 2026</div>
+          <div class="tl-text"><strong>Voluntary administration.</strong> Worrells appointed. Nearly 50-year-old family business. Portfolio includes Dicker Data warehouse (Kurnell), luxury apartments (South Cronulla), Manly Civic Club fit-out, Sargood on Collaroy (MBAssoc award 2017).</div>
+        </div>
+        <div class="tl-item yellow">
+          <div class="tl-date">18 Feb 2026</div>
+          <div class="tl-text"><strong>First creditors' meeting scheduled.</strong> Stakeholders seeking clarity on liabilities, ongoing contracts, and potential outcomes.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Next Steps</div>
+          <div class="tl-text">Awaiting administrator's report to determine insolvent trading date, then research projects won during that period — same methodology as other case files.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <div class="cta-title">This case file will be updated as information becomes available</div>
+      <div class="cta-text">When the administrator's report is released, we'll identify the insolvent trading period and map all projects won during that window — the same analysis that revealed $389M in projects awarded to insolvent builders across our other 7 case studies.</div>
+    </div>
+  </div>
+
+  <!-- LANSKEY DETAIL -->
+  <div class="page" id="page-lanskey">
+    <button class="back-btn" onclick="showDashboard()">← Back to Dashboard</button>
+    <div class="detail-header">
+      <div>
+        <div class="detail-title">Lanskey Constructions</div>
+        <div class="detail-meta">Multi-state (NSW, QLD, VIC, WA)</div>
+      </div>
+      <span class="tag complete" style="font-size:.8rem;padding:6px 16px">RESEARCH COMPLETE</span>
+    </div>
+    <div class="info-grid">
+      <div class="info-card"><div class="info-label">Administration Date</div><div class="info-value" style="color:var(--red)">12 December 2022</div></div>
+      <div class="info-card"><div class="info-label">Est. Trading Insolvent From</div><div class="info-value" style="color:var(--red)">December 2021</div></div>
+      <div class="info-card"><div class="info-label">Insolvent Trading Period</div><div class="info-value" style="color:var(--red)">12 months 11 days (376 days)</div></div>
+    </div>
+    <div class="findings-banner">
+      <div class="findings-title">⚠️ Key Findings</div>
+      <div class="findings-grid">
+        <div class="finding-item"><div class="finding-value">19</div><div class="finding-label">Projects won within 6 months of insolvent trading date</div></div>
+        <div class="finding-item"><div class="finding-value">7</div><div class="finding-label">Projects won during insolvent trading period</div></div>
+        <div class="finding-item"><div class="finding-value">$87.0M</div><div class="finding-label">Value of projects won while trading insolvent</div></div>
+      </div>
+    </div>
+    <div class="section-title">🏗️ Projects Won During Insolvent Trading Period</div>
+    <div style="overflow-x:auto">
+    <table class="projects-table">
+      <thead><tr><th>Project</th><th>Developer</th><th>Value</th><th>Date</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><div class="project-name">Rose Bay Apartments</div><div class="project-addr">599-603 Old South Head Rd, Rose Bay NSW</div></td><td>Urban DC</td><td style="font-weight:600">$16.2M</td><td>Oct 2022</td><td>Contract Won</td></tr>
+        <tr><td><div class="project-name">Greendale Village Shopping Centre</div><div class="project-addr">15 Greendale Way, Carindale QLD</div></td><td>Woolworths Group</td><td style="font-weight:600">$19.0M</td><td>Aug 2022</td><td>Tendering</td></tr>
+        <tr><td><div class="project-name">Metroplex Estate</div><div class="project-addr">18 Macgregor Pl, Richlands QLD</div></td><td>Clarence Property Group</td><td style="font-weight:600">$10.0M</td><td>Jan 2022</td><td>Contract Won</td></tr>
+        <tr><td><div class="project-name">Wattleup East Primary School</div><div class="project-addr">380 Wattleup Rd, Hammond Park WA</div></td><td>Dept of Education WA</td><td style="font-weight:600">$22.5M</td><td>Sep 2022</td><td>Tendering</td></tr>
+        <tr><td><div class="project-name">Radich Chase Development</div><div class="project-addr">38 Radich Chase, Wangara WA</div></td><td>TBD</td><td style="font-weight:600">$2.7M</td><td>Apr 2022</td><td>Contract Won</td></tr>
+        <tr><td><div class="project-name">Newmarket Rd Development</div><div class="project-addr">131A Newmarket Rd, Windsor QLD</div></td><td>TBD</td><td style="font-weight:600">$10.0M</td><td>Jun 2022</td><td>TBD</td></tr>
+        <tr><td><div class="project-name">St Germain Town Centre</div><div class="project-addr">195 Germain St, Clyde North VIC</div></td><td>Campbell Park Property</td><td style="font-weight:600">$6.6M*</td><td>— </td><td>— </td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:.75rem;color:#667;margin-bottom:24px">*Values from IPEX research. Full project list includes 19 projects won within 6 months of insolvent trading date, totalling $141.5M.</p>
+    <div class="cta-section">
+      <div class="cta-title">Lanskey won 7 projects worth $87M while trading insolvent</div>
+      <div class="cta-text">For over 12 months, this builder continued to secure contracts — including government schools and major retail — despite being unable to meet existing financial obligations. Traditional due diligence didn't catch it.</div>
+      <a class="cta-btn" href="mailto:info@ipex.com.au">Learn How IPEX Prevents This →</a>
+    </div>
+  </div>
+
+  <!-- LLOYD GROUP DETAIL -->
+  <div class="page" id="page-lloyd">
+    <button class="back-btn" onclick="showDashboard()">← Back to Dashboard</button>
+    <div class="detail-header">
+      <div><div class="detail-title">Lloyd Group</div><div class="detail-meta">VIC / NSW / QLD</div></div>
+      <span class="tag complete" style="font-size:.8rem;padding:6px 16px">RESEARCH COMPLETE</span>
+    </div>
+    <div class="info-grid">
+      <div class="info-card"><div class="info-label">Administration Date</div><div class="info-value" style="color:var(--red)">31 March 2023</div></div>
+      <div class="info-card"><div class="info-label">Est. Trading Insolvent From</div><div class="info-value" style="color:var(--red)">September 2022</div></div>
+      <div class="info-card"><div class="info-label">Insolvent Trading Period</div><div class="info-value" style="color:var(--red)">6 months 30 days (210 days)</div></div>
+    </div>
+    <div class="findings-banner">
+      <div class="findings-title">⚠️ Key Findings</div>
+      <div class="findings-grid">
+        <div class="finding-item"><div class="finding-value">5</div><div class="finding-label">Projects won within 6 months of insolvent trading date</div></div>
+        <div class="finding-item"><div class="finding-value">8</div><div class="finding-label">Projects won during insolvent trading period</div></div>
+        <div class="finding-item"><div class="finding-value">$63.0M</div><div class="finding-label">Value of projects won while trading insolvent</div></div>
+      </div>
+    </div>
+    <div class="section-title">🏗️ Projects Won During Insolvent Trading Period</div>
+    <div style="overflow-x:auto">
+    <table class="projects-table">
+      <thead><tr><th>Project</th><th>Developer</th><th>Value</th><th>Date</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><div class="project-name">Church of Jesus Christ — Mickleham</div><div class="project-addr">1540 Mickleham Rd, Mickleham VIC</div></td><td>—</td><td style="font-weight:600">$8.8M</td><td>Nov 2023</td><td>Contract Won</td></tr>
+        <tr><td><div class="project-name">Broadmeadows Fire Station</div><div class="project-addr">338 Camp Rd, Broadmeadows VIC</div></td><td>—</td><td style="font-weight:600">$8.5M</td><td>Oct 2022</td><td>Contract Won</td></tr>
+        <tr><td><div class="project-name">Holy Spirit / Mt Carmel / St Francis / Mary Immaculate</div><div class="project-addr">Multiple sites, NSW</div></td><td>Catholic Education Office</td><td style="font-weight:600">$30.0M</td><td>Oct 2022</td><td>Contract Won</td></tr>
+        <tr><td><div class="project-name">St Francis College — Edmondson Park (Stage 5-7)</div><div class="project-addr">130-160 Jardine Dr, Edmondson Park NSW</div></td><td>Catholic Education Office</td><td style="font-weight:600">$10.0M</td><td>Oct 2022</td><td>Contract Won</td></tr>
+        <tr><td><div class="project-name">UTS CB02 Informal Learning</div><div class="project-addr">61 Broadway, Ultimo NSW</div></td><td>UTS</td><td style="font-weight:600">$0.5M</td><td>Jun 2023</td><td>Contract Won</td></tr>
+        <tr><td><div class="project-name">UTS CB05 Teaching Spaces</div><div class="project-addr">187 Thomas St, Haymarket NSW</div></td><td>UTS</td><td style="font-weight:600">$1.0M</td><td>Sep 2022</td><td>Contract Won</td></tr>
+        <tr><td><div class="project-name">Noosa Pengari Steiner School (K & L)</div><div class="project-addr">86 Nyell Rd, Doonan QLD</div></td><td>Noosa Pengari Steiner School</td><td style="font-weight:600">$0.5M</td><td>Sep 2022</td><td>Contract Won</td></tr>
+        <tr><td><div class="project-name">Orara — Dandenong</div><div class="project-addr">100 South Gippsland Hwy, Dandenong South VIC</div></td><td>Orora Ltd</td><td style="font-weight:600">$3.7M</td><td>Sep 2022</td><td>Contract Won</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:.75rem;color:#667;margin-bottom:24px">Additionally, 5 projects worth $20.9M were won within 6 months prior to the insolvent trading date. 3 projects worth $48.5M were won within 6 months of administration.</p>
+    <div class="cta-section">
+      <div class="cta-title">Lloyd Group won 8 projects worth $63M while trading insolvent</div>
+      <div class="cta-text">Schools, universities, fire stations — even government and institutional clients weren't protected by traditional due diligence. These developers and agencies had no way of knowing.</div>
+      <a class="cta-btn" href="mailto:info@ipex.com.au">Learn How IPEX Prevents This →</a>
+    </div>
+  </div>
+
+  <!-- GCB DETAIL -->
+  <div class="page" id="page-gcb">
+    <button class="back-btn" onclick="showDashboard()">← Back to Dashboard</button>
+    <div class="detail-header">
+      <div><div class="detail-title">GCB Constructions</div><div class="detail-meta">Queensland</div></div>
+      <span class="tag complete" style="font-size:.8rem;padding:6px 16px">RESEARCH COMPLETE</span>
+    </div>
+    <div class="info-grid">
+      <div class="info-card"><div class="info-label">Administration Date</div><div class="info-value" style="color:var(--red)">26 July 2023</div></div>
+      <div class="info-card"><div class="info-label">Est. Trading Insolvent From</div><div class="info-value" style="color:var(--red)">January 2023</div></div>
+      <div class="info-card"><div class="info-label">Insolvent Trading Period</div><div class="info-value" style="color:var(--red)">6 months 25 days (205 days)</div></div>
+    </div>
+    <div class="findings-banner">
+      <div class="findings-title">⚠️ Key Findings</div>
+      <div class="findings-grid">
+        <div class="finding-item"><div class="finding-value">1</div><div class="finding-label">Projects won within 6 months of insolvent trading date</div></div>
+        <div class="finding-item"><div class="finding-value">1</div><div class="finding-label">Projects won during insolvent trading period</div></div>
+        <div class="finding-item"><div class="finding-value">$193M</div><div class="finding-label">Value of projects won while trading insolvent</div></div>
+      </div>
+    </div>
+    <div class="section-title">🏗️ Projects Detail</div>
+    <div style="overflow-x:auto">
+    <table class="projects-table">
+      <thead><tr><th>Project</th><th>Developer</th><th>Value</th><th>Date</th><th>Won During Insolvency</th></tr></thead>
+      <tbody>
+        <tr><td><div class="project-name">Canopy House</div><div class="project-addr">64 Leopard St, Kangaroo Point QLD</div></td><td>Aria Property Group</td><td style="font-weight:600;color:var(--red)">$193M</td><td>Apr 2023</td><td style="color:var(--red);font-weight:600">✔ Yes</td></tr>
+        <tr><td><div class="project-name">Cote Palm Beach</div><div class="project-addr">3 Thirteenth Ave, Palm Beach QLD</div></td><td>Steer Developments</td><td style="font-weight:600">$51M</td><td>Oct 2022</td><td>Within 6m prior</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="cta-section">
+      <div class="cta-title">A single $193M project won while trading insolvent</div>
+      <div class="cta-text">Aria Property Group engaged GCB for Canopy House — a major Kangaroo Point development — 4 months after GCB began trading insolvent. The builder entered administration 3 months later.</div>
+      <a class="cta-btn" href="mailto:info@ipex.com.au">Learn How IPEX Prevents This →</a>
+    </div>
+  </div>
+
+  <!-- EQ PROJECTS DETAIL -->
+  <div class="page" id="page-eq">
+    <button class="back-btn" onclick="showDashboard()">← Back to Dashboard</button>
+    <div class="detail-header">
+      <div><div class="detail-title">EQ Projects</div><div class="detail-meta">NSW</div></div>
+      <span class="tag complete" style="font-size:.8rem;padding:6px 16px">RESEARCH COMPLETE</span>
+    </div>
+    <div class="info-grid">
+      <div class="info-card"><div class="info-label">Administration Date</div><div class="info-value" style="color:var(--red)">3 February 2023</div></div>
+      <div class="info-card"><div class="info-label">Est. Trading Insolvent From</div><div class="info-value" style="color:var(--red)">December 2021</div></div>
+      <div class="info-card"><div class="info-label">Insolvent Trading Period</div><div class="info-value" style="color:var(--red)">14 months 2 days (422 days)</div></div>
+    </div>
+    <div class="findings-banner">
+      <div class="findings-title">⚠️ Key Findings</div>
+      <div class="findings-grid">
+        <div class="finding-item"><div class="finding-value">0</div><div class="finding-label">Projects won within 6 months of insolvent trading date</div></div>
+        <div class="finding-item"><div class="finding-value">1</div><div class="finding-label">Projects won during insolvent trading period</div></div>
+        <div class="finding-item"><div class="finding-value">$38.6M</div><div class="finding-label">Value of projects won while trading insolvent</div></div>
+      </div>
+    </div>
+    <div class="section-title">🏗️ Projects Detail</div>
+    <div style="overflow-x:auto">
+    <table class="projects-table">
+      <thead><tr><th>Project</th><th>Developer</th><th>Value</th><th>Date</th><th>Won During Insolvency</th></tr></thead>
+      <tbody>
+        <tr><td><div class="project-name">Forest Lodge Warriewood</div><div class="project-addr">8 Forest Rd, Warriewood NSW</div></td><td>TBD</td><td style="font-weight:600;color:var(--red)">$38.6M</td><td>Jan 2022</td><td style="color:var(--red);font-weight:600">✔ Yes</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="cta-section">
+      <div class="cta-title">422 days of insolvent trading — over 14 months</div>
+      <div class="cta-text">EQ Projects traded insolvent for the longest period in our study. A $38.6M Warriewood project was secured during this time. The longest insolvent trading periods pose the greatest risk to developers.</div>
+      <a class="cta-btn" href="mailto:info@ipex.com.au">Learn How IPEX Prevents This →</a>
+    </div>
+  </div>
+
+  <!-- ST HILLIERS DETAIL -->
+  <div class="page" id="page-sthilliers">
+    <button class="back-btn" onclick="showDashboard()">← Back to Dashboard</button>
+    <div class="detail-header">
+      <div><div class="detail-title">St Hilliers</div><div class="detail-meta">Multi-state (QLD, NSW, WA)</div></div>
+      <span class="tag complete" style="font-size:.8rem;padding:6px 16px">RESEARCH COMPLETE</span>
+    </div>
+    <div class="info-grid">
+      <div class="info-card"><div class="info-label">Administration Date</div><div class="info-value" style="color:var(--red)">4 February 2024</div></div>
+      <div class="info-card"><div class="info-label">Est. Trading Insolvent From</div><div class="info-value">4 February 2024 (same day)</div></div>
+      <div class="info-card"><div class="info-label">Insolvent Trading Period</div><div class="info-value" style="color:var(--yellow)">0 days (no prior insolvent trading indicated)</div></div>
+    </div>
+    <div class="findings-banner" style="border-color:rgba(245,158,11,.3)">
+      <div class="findings-title" style="color:var(--yellow)">📌 Key Findings</div>
+      <div class="findings-grid">
+        <div class="finding-item"><div class="finding-value">5</div><div class="finding-label">Projects won within 6 months of administration</div></div>
+        <div class="finding-item"><div class="finding-value">$62.3M</div><div class="finding-label">Value of projects won in 6 months before admin</div></div>
+        <div class="finding-item"><div class="finding-value">0 days</div><div class="finding-label">Indicated insolvent trading period</div></div>
+      </div>
+    </div>
+    <div class="section-title">🏗️ Projects Won Within 6 Months of Administration</div>
+    <div style="overflow-x:auto">
+    <table class="projects-table">
+      <thead><tr><th>Project</th><th>Developer</th><th>Value</th><th>Date</th></tr></thead>
+      <tbody>
+        <tr><td><div class="project-name">Ascot Grove Care Community (ECI)</div><div class="project-addr">52 Hampden St, Ascot QLD</div></td><td>Brisbane Racing Club / Opal HealthCare</td><td style="font-weight:600">$43.8M</td><td>Sep 2023</td></tr>
+        <tr><td><div class="project-name">ANSTO Calibration Centre (Building 4)</div><div class="project-addr">Lucas Heights NSW</div></td><td>ANSTO</td><td style="font-weight:600">$7.0M</td><td>Dec 2023</td></tr>
+        <tr><td><div class="project-name">Dordaak Kepap</div><div class="project-addr">15 The Broadview, Landsdale WA</div></td><td>City of Wanneroo</td><td style="font-weight:600">$10.5M</td><td>Dec 2023</td></tr>
+        <tr><td><div class="project-name">RAAF Amberley Building 737 Refurbishment</div><div class="project-addr">Amberley QLD</div></td><td>Dept of Defence</td><td style="font-weight:600">$1.0M</td><td>Dec 2023</td></tr>
+        <tr><td><div class="project-name">Opal Healthcare — Ascot Grove</div><div class="project-addr">TBD</div></td><td>Opal HealthCare</td><td style="font-weight:600">TBD</td><td>Sep 2023</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="cta-section">
+      <div class="cta-title">5 projects worth $62.3M won in the months before collapse</div>
+      <div class="cta-text">St Hilliers showed no prior insolvent trading period — the administration date and insolvent trading date were the same. But $62.3M in projects were still won in the 6 months leading up to it, including government defence and healthcare contracts.</div>
+      <a class="cta-btn" href="mailto:info@ipex.com.au">Learn How IPEX Prevents This →</a>
+    </div>
+  </div>
+
+  <!-- STEVENS DETAIL -->
+  <div class="page" id="page-stevens">
+    <button class="back-btn" onclick="showDashboard()">← Back to Dashboard</button>
+    <div class="detail-header">
+      <div><div class="detail-title">Stevens Constructions</div><div class="detail-meta">NSW</div></div>
+      <span class="tag complete" style="font-size:.8rem;padding:6px 16px">RESEARCH COMPLETE</span>
+    </div>
+    <div class="info-grid">
+      <div class="info-card"><div class="info-label">Administration Date</div><div class="info-value" style="color:var(--red)">27 May 2024</div></div>
+      <div class="info-card"><div class="info-label">Est. Trading Insolvent From</div><div class="info-value" style="color:var(--red)">September 2023</div></div>
+      <div class="info-card"><div class="info-label">Insolvent Trading Period</div><div class="info-value" style="color:var(--red)">7 months 27 days (237 days)</div></div>
+    </div>
+    <div class="findings-banner">
+      <div class="findings-title">⚠️ Key Findings</div>
+      <div class="findings-grid">
+        <div class="finding-item"><div class="finding-value">2</div><div class="finding-label">Projects won within 6 months of insolvent trading date</div></div>
+        <div class="finding-item"><div class="finding-value">2</div><div class="finding-label">Projects won during insolvent trading period</div></div>
+        <div class="finding-item"><div class="finding-value">$3.7M</div><div class="finding-label">Value won during insolvent period</div></div>
+      </div>
+    </div>
+    <div class="section-title">🏗️ Projects Detail</div>
+    <div style="overflow-x:auto">
+    <table class="projects-table">
+      <thead><tr><th>Project</th><th>Developer</th><th>Value</th><th>Date</th><th>Won During Insolvency</th></tr></thead>
+      <tbody>
+        <tr><td><div class="project-name">Wyong Business Units (Stages 2-4)</div><div class="project-addr">4-8 Dulmison Ave, Wyong NSW</div></td><td>Gibbens Group Property</td><td style="font-weight:600">$3.7M</td><td>Q4 2023</td><td style="color:var(--red);font-weight:600">✔ Yes</td></tr>
+        <tr><td><div class="project-name">Newcastle Beach Hotel</div><div class="project-addr">21 Parnell Pl, Newcastle East NSW</div></td><td>WINIM Funds Management</td><td style="font-weight:600">$6.7M</td><td>May 2024</td><td style="color:var(--red);font-weight:600">✔ Yes</td></tr>
+        <tr><td><div class="project-name">Taco Bell — Lisarow Plaza</div><div class="project-addr">4/1 Parsons Rd, Lisarow NSW</div></td><td>Yum! Restaurants</td><td style="font-weight:600">$2.0M</td><td>Q4 2024</td><td>Within 6m of admin</td></tr>
+        <tr><td><div class="project-name">Swift on Hunter</div><div class="project-addr">653 Hunter St, Newcastle NSW</div></td><td>Altim Property</td><td style="font-weight:600">$10.0M</td><td>Apr 2024</td><td>Within 6m prior</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:.75rem;color:#667;margin-bottom:24px;font-style:italic">Note: The 530 report for Stevens Construction does not provide a specific date of insolvency — estimate used.</p>
+    <div class="cta-section">
+      <div class="cta-title">Hotels and retail secured while unable to pay existing debts</div>
+      <div class="cta-text">Stevens won the Newcastle Beach Hotel contract for $6.7M just weeks before entering administration. Traditional due diligence gave no warning.</div>
+      <a class="cta-btn" href="mailto:info@ipex.com.au">Learn How IPEX Prevents This →</a>
+    </div>
+  </div>
+
+  <!-- PROJECT COORDINATION DETAIL -->
+  <div class="page" id="page-projcoord">
+    <button class="back-btn" onclick="showDashboard()">← Back to Dashboard</button>
+    <div class="detail-header">
+      <div><div class="detail-title">Project Coordination</div><div class="detail-meta">NSW / ACT</div></div>
+      <span class="tag complete" style="font-size:.8rem;padding:6px 16px">RESEARCH COMPLETE</span>
+    </div>
+    <div class="info-grid">
+      <div class="info-card"><div class="info-label">Administration Date</div><div class="info-value" style="color:var(--red)">19 March 2024</div></div>
+      <div class="info-card"><div class="info-label">Est. Trading Insolvent From</div><div class="info-value" style="color:var(--red)">31 January 2024</div></div>
+      <div class="info-card"><div class="info-label">Insolvent Trading Period</div><div class="info-value" style="color:var(--yellow)">1 month 19 days (49 days)</div></div>
+      <div class="info-card"><div class="info-label">Last ATO Payment</div><div class="info-value" style="color:var(--red)">21 November 2023</div></div>
+    </div>
+    <div class="findings-banner">
+      <div class="findings-title">⚠️ Key Findings</div>
+      <div class="findings-grid">
+        <div class="finding-item"><div class="finding-value">2</div><div class="finding-label">Projects won within 6 months of insolvent trading date</div></div>
+        <div class="finding-item"><div class="finding-value">1</div><div class="finding-label">Projects won during insolvent trading period</div></div>
+        <div class="finding-item"><div class="finding-value">$4.3M</div><div class="finding-label">Value won during insolvent period</div></div>
+      </div>
+    </div>
+    <div class="section-title">🏗️ Projects Detail</div>
+    <div style="overflow-x:auto">
+    <table class="projects-table">
+      <thead><tr><th>Project</th><th>Developer</th><th>Value</th><th>Date</th><th>Won During Insolvency</th></tr></thead>
+      <tbody>
+        <tr><td><div class="project-name">Banksia Village Broulee</div><div class="project-addr">65-69 Heath St, Broulee NSW</div></td><td>Banksia Villages</td><td style="font-weight:600;color:var(--red)">$4.3M</td><td>Mar 2024</td><td style="color:var(--red);font-weight:600">✔ Yes</td></tr>
+        <tr><td><div class="project-name">Ovolo Nishi Roofing Works</div><div class="project-addr">25 Edinburgh Ave, Canberra ACT</div></td><td>Ovolo Nishi</td><td style="font-weight:600">$4.0M</td><td>Aug 2023</td><td>Within 6m prior</td></tr>
+        <tr><td><div class="project-name">Housing Trust Community — Wollongong</div><div class="project-addr">6-8 Dudley St, Wollongong NSW</div></td><td>Illawarra Community Housing Trust</td><td style="font-weight:600">$20.0M</td><td>Dec 2023</td><td>Within 6m prior</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="cta-section">
+      <div class="cta-title">Community housing and hospitality contracts won on borrowed time</div>
+      <div class="cta-text">Even with just 49 days of confirmed insolvent trading, Project Coordination still managed to secure a new $4.3M contract. Their last ATO payment was 4 months before administration.</div>
+      <a class="cta-btn" href="mailto:info@ipex.com.au">Learn How IPEX Prevents This →</a>
+    </div>
+  </div>
+
+</div><!-- /main -->
 
 <script>
-function showPage(page){
+// Navigation
+function showDashboard(){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-dashboard').classList.add('active');
   document.querySelectorAll('.sidebar nav a').forEach(a=>a.classList.remove('active'));
-  event.currentTarget.classList.add('active');
-  // Demo: only dashboard is implemented
+  document.getElementById('nav-dashboard').classList.add('active');
+  window.scrollTo(0,0);
+}
+function showArticle(){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-article').classList.add('active');
+  document.querySelectorAll('.sidebar nav a').forEach(a=>a.classList.remove('active'));
+  document.getElementById('nav-article').classList.add('active');
+  window.scrollTo(0,0);
+}
+function showDetail(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  var el=document.getElementById('page-'+id);
+  if(el){el.classList.add('active');window.scrollTo(0,0)}
 }
 
-function showNovatiDetail(){
-  document.getElementById('overlay').classList.add('open');
+// Search filter
+function filterBuilders(){
+  var q=document.getElementById('searchBar').value.toLowerCase();
+  document.querySelectorAll('.builder-row').forEach(function(row){
+    row.style.display=row.textContent.toLowerCase().includes(q)?'':'none';
+  });
 }
-function closeModal(){
-  document.getElementById('overlay').classList.remove('open');
-}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
+// Theme
 function toggleTheme(){
   var html=document.documentElement;
   var next=html.getAttribute('data-theme')==='light'?'dark':'light';
   html.setAttribute('data-theme',next);
   localStorage.setItem('ipex-terminal-theme',next);
-  document.querySelector('.theme-toggle .toggle-icon').textContent=next==='light'?'◑':'☀';
+  document.querySelector('.toggle-icon').textContent=next==='light'?'◑':'☀';
 }
 (function(){
-  var saved=localStorage.getItem('ipex-terminal-theme');
-  if(saved){document.documentElement.setAttribute('data-theme',saved);
-    var icon=document.querySelector('.theme-toggle .toggle-icon');
-    if(icon)icon.textContent=saved==='light'?'◑':'☀';
-  }
+  var s=localStorage.getItem('ipex-terminal-theme');
+  if(s){document.documentElement.setAttribute('data-theme',s);
+    var i=document.querySelector('.toggle-icon');if(i)i.textContent=s==='light'?'◑':'☀'}
 })();
-
-// Search bar demo
-document.getElementById('searchBar').addEventListener('input',function(e){
-  if(e.target.value.toLowerCase().includes('novati')){
-    showNovatiDetail();
-  }
-});
 </script>
 </body>
 </html>
