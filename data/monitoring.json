@@ -1,13 +1,10 @@
 {
-  "lastScan": null,
-  "scanResults": [],
-  "monitoredKeywords": [
-    "voluntary administration",
-    "administrator appointed",
-    "creditors meeting",
-    "liquidation",
-    "construction",
-    "builder",
-    "building company"
-  ]
+  "lastScan": "2026-02-17T14:38:42.752254",
+  "scanFrequency": "daily-7am-weekdays",
+  "sources": [
+    "Brave Search (construction insolvency)",
+    "ABR (ABN verification)"
+  ],
+  "nextScan": "2026-02-18T07:00:42.752281",
+  "results": []
 }
