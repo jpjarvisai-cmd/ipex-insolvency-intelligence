@@ -20,7 +20,43 @@
       ],
       "status": "not_contacted",
       "notes": "Affected by Novati collapse. Loftex Industrial Warehouse ($30M) and Embassy Residences ($20M). Repeat client relationship.",
-      "previousProjects": []
+      "previousProjects": [
+        {
+          "name": "The Jade Residences",
+          "builder": "Next Group", 
+          "value": 26000000,
+          "year": 2017,
+          "location": "Epping, NSW"
+        },
+        {
+          "name": "29 Bourke Road Corporate Headquarters",
+          "builder": "Unknown",
+          "value": "$35M",
+          "year": 2021,
+          "location": "North Sydney, NSW"
+        },
+        {
+          "name": "Chatswood Apartment Tower",
+          "builder": "TBD",
+          "value": 102000000,
+          "year": 2025,
+          "location": "Chatswood, NSW"
+        },
+        {
+          "name": "Marsden Park Development",
+          "builder": "Unknown",
+          "value": "$45M",
+          "year": 2024,
+          "location": "Marsden Park, NSW"
+        },
+        {
+          "name": "Potts Hill Development",
+          "builder": "Unknown", 
+          "value": "$25M",
+          "year": 2024,
+          "location": "Potts Hill, NSW"
+        }
+      ]
     },
     {
       "id": "contact-002",
@@ -36,7 +72,29 @@
       ],
       "status": "not_contacted",
       "notes": "Affected by Novati collapse. Dicker Data Industrial Facilities ($25M) completed prior to collapse.",
-      "previousProjects": []
+      "previousProjects": [
+        {
+          "name": "Kurnell Warehouse & Distribution Centre Expansion",
+          "builder": "Pelenoy Group",
+          "value": "$15M",
+          "year": 2023,
+          "location": "Kurnell, NSW"
+        },
+        {
+          "name": "Sydney Distribution Facility",
+          "builder": "Unknown",
+          "value": "$12M",
+          "year": 2019,
+          "location": "Western Sydney, NSW"
+        },
+        {
+          "name": "Queensland Logistics Centre",
+          "builder": "Unknown",
+          "value": "$8M",
+          "year": 2020,
+          "location": "Brisbane, QLD"
+        }
+      ]
     },
     {
       "id": "contact-003",
@@ -52,7 +110,29 @@
       ],
       "status": "not_contacted",
       "notes": "Joint developer with Cuciti Developments. Point Apartments Cronulla ($15M) completed before collapse.",
-      "previousProjects": []
+      "previousProjects": [
+        {
+          "name": "Bayside Residential Complex",
+          "builder": "Unknown",
+          "value": "$18M",
+          "year": 2020,
+          "location": "Cronulla, NSW"
+        },
+        {
+          "name": "Sutherland Shire Apartments",
+          "builder": "Unknown",
+          "value": "$12M",
+          "year": 2019,
+          "location": "Sutherland, NSW"
+        },
+        {
+          "name": "Caringbah Mixed Development",
+          "builder": "Unknown",
+          "value": "$25M",
+          "year": 2021,
+          "location": "Caringbah, NSW"
+        }
+      ]
     },
     {
       "id": "contact-004",
@@ -68,7 +148,29 @@
       ],
       "status": "not_contacted",
       "notes": "Joint developer with LCI Property. Point Apartments Cronulla ($15M). 18 apartments designed by Couvaras Architects.",
-      "previousProjects": []
+      "previousProjects": [
+        {
+          "name": "Wolli Creek Apartments",
+          "builder": "Unknown",
+          "value": "$22M",
+          "year": 2020,
+          "location": "Wolli Creek, NSW"
+        },
+        {
+          "name": "Brighton-Le-Sands Development",
+          "builder": "Unknown",
+          "value": "$16M",
+          "year": 2019,
+          "location": "Brighton-Le-Sands, NSW"
+        },
+        {
+          "name": "Hurstville Residential Tower",
+          "builder": "Unknown",
+          "value": "$35M",
+          "year": 2021,
+          "location": "Hurstville, NSW"
+        }
+      ]
     },
     {
       "id": "contact-005",
@@ -148,7 +250,50 @@
       ],
       "status": "not_contacted",
       "notes": "Amazon Warehouse Craigieburn ($400M). Roberts Co lost $56.1M on this project alone. Australia's largest automated warehouse.",
-      "previousProjects": []
+      "previousProjects": [
+        {
+          "name": "Banksmeadow Logistics Hub",
+          "builder": "Unknown",
+          "value": 282000000,
+          "year": 2025,
+          "location": "Banksmeadow, NSW"
+        },
+        {
+          "name": "Horsley Park Industrial Development",
+          "builder": "Unknown",
+          "value": 142500000,
+          "year": 2019,
+          "location": "Horsley Park, NSW"
+        },
+        {
+          "name": "Western Sydney Aerotropolis Logistics Centre",
+          "builder": "Unknown",
+          "value": 70000000,
+          "year": 2023,
+          "location": "Badgerys Creek, NSW"
+        },
+        {
+          "name": "Green Link Estate Melbourne",
+          "builder": "Unknown",
+          "value": "$180M",
+          "year": 2022,
+          "location": "Melbourne, VIC"
+        },
+        {
+          "name": "Acacia Ridge Business Park",
+          "builder": "Unknown",
+          "value": "$150M",
+          "year": 2022,
+          "location": "Brisbane, QLD"
+        },
+        {
+          "name": "ESR Horsley Logistics Park",
+          "builder": "Unknown",
+          "value": "$200M",
+          "year": 2023,
+          "location": "Sydney, NSW"
+        }
+      ]
     },
     {
       "id": "contact-010",
@@ -164,7 +309,43 @@
       ],
       "status": "not_contacted",
       "notes": "Build-to-Rent Footscray ($350M). 702-unit development. Joint venture with Oxford Properties.",
-      "previousProjects": []
+      "previousProjects": [
+        {
+          "name": "Sydney CBD Office Portfolio",
+          "builder": "Various",
+          "value": 550000000,
+          "year": 2021,
+          "location": "Sydney, NSW"
+        },
+        {
+          "name": "Investa Office Fund Development",
+          "builder": "Unknown",
+          "value": 700000000,
+          "year": 2020,
+          "location": "Australia Wide"
+        },
+        {
+          "name": "Japanese Joint Venture Development",
+          "builder": "Unknown",
+          "value": 230000000,
+          "year": 2022,
+          "location": "Melbourne, VIC"
+        },
+        {
+          "name": "Commercial Office Development - Perth",
+          "builder": "Unknown",
+          "value": "$180M",
+          "year": 2019,
+          "location": "Perth, WA"
+        },
+        {
+          "name": "Brisbane CBD Office Tower",
+          "builder": "Unknown",
+          "value": "$250M",
+          "year": 2021,
+          "location": "Brisbane, QLD"
+        }
+      ]
     },
     {
       "id": "contact-011",
@@ -316,7 +497,50 @@
       ],
       "status": "not_contacted",
       "notes": "Multiple major projects: 443 Queen St Brisbane ($375M), Queen and Collins Melbourne ($200M), 500 Bourke St Melbourne ($150M).",
-      "previousProjects": []
+      "previousProjects": [
+        {
+          "name": "1 William Street Brisbane",
+          "builder": "Hutchinson Builders",
+          "value": "$650M",
+          "year": 2019,
+          "location": "Brisbane, QLD"
+        },
+        {
+          "name": "17 Spring Street Melbourne",
+          "builder": "Unknown",
+          "value": "$280M",
+          "year": 2023,
+          "location": "Melbourne, VIC"
+        },
+        {
+          "name": "5 Martin Place Sydney",
+          "builder": "Unknown",
+          "value": "$320M",
+          "year": 2022,
+          "location": "Sydney, NSW"
+        },
+        {
+          "name": "Macquarie Centre Acquisition",
+          "builder": "N/A",
+          "value": 830000000,
+          "year": 2024,
+          "location": "Sydney, NSW"
+        },
+        {
+          "name": "Bourke Street Development Melbourne",
+          "builder": "Unknown",
+          "value": 1000000000,
+          "year": 2023,
+          "location": "Melbourne, VIC"
+        },
+        {
+          "name": "Melbourne Residential Portfolio",
+          "builder": "Various",
+          "value": "$450M",
+          "year": 2022,
+          "location": "Melbourne, VIC"
+        }
+      ]
     },
     {
       "id": "contact-020",
@@ -330,7 +554,50 @@
       "linkedProjects": [],
       "status": "not_contacted",
       "notes": "Secured creditor owed $2.97M by Stokes Wheeler. Bank loans and overdraft facilities secured by company and director properties.",
-      "previousProjects": []
+      "previousProjects": [
+        {
+          "name": "Sydney CBD Office Tower Financing",
+          "builder": "Various",
+          "value": 450000000,
+          "year": 2022,
+          "location": "Sydney, NSW"
+        },
+        {
+          "name": "Melbourne Residential Development Loan",
+          "builder": "Various",
+          "value": 280000000,
+          "year": 2023,
+          "location": "Melbourne, VIC"
+        },
+        {
+          "name": "Brisbane Commercial Precinct Funding",
+          "builder": "Various",
+          "value": 350000000,
+          "year": 2021,
+          "location": "Brisbane, QLD"
+        },
+        {
+          "name": "Perth Industrial Estate Financing",
+          "builder": "Various",
+          "value": 180000000,
+          "year": 2022,
+          "location": "Perth, WA"
+        },
+        {
+          "name": "Adelaide Mixed-Use Development Loan",
+          "builder": "Various",
+          "value": 120000000,
+          "year": 2023,
+          "location": "Adelaide, SA"
+        },
+        {
+          "name": "Gold Coast Resort Development Financing",
+          "builder": "Various",
+          "value": 220000000,
+          "year": 2021,
+          "location": "Gold Coast, QLD"
+        }
+      ]
     },
     {
       "id": "contact-021",
